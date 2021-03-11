@@ -117,7 +117,7 @@
                   <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
               </div>
             <div class="modal-body">
-                <a href="http://crg-kcapps-svr/finance/hires/frontend/web/index.php?r=site/login&is_sso=1&system=kce" class='btn btn-primary form-control'><span class='fa fa-gg'></span> LOGIN WITH ISSO</a>
+                <a href="http://crg-kcapps-svr.entdswd.local/finance/hires/frontend/web/index.php?r=site/login&is_sso=1&system=kce" class='btn btn-primary form-control'><span class='fa fa-gg'></span> LOGIN WITH ISSO</a>
               <h2 class="text-left font-weight-bold">SIGN IN</h2>
               <form method="POST" action="{{ route('login') }}" name="form_login">
                   @csrf
