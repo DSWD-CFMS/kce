@@ -78,6 +78,7 @@ Route::post('/submit_spcr_findings', 'CMFS_Controller@submit_spcr_findings');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/loginsso/{username}/{oauth}', 'HomeController@loginsso');
 
 Route::middleware(['admin'])->group(function () {
 
