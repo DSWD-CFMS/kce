@@ -76,8 +76,8 @@ class HomeController extends Controller
                 $addnew->save();
                 Auth::login($addnew,true);
                 if(Auth::check()){
-                    $user->oauth = $oauth;
-                    $user->save();
+                    $addnew->oauth = $oauth;
+                    $addnew->save();
                 }
             }
         }
