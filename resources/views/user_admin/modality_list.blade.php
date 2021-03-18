@@ -113,7 +113,9 @@
 <!--                         <button ng-if="all_data.sp == null" class="btn btn-outline-success btn-sm rounded-0" data-backdrop="static" data-keyboard="false" data-target="#encode_new_sp" data-toggle="modal" ng-click="Assigned_SP(all_data)" data-toggle="tooltip" data-placement="top" title="Add SP Plan">
                         <i class="fa fa-bookmark"></i>
                         </button> -->
-                        all_data.sp 
+                        ------
+                        all_data.sp
+                        ------
                         <button ng-if="all_data.sp != null" class="btn btn-outline-primary btn-sm rounded-0" data-backdrop="static" data-keyboard="false" data-target="#assign_dac_sp" data-toggle="modal" ng-click="Assigned_SP(all_data)" data-toggle="tooltip" data-placement="top" title="Assigned a DAC">
                           <i class="fa fa-street-view"></i>
                          </button>
