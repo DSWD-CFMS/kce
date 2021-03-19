@@ -89,28 +89,28 @@ app.config(['$routeProvider','$locationProvider',
        //      }
        // }
     })
-        .when('/admin/routes/show_modality',{
-        templateUrl: '/admin/routes/fetch_admin_dashboard',
-        controller : ''
-       //  resolve:{
-       //     delay: function($q, $timeout){
-       //          var delay = $q.defer();
-       //          $timeout(delay.resolve, 1000);
-       //          return delay.promise;
-       //      }
-       // }
-    })
-            .when('/admin/routes/show_modality',{
-        templateUrl: '/admin/routes/show_profile',
-        controller : ''
-       //  resolve:{
-       //     delay: function($q, $timeout){
-       //          var delay = $q.defer();
-       //          $timeout(delay.resolve, 1000);
-       //          return delay.promise;
-       //      }
-       // }
-    })
+    //     .when('/admin/routes/show_modality',{
+    //     templateUrl: '/admin/routes/fetch_admin_dashboard',
+    //     controller : ''
+    //    //  resolve:{
+    //    //     delay: function($q, $timeout){
+    //    //          var delay = $q.defer();
+    //    //          $timeout(delay.resolve, 1000);
+    //    //          return delay.promise;
+    //    //      }
+    //    // }
+    // })
+    //         .when('/admin/routes/show_modality',{
+    //     templateUrl: '/admin/routes/show_profile',
+    //     controller : ''
+    //    //  resolve:{
+    //    //     delay: function($q, $timeout){
+    //    //          var delay = $q.defer();
+    //    //          $timeout(delay.resolve, 1000);
+    //    //          return delay.promise;
+    //    //      }
+    //    // }
+    // })
 
 		$locationProvider.html5Mode({
 		enabled: true,
