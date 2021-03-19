@@ -393,7 +393,7 @@ body.modal-open {
           <div class="col-lg-12">
             <div class="form-group">
               <label><small class="font-weight-bold">Assigned DAC</small></label>
-              <select class="custom-select" ng-model="assigned_dac" name="assigned_dac" ng-options="dac_acct.id as dac_acct.Fname + ' ' + dac_acct.Lname for dac_acct in dac" required></select>
+              <select id="ass_dac" class="custom-select" ng-model="assigned_dac" name="assigned_dac" ng-options="dac_acct.id as dac_acct.Fname + ' ' + dac_acct.Lname for dac_acct in dac" required></select>
             </div>
           </div>
         </div>
