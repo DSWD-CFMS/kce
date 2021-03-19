@@ -352,9 +352,7 @@ class RPMO_Controller extends Controller
     public function fetch_rpmo_sps(Request $rq){
         $modality = Assigned_grouping::with('Sp_groupings')->where('assigned_to',Auth::User()->id)->get()->unique('sp_grouping_id');
 
-        var_dump($modality);
-        die();
-        
+   
         $modality_array = [];
         foreach ($modality as $key) {
             array_push($modality_array, $key->sp_grouping_id);
@@ -368,18 +366,18 @@ class RPMO_Controller extends Controller
                 return $ee->select('id','Fname','Lname')->get();
             }])->get();
         }])
-        ->with('Cadt')
+        // ->with('Cadt')
         ->with(['Sp_groupings' => function($query){
             $query->select('id','grouping')->get();
         }])
-        ->with(['Sp_category' => function($query){
-            $query->select('id','category')->get();
-        }])
-        ->with(['Sp_type' => function($query){
-            $query->select('id','type')->get();
-        }])
-        ->whereIn('sp_status', ['Completed','On-going','NYS'])
-        ->whereIn('sp_groupings',$modality_array)
+        // ->with(['Sp_category' => function($query){
+        //     $query->select('id','category')->get();
+        // }])
+        // ->with(['Sp_type' => function($query){
+        //     $query->select('id','type')->get();
+        // }])
+        // ->whereIn('sp_status', ['Completed','On-going','NYS'])
+        // ->whereIn('sp_groupings',$modality_array)
         ->orderBy('updated_at','DESC')
         ->paginate(100);
 
