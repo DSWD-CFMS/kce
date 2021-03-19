@@ -135,6 +135,23 @@ use App\CMFS_kalahi_2020_NCDDP_RFR;
 use App\CMFS_kalahi_2020_NCDDP_RFR_FINDINGS;
 // // CMFS 2020
 
+// // CMFS 2021
+use App\CMFS_kalahi_2021_NCDDP_SP;
+use App\CMFS_kalahi_2021_BUB_SP;
+
+use App\CMFS_kalahi_2021_BUB_SPCR;
+use App\CMFS_kalahi_2021_BUB_SPCR_FINDINGS;
+use App\CMFS_kalahi_2021_BUB_SPCR_LOGS;
+use App\CMFS_kalahi_2021_NCDDP_SPCR;
+use App\CMFS_kalahi_2021_NCDDP_SPCR_FINDINGS;
+use App\CMFS_kalahi_2021_NCDDP_SPCR_LOGS;
+
+use App\CMFS_kalahi_2021_BUB_RFR;
+use App\CMFS_kalahi_2021_BUB_RFR_FINDINGS;
+use App\CMFS_kalahi_2021_NCDDP_RFR;
+use App\CMFS_kalahi_2021_NCDDP_RFR_FINDINGS;
+// // CMFS 2021
+
 class RPMO_Controller extends Controller
 {
     public function index(){
@@ -396,6 +413,7 @@ class RPMO_Controller extends Controller
                 ->with('CMFS_kalahi_2017_BUB_SP')
                 ->with('CMFS_kalahi_2018_BUB_SP')
                 ->with('CMFS_kalahi_2020_BUB_SP')
+                ->with('CMFS_kalahi_2021_BUB_SP')
                ->where('sp_status','On-going')
                ->get();
             }])
@@ -424,6 +442,7 @@ class RPMO_Controller extends Controller
                 ->with('CMFS_kalahi_2017_BUB_SP')
                 ->with('CMFS_kalahi_2018_BUB_SP')
                 ->with('CMFS_kalahi_2020_BUB_SP')
+                ->with('CMFS_kalahi_2021_BUB_SP')
                 ->where('sp_status','Completed')
                 ->orderBy('sp_id', 'ASC')
                 ->get();
@@ -470,6 +489,7 @@ class RPMO_Controller extends Controller
                 ->with('CMFS_kalahi_2017_BUB_SP')
                 ->with('CMFS_kalahi_2018_BUB_SP')
                 ->with('CMFS_kalahi_2020_BUB_SP')
+                ->with('CMFS_kalahi_2021_BUB_SP')
                 ->where('sp_status','NYS')
                 ->get();
 
@@ -508,6 +528,7 @@ class RPMO_Controller extends Controller
             ->with('Sp.CMFS_kalahi_2018_NCDDP_SP')
             ->with('Sp.CMFS_kalahi_2019_NCDDP_SP')
             ->with('Sp.CMFS_kalahi_2020_NCDDP_SP')
+            ->with('Sp.CMFS_kalahi_2021_NCDDP_SP')
             ->where('status','On-going')
             ->where('assigned_grouping',$rq->modality)
             ->paginate(10);
@@ -535,6 +556,7 @@ class RPMO_Controller extends Controller
             ->with('Sp.CMFS_kalahi_2018_NCDDP_SP')
             ->with('Sp.CMFS_kalahi_2019_NCDDP_SP')
             ->with('Sp.CMFS_kalahi_2020_NCDDP_SP')
+            ->with('Sp.CMFS_kalahi_2021_NCDDP_SP')
             ->where('status','Completed')
             ->where('assigned_grouping',$rq->modality)
             ->paginate(10);
@@ -579,6 +601,7 @@ class RPMO_Controller extends Controller
             ->with('Sp.CMFS_kalahi_2018_NCDDP_SP')
             ->with('Sp.CMFS_kalahi_2019_NCDDP_SP')
             ->with('Sp.CMFS_kalahi_2020_NCDDP_SP')
+            ->with('Sp.CMFS_kalahi_2021_NCDDP_SP')
             ->where('status','NYS')
             ->where('assigned_grouping',$rq->modality)
             ->paginate(10);
@@ -839,23 +862,27 @@ class RPMO_Controller extends Controller
         ->with('CMFS_kalahi_2017_BUB_SP')
         ->with('CMFS_kalahi_2018_BUB_SP')
         ->with('CMFS_kalahi_2020_BUB_SP')
+        ->with('CMFS_kalahi_2021_BUB_SP')
         ->with('CMFS_kalahi_2015_BUB_RFR')
         ->with('CMFS_kalahi_2016_BUB_RFR')
         ->with('CMFS_kalahi_2017_BUB_RFR')
         ->with('CMFS_kalahi_2018_BUB_RFR')
         ->with('CMFS_kalahi_2020_BUB_RFR')
+        ->with('CMFS_kalahi_2021_BUB_RFR')
         ->with('CMFS_kalahi_2015_NCDDP_SP')
         ->with('CMFS_kalahi_2016_NCDDP_SP')
         ->with('CMFS_kalahi_2017_NCDDP_SP')
         // ->with('CMFS_kalahi_2018_NCDDP_SP')
         ->with('CMFS_kalahi_2019_NCDDP_SP')
         ->with('CMFS_kalahi_2020_NCDDP_SP')
+        ->with('CMFS_kalahi_2021_NCDDP_SP')
         ->with('CMFS_kalahi_2015_NCDDP_RFR')
         ->with('CMFS_kalahi_2016_NCDDP_RFR')
         ->with('CMFS_kalahi_2017_NCDDP_RFR')
         ->with('CMFS_kalahi_2018_NCDDP_RFR')
         ->with('CMFS_kalahi_2019_NCDDP_RFR')
         ->with('CMFS_kalahi_2020_NCDDP_RFR')
+        ->with('CMFS_kalahi_2021_NCDDP_RFR')
         ->whereIn('sp_groupings',$assigned_grouping_array)
         ->orderBy('updated_at', 'DESC')
         ->paginate(10);
