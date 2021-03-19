@@ -379,7 +379,7 @@ class RPMO_Controller extends Controller
         // ->whereIn('sp_status', ['Completed','On-going','NYS'])
         // ->whereIn('sp_groupings',$modality_array)
         ->orderBy('updated_at','DESC')
-        ->paginate(100);
+        // ->paginate(100);
 
         // ->with(['Users' => function($e){
         //     $e->select('id','Fname','Lname')->get();
