@@ -352,7 +352,7 @@ class RPMO_Controller extends Controller
     public function fetch_rpmo_sps(Request $rq){
         $modality = Assigned_grouping::with('Sp_groupings')->where('assigned_to',Auth::User()->id)->get()->unique('sp_grouping_id');
 
-        echo 'shet';
+        var_dump($modality);
         die();
         
         $modality_array = [];
