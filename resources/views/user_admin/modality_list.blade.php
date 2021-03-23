@@ -74,7 +74,6 @@
                 $count = 0;
               ?>
                 <tr ng-repeat="all_data in bars = (sp_per_modality | filter: search_data_modality_nys.$) track by $index">
-                  <!-- <td>{{bars.indexOf(all_data)}}</td> -->
                   <th><?php echo ++$count; ?></th>
                   <td ng-bind="all_data.date_encoded | date:'medium'">DATE</td>
                   <td>
