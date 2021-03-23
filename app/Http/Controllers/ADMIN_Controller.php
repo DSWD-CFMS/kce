@@ -658,7 +658,7 @@ class ADMIN_Controller extends Controller
                         $rpmo = Users::select('id','Fname','Lname', 'contact')->where('role','RPMO')->get();
                         return [$CMFS_kalahi_2019_BUB_SP,$sp_cat,$sp_type,$dac,$rpmo];
                     }else if($rq->year == 2020){
-                        $CMFS_kalahi_2020_BUB_SP = CMFS_kalahi_2020_BUB_SP::with('sp.assigned_sp.users')->with('sp.sp_logs')->with('brgy.cities.provinces.region')->get();
+                        $CMFS_kalahi_2020_BUB_SP = CMFS_kalahi_2020_BUB_SP::with('sp.assigned_sp.users')->with('sp.sp_logs')->with('brgy.cities.provinces.region')->where(['cancelled'=>0])->get();
                         $sp_cat = Sp_category::select('id','category')->get();
                         $sp_type = Sp_type::select('id','type')->get();
                         $dac = Users::select('id','Fname','Lname', 'contact')->whereNotIn('id',[13,14,15,16,17])->where('role','DAC')->get();
