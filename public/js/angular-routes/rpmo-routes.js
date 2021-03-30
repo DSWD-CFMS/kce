@@ -34,6 +34,17 @@ app.config(['$routeProvider','$locationProvider',
        //      }
        // }
     })
+    .when('/rpmo/routes/new_module',{
+      templateUrl: '/rpmo/routes/new_module_content',
+      controller : ''
+     //  resolve:{
+     //     delay: function($q, $timeout){
+     //          var delay = $q.defer();
+     //          $timeout(delay.resolve, 1000);
+     //          return delay.promise;
+     //      }
+     // }
+  })
     .when('/rpmo/routes/files',{
         templateUrl: '/rpmo/routes/file_contents',
         controller : ''

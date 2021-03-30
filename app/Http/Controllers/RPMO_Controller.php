@@ -158,6 +158,74 @@ class RPMO_Controller extends Controller
         return view('user_rpmo.home');
     }
 
+    public function new_module(){
+        return view('user_rpmo.home');
+    }   
+
+    public function new_module_content(){
+        return view('user_rpmo.new_module');
+    } 
+    
+    public function new_module_content_table(){
+        $string = "<div class='table-responsive'><table class='display dataTable no-footer' id='table_details' cellspacing='0' width='100%'>
+        <thead>
+        <tr>
+        <th>#</th>
+        <th>Barangay</th>
+        <th>SPID</th>
+        <th>Title</th>
+        <th>Modality</th>
+        <th>Planned</th>
+        <th>Actual</th>
+        <th>Slippage</th>
+        <th>DAC</th>
+        <th>Status</th>
+        <th>Action</th></tr></thead><tbody>";
+
+       
+        $results = DB::select( DB::raw("SELECT
+                sp_brgy,
+                sp.sp_id as sp_id,
+                sp_title,
+                sp_groupings.grouping as modality,
+                planned,
+                actual,
+                slippage,
+                sp_status,
+                CONCAT(Lname,', ',Fname) as name
+            FROM
+                sp,
+                sp_groupings,
+                assigned_sp,
+                users
+            WHERE sp.sp_groupings = sp_groupings.id
+            AND sp.sp_id = assigned_sp.sp_id
+            AND assigned_sp.assigned_to = users.id
+            ORDER BY
+                sp.id DESC") );
+                
+        $count = 0;
+        foreach($results as $row){
+           $string .= "<tr>";
+            $string .= "<td>".(++$count)."</td>";
+            $string .= "<td>".$row->sp_brgy."</td>";
+            $string .= "<td>".$row->sp_id."</td>";
+            $string .= "<td>".$row->sp_title."</td>";
+            $string .= "<td>".$row->modality."</td>";
+            $string .= "<td>".$row->planned."</td>";
+            $string .= "<td>".$row->actual."</td>";
+            $string .= "<td>".$row->slippage."</td>";
+            $string .= "<td>".$row->name."</td>";
+            $string .= "<td>".$row->sp_status."</td>";
+            $string .= "<td><button class='btn btn-success btn-xs'>More</button></td>";
+           $string .= "</tr>";
+        }
+
+        $string .= "</tbody></table></div>";
+
+        return $string;
+    } 
+
     public function iTextMoAPI($number,$message,$apicode,$passwd){
         //##########################################################################
         // ITEXMO SEND SMS API - PHP - CURL METHOD

@@ -64,6 +64,10 @@
 		              <a href="{{ url('/rpmo/routes/show_modality') }}" ><i class="fa fa-list-alt"></i> <span class="nav-label">Modality</span></a>
 		          </li>
 
+                  <li>
+		              <a href="{{ url('/rpmo/routes/new_module') }}" ><i class="fa fa-gg"></i> <span class="nav-label">New Module</span></a>
+		          </li>
+
 		          <li>
 		              <a href="" ng-click="fetch_rpmo_ceac()"><i class="fa fa-fw fa-slideshare"></i>
 		                <span class="nav-label" ng-class="{'text-warning': fetch_rpmo_ceac_div == true}">CEAC</span>

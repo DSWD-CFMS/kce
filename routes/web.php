@@ -225,6 +225,11 @@ Route::middleware(['rpmo'])->group(function () {
 	// modality page
 	// When
 	Route::get('/rpmo/routes/show_modality', 'RPMO_Controller@index');
+
+	Route::get('/rpmo/routes/new_module', 'RPMO_Controller@new_module');
+	Route::get('/rpmo/routes/new_module_content', 'RPMO_Controller@new_module_content');
+	Route::get('/rpmo/routes/new_module_content_table', 'RPMO_Controller@new_module_content_table');
+
 	// URL TEMPLATE
 	Route::get('/rpmo/routes/my_modality_contents', function () {
 	       return view('user_rpmo.my_modalities');

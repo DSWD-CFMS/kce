@@ -26,6 +26,8 @@
     <link href="{{ asset('ispinia/css/animate.css') }}" rel="stylesheet">
     <link href="{{ asset('ispinia/css/style.css') }}" rel="stylesheet">
 
+    
+
 </head>
 <body id="page-top" class="landing-page no-skin-config" ng-app="Main_Function">
     @guest
@@ -239,6 +241,7 @@
   <script type="text/javascript" src="{{ asset('/js/lightbox/lightbox.min.js') }}"></script>
   <script src="{{ asset('/js/location/build/phil.min.js') }}"></script>
   <script type="text/javascript" src="{{ asset('/js/main_functions.js') }}"></script>
+
 
   <script>
       $(document).ready(function () {
