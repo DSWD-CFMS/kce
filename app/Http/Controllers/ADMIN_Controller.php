@@ -1030,7 +1030,6 @@ class ADMIN_Controller extends Controller
         ->whereIn('sp_groupings',$assigned_grouping_array)
         ->orderBy('updated_at', 'DESC')
         ->get();
-
         return $sp_ongoing_all_sp_logs;
     }
 
