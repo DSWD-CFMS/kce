@@ -61,6 +61,6 @@ $.ajax({
 	}
 });
 function det_modal(res){
-	$ID('id01').style.display='none'
+	$ID('id01').style.display='block'
 }
 </script>
