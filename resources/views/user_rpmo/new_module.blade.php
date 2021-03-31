@@ -30,10 +30,11 @@
 			<h4 class="x-text-blue">Details for SP # : <b id="sp_id_v"></b></h4>
 			<div class="x-row x-container">
 				<div class="x-container x-col l4 s4 m4">
-					<h4>Date Started</h4>
-					<input type="date" class="x-input x-border" name="started_date" id="started_date">
-					<label for="started_date"></label>
-					<button class="x-btn x-blue x-round-large">Set Date</button>
+					<h4 class="x-row">Date Started</h4>
+					<div class="x-row">
+						<input type="date" class="x-col s7 m7 l7 x-input x-border" name="started_date" id="started_date">
+						<button class="x-col s5 m5 l5 x-btn x-blue x-round-large">Set Date</button>
+					</div>
 				</div>
 			</div>
 			<hr>
