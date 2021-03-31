@@ -26,7 +26,7 @@
 	<div class="x-modal-content x-round-large">
 		<div class="x-container">
 			<span onclick="$ID('id01').style.display='none'"
-			class="x-button x-display-topright">&times;</span>
+			class="x-button x-display-topright x-round-large x-red">&times;</span>
 			<h3 class="x-text-blue x-wide">Details</h3>
 			<div class="x-row x-container">
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -34,7 +34,11 @@
 				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 				consequat. Duis aute irure dolor in reprehenderit in
 			</div>
-			<div></div>
+			<div class="x-container x-row">
+				<button class="x-round-large x-orange">RFR Tracking</button>
+				<button class="x-round-large x-blue">History</button>
+				<button class="x-round-large x-green">SPcr Tracking</button>
+			</div>
 		</div>
 	</div>
 </div>
