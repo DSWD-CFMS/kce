@@ -33,7 +33,7 @@
 					<h4 class="x-row">Date Started</h4>
 					<div class="x-row">
 						<input type="date" class="x-col s7 m7 l7 x-input x-border" name="started_date" id="started_date">
-						<button class="x-col s5 m5 l5 x-btn x-blue" onclick="">Set Date</button>
+						<button class="x-col s5 m5 l5 x-btn x-blue" onclick="set_start_date()">Set Date</button>
 					</div>
 				</div>
 			</div>
@@ -41,7 +41,7 @@
 			<div class="x-container x-padding x-row">
 				<button class="x-btn x-orange">RFR Tracking</button>
 				<button class="x-btn x-blue">History</button>
-				<button class="x-btn x-green">SPcr Tracking</button>
+				<button class="x-btn x-green">SPCR Tracking</button>
 			</div>
 		</div>
 	</div>
@@ -78,7 +78,6 @@ $.ajax({
 function det_modal(res){
 	$ID('sp_id_v').innerHTML = res
 	$ID('id01').style.display='block'
-
 	$send({
 		action:'/rpmo/routes/get_sp_details',
 		data : $DATA({'data':res}),
@@ -89,6 +88,14 @@ function det_modal(res){
 			$print(res)
 		}
 	})
-
 }
+
+function set_start_date(){
+	spid = $ID('sp_id_v').innerHTML
+	date_start = $ID('started_date').value
+	$print(date_start)
+}
+
+
+
 </script>
