@@ -195,14 +195,11 @@ class RPMO_Controller extends Controller
                 sp_date_started,
                 actual,
                 slippage,
-                sp_status,
-                assigned_sp.assign_to as userid
+                sp_status
             FROM
                 sp,
-                sp_groupings,
-                assigned_sp
+                sp_groupings
             WHERE sp.sp_groupings = sp_groupings.id
-            AND sp.sp_id = assigned_sp.sp_id
             ORDER BY
                 sp.id DESC") );
                 
@@ -220,7 +217,8 @@ class RPMO_Controller extends Controller
             $string .= "<td>".$row->slippage."</td>";
             // $string .= "<td>".$row->name."</td>";
             // START
-            $users = DB::select( DB::raw("SELECT Fname,Lname FROM users where id = '".$row->userid."'") );
+            $users = DB::select( DB::raw("SELECT Fname,Lname FROM users,assigned_sp where users.id = assigned_sp.assigned_to  
+            AND  assigned_sp.sp_id = '".$row->sp_id."'") );
             $stringname = '';
             foreach ($users as $row1) {
                 $stringname .= $row1->Lname.', '.$row1->Fname;
