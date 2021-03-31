@@ -171,8 +171,8 @@ class RPMO_Controller extends Controller
         <thead>
         <tr>
         <th>#</th>
-        <th>Barangay</th>
         <th>Municipality</th>
+        <th>Barangay</th>
         <th>SPID</th>
         <th>Title</th>
         <th>Modality</th>
