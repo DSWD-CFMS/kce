@@ -70,6 +70,7 @@ $.ajax({
 		});
 	}
 });
+
 function det_modal(res){
 	$ID('sp_id_v').innerHTML = res
 	$ID('id01').style.display='block'
