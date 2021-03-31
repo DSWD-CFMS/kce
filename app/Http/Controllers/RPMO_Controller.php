@@ -206,7 +206,6 @@ class RPMO_Controller extends Controller
                 
         $count = 0;
         foreach($results as $row){
-            echo $row;
             $string .= "<tr>";
             $string .= "<td>".(++$count)."</td>";
             $string .= "<td>".$row->sp_brgy."</td>";
