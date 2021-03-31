@@ -27,16 +27,17 @@
 		<div class="x-container x-padding">
 			<span onclick="$ID('id01').style.display='none'"
 			class="x-button x-display-topright x-round-large x-red">&times;</span>
-			<h3 class="x-text-blue x-wide">Details for SP # : <b id="sp_id_v"></b></h3>
+			<h4 class="x-text-blue">Details for SP # : <b id="sp_id_v"></b></h4>
 			<div class="x-row x-container">
-				<div class="x-container x-col l2 s2 m2">
+				<div class="x-container x-col l4 s4 m4">
 					<h4>Date Started</h4>
 					<input type="date" class="x-input x-border" name="started_date" id="started_date">
 					<label for="started_date"></label>
-					<button class="x-btn x-blue x-round-large"></button>
+					<button class="x-btn x-blue x-round-large">Set Date</button>
 				</div>
 			</div>
-			<div class="x-container x-row">
+			<hr>
+			<div class="x-container x-padding x-row">
 				<button class="x-btn x-round-large x-orange">RFR Tracking</button>
 				<button class="x-btn x-round-large x-blue">History</button>
 				<button class="x-btn x-round-large x-green">SPcr Tracking</button>
