@@ -50,6 +50,7 @@
 </div>
 
 <script type="text/javascript" src="{{ asset('/dataTables/datatablesnew.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('/Brorn/Brorn.min.js') }}"></script>
 <script>
 $.ajax({
     type:'GET',
@@ -75,4 +76,7 @@ $.ajax({
         });
     }
 });
+det_modal =(res)=>{
+    alert(res)
+}
 </script>
