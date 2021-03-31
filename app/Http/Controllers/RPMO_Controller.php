@@ -179,6 +179,7 @@ class RPMO_Controller extends Controller
         <th>Actual</th>
         <th>Slippage</th>
         <th>DAC</th>
+        <th>Date Started</th>
         <th>Status</th>
         <th>Action</th></tr></thead><tbody>";
 
@@ -216,6 +217,7 @@ class RPMO_Controller extends Controller
             $string .= "<td>".$row->actual."</td>";
             $string .= "<td>".$row->slippage."</td>";
             $string .= "<td>".$row->name."</td>";
+            $string .= "<td>".$row->sp_date_started."</td>";
             $string .= "<td>".$row->sp_status."</td>";
             $string .= "<td><button class='btn btn-success btn-xs' onclick='det_modal(".$row->sp_id.")'>More</button></td>";
             $string .= "</tr>";
