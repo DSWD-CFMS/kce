@@ -183,7 +183,7 @@ class RPMO_Controller extends Controller
         <th>Status</th>
         <th>Action</th></tr></thead><tbody>";
 
-       
+    
         $results = DB::select( DB::raw("SELECT
                 sp_brgy,
                 sp.sp_id as sp_id,

@@ -40,7 +40,8 @@
 			<hr>
 			<div class="x-container x-padding x-row">
 				<button class="x-btn x-orange">RFR Tracking</button>
-				<button class="x-btn x-blue">History</button>
+				
+		      	<button type="button" style="border-radius: 100px;" class="btn btn-outline-primary mb-2" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#plan_history" onclick="view_planned_sched($ID('sp_id_v').innerHTML)"> <i class="fa fa-history"></i> View Track history </button>
 				<button class="x-btn x-green">SPCR Tracking</button>
 			</div>
 		</div>
