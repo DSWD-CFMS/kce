@@ -33,15 +33,15 @@
 					<h4 class="x-row">Date Started</h4>
 					<div class="x-row">
 						<input type="date" class="x-col s7 m7 l7 x-input x-border" name="started_date" id="started_date">
-						<button class="x-col s5 m5 l5 x-btn x-blue x-round-large">Set Date</button>
+						<button class="x-col s5 m5 l5 x-btn x-blue" onclick="">Set Date</button>
 					</div>
 				</div>
 			</div>
 			<hr>
 			<div class="x-container x-padding x-row">
-				<button class="x-btn x-round-large x-orange">RFR Tracking</button>
-				<button class="x-btn x-round-large x-blue">History</button>
-				<button class="x-btn x-round-large x-green">SPcr Tracking</button>
+				<button class="x-btn x-orange">RFR Tracking</button>
+				<button class="x-btn x-blue">History</button>
+				<button class="x-btn x-green">SPcr Tracking</button>
 			</div>
 		</div>
 	</div>
