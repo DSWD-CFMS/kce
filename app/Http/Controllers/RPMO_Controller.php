@@ -221,7 +221,6 @@ class RPMO_Controller extends Controller
             $string .= "</tr>";
         }
         $string .= "</tbody></table></div>";
-
         return $string;
     } 
     
