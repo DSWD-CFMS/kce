@@ -190,6 +190,7 @@ class RPMO_Controller extends Controller
                 sp_title,
                 sp_groupings.grouping as modality,
                 planned,
+                sp_date_started,
                 actual,
                 slippage,
                 sp_status,
