@@ -78,16 +78,16 @@ $.ajax({
 function det_modal(res){
 	$ID('sp_id_v').innerHTML = res
 	$ID('id01').style.display='block'
-	$send({
-		action:'/rpmo/routes/get_sp_details',
-		data : $DATA({'data':res}),
-		method : POST,
-		_async : true,
-		headers : {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-		func : function(res){
-			$print(res)
-		}
-	})
+	// $send({
+	// 	action:'/rpmo/routes/get_sp_details',
+	// 	data : $DATA({'data':res}),
+	// 	method : POST,
+	// 	_async : true,
+	// 	headers : {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+	// 	func : function(res){
+	// 		$print(res)
+	// 	}
+	// })
 }
 
 function set_start_date(){

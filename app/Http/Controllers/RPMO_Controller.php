@@ -206,7 +206,7 @@ class RPMO_Controller extends Controller
                 
         $count = 0;
         foreach($results as $row){
-           $string .= "<tr>";
+            $string .= "<tr>";
             $string .= "<td>".(++$count)."</td>";
             $string .= "<td>".$row->sp_brgy."</td>";
             $string .= "<td>".$row->sp_id."</td>";
@@ -217,10 +217,9 @@ class RPMO_Controller extends Controller
             $string .= "<td>".$row->slippage."</td>";
             $string .= "<td>".$row->name."</td>";
             $string .= "<td>".$row->sp_status."</td>";
-            $string .= "<td><button class='btn btn-success btn-xs' onclick='det_modal(".$row->sp_id.")'>More</button></td>";
-           $string .= "</tr>";
+            $string .= "<td><button class='btn btn-success btn-xs' onclick='det_modal(".$row.")'>More</button></td>";
+            $string .= "</tr>";
         }
-
         $string .= "</tbody></table></div>";
 
         return $string;
