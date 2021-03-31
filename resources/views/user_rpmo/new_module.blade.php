@@ -29,8 +29,12 @@
 			class="x-button x-display-topright x-round-large x-red">&times;</span>
 			<h3 class="x-text-blue x-wide">Details for SP # : <b id="sp_id_v"></b></h3>
 			<div class="x-row x-container">
-				<input type="date" class="x-input x-border" name="started_date" id="started_date">
-				<label for="started_date"></label>
+				<div class="x-container x-col l2 s2 m2">
+					<h4>Date Started</h4>
+					<input type="date" class="x-input x-border" name="started_date" id="started_date">
+					<label for="started_date"></label>
+					<button class="x-btn x-blue x-round-large"></button>
+				</div>
 			</div>
 			<div class="x-container x-row">
 				<button class="x-btn x-round-large x-orange">RFR Tracking</button>
