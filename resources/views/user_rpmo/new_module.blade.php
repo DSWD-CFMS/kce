@@ -23,13 +23,19 @@
 </div>
 
 <div id="id01" class="x-modal">
-	<div class="x-modal-content">
-	<div class="x-container">
-		<span onclick="$ID('id01').style.display='none'"
-		class="x-button x-display-topright">&times;</span>
-		<p>Some text in the Modal..</p>
-		<p>Some text in the Modal..</p>
-	</div>
+	<div class="x-modal-content x-round-large">
+		<div class="x-container">
+			<span onclick="$ID('id01').style.display='none'"
+			class="x-button x-display-topright">&times;</span>
+			<h3 class="x-text-blue x-wide">Details</h3>
+			<div class="x-row x-container">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in
+			</div>
+			<div></div>
+		</div>
 	</div>
 </div>
 
