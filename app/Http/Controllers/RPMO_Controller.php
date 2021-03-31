@@ -196,7 +196,7 @@ class RPMO_Controller extends Controller
                 actual,
                 slippage,
                 sp_status,
-                assigned_sp.assign_to as userid
+                assigned_sp.assigned_to as userid
             FROM
                 sp,
                 sp_groupings,
