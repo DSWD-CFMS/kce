@@ -221,9 +221,9 @@ class RPMO_Controller extends Controller
             AND  assigned_sp.sp_id = '".$row->sp_id."'") );
             $stringname = '';
             foreach ($users as $row1) {
-                $stringname .= $row1->Lname.' | '.$row1->Fname;
+                $stringname .= $row1->Lname.', '.$row1->Fname;
                 if(next($users)){
-                    $stringname .=', ';
+                    $stringname .=' | ';
                 }
             }
             // END
