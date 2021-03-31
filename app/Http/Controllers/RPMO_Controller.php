@@ -226,8 +226,8 @@ class RPMO_Controller extends Controller
         return $string;
     } 
     
-    public function new_module_content_modal($param1){
-
+    public function new_module_content_modal(){
+        $name = Input::get('data');
         // $results = DB::select( DB::raw("SELECT
         //         sp_brgy,
         //         sp.sp_id as sp_id,

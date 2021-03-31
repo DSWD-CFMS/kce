@@ -76,8 +76,9 @@ function det_modal(res){
 	$ID('id01').style.display='block'
 
 	$send({
-		action:'/get_sp_details/'+res,
-		method : GET,
+		action:'/get_sp_details',
+		data : $DATA({'data':res})
+		method : POST,
 		_async : true,
 		func : function(res){
 			alert(res)
