@@ -217,7 +217,7 @@ class RPMO_Controller extends Controller
             $string .= "<td>".$row->slippage."</td>";
             $string .= "<td>".$row->name."</td>";
             $string .= "<td>".$row->sp_status."</td>";
-            $string .= "<td><button class='btn btn-success btn-xs' onclick='det_modal(".$row.")'>More</button></td>";
+            $string .= "<td><button class='btn btn-success btn-xs' onclick='det_modal(".$row->sp_id.")'>More</button></td>";
            $string .= "</tr>";
         }
 
@@ -228,7 +228,7 @@ class RPMO_Controller extends Controller
     
     public function new_module_content_modal(Request $req){
 
-        $results = DB::select( DB::raw("SELECT") );
+        // $results = DB::select( DB::raw("SELECT") );
 
         return $req->data;
     } 
