@@ -50,7 +50,7 @@
 </div>
 
 <script type="text/javascript" src="{{ asset('/dataTables/datatablesnew.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('/brorn/Brorn.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('/dataTables/Brorn.min.js') }}"></script>
 <script>
 $.ajax({
     type:'GET',
