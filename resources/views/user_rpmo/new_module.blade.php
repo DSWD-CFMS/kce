@@ -81,11 +81,9 @@ function det_modal(res){
 		method : POST,
 		_async : true,
 		func : function(res){
-			alert(res)
+			$print(res)
 		}
 	})
-	// $.get('get_sp_details/'.res,function(data){
-	// 	console.log(data);
-	// });
+
 }
 </script>

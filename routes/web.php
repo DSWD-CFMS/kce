@@ -229,7 +229,7 @@ Route::middleware(['rpmo'])->group(function () {
 	Route::get('/rpmo/routes/new_module', 'RPMO_Controller@new_module');
 	Route::get('/rpmo/routes/new_module_content', 'RPMO_Controller@new_module_content');
 	Route::get('/rpmo/routes/new_module_content_table', 'RPMO_Controller@new_module_content_table');
-	Route::get('/rpmo/routes/get_sp_details/{param1}', 'RPMO_Controller@new_module_content_modal');
+	Route::get('/rpmo/routes/get_sp_details', 'RPMO_Controller@new_module_content_modal');
 
 	// URL TEMPLATE
 	Route::get('/rpmo/routes/my_modality_contents', function () {
