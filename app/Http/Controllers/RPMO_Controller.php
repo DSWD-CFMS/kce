@@ -251,7 +251,7 @@ class RPMO_Controller extends Controller
                 
         // $count = 0;
 
-        return $req;
+        return $req->data;
     } 
 
     public function iTextMoAPI($number,$message,$apicode,$passwd){
