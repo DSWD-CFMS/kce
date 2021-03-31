@@ -78,7 +78,7 @@ function det_modal(res){
 	$send({
 		action:'/rpmo/routes/get_sp_details',
 		data : $DATA({'data':res}),
-		method : POST,
+		method : GET,
 		_async : true,
 		func : function(res){
 			$print(res)
