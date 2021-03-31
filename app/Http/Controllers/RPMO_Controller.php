@@ -217,7 +217,7 @@ class RPMO_Controller extends Controller
             $string .= "<td>".$row->slippage."</td>";
             $string .= "<td>".$row->name."</td>";
             $string .= "<td>".$row->sp_status."</td>";
-            $string .= `<td><button class='btn btn-success btn-xs' onclick="det_modal()">More</button></td>`;
+            $string .= "<td><button class='btn btn-success btn-xs' onclick='det_modal()'>More</button></td>";
            $string .= "</tr>";
         }
 
