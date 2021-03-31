@@ -83,7 +83,7 @@ function det_modal(res){
 	// 		alert(res)
 	// 	}
 	// })
-	$.get('get_sp_details',{param1:res},function(data){
+	$.get('get_sp_details/'.res,function(data){
 		console.log(data);
 	});
 }
