@@ -27,7 +27,7 @@
 		<div class="x-container">
 			<span onclick="$ID('id01').style.display='none'"
 			class="x-button x-display-topright x-round-large x-red">&times;</span>
-			<h3 class="x-text-blue x-wide">Details</h3>
+			<h3 class="x-text-blue x-wide">Details for SP # : <b id="sp_id_v"></b></h3>
 			<div class="x-row x-container">
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -35,9 +35,9 @@
 				consequat. Duis aute irure dolor in reprehenderit in
 			</div>
 			<div class="x-container x-row">
-				<button class="x-round-large x-orange">RFR Tracking</button>
-				<button class="x-round-large x-blue">History</button>
-				<button class="x-round-large x-green">SPcr Tracking</button>
+				<button class="x-btn x-round-large x-orange">RFR Tracking</button>
+				<button class="x-btn x-round-large x-blue">History</button>
+				<button class="x-btn x-round-large x-green">SPcr Tracking</button>
 			</div>
 		</div>
 	</div>
@@ -71,6 +71,7 @@ $.ajax({
 	}
 });
 function det_modal(res){
+	$ID('sp_id_v').innerHTML = res
 	$ID('id01').style.display='block'
 }
 </script>
