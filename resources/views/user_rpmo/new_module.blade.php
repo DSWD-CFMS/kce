@@ -77,7 +77,7 @@ function det_modal(res){
 
 	$send({
 		action:'/get_sp_details',
-		data : $DATA({'data':res})
+		data : $DATA({'data':res}),
 		method : POST,
 		_async : true,
 		func : function(res){
