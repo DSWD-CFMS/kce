@@ -50,30 +50,36 @@
 <script type="text/javascript" src="{{ asset('/dataTables/datatablesnew.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('/dataTables/Brorn.min.js') }}"></script>
 <script>
-$.ajax({
-	type:'GET',
-	url:'new_module_content_table',
-	success: function(data){
-		$('#content').html(data);
-		$('#table_details').DataTable({
-			 'processing': true,
-			 'dom': 'lBfrtip',
-			 'buttons': [
-				{
-					extend: 'collection',
-					text: 'Export to...',
-					buttons: [
-						'copy',
-						'excel',
-						'csv',
-						'pdf',
-						'print'
-					]
-				}
-			]
-		});
-	}
-});
+
+
+function init(){
+	$.ajax({
+		type:'GET',
+		url:'new_module_content_table',
+		success: function(data){
+			$('#content').html(data);
+			$('#table_details').DataTable({
+				 'processing': true,
+				 'dom': 'lBfrtip',
+				 'buttons': [
+					{
+						extend: 'collection',
+						text: 'Export to...',
+						buttons: [
+							'copy',
+							'excel',
+							'csv',
+							'pdf',
+							'print'
+						]
+					}
+				]
+			});
+		}
+	});	
+}
+
+init();
 
 function det_modal(res){
 	$ID('sp_id_v').innerHTML = res
@@ -106,7 +112,8 @@ function set_start_date(){
 			_async : true,
 			headers : {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
 			func : function(res){
-				location.reload()
+				// location.reload()
+				init();
 			}
 		})
 	}
