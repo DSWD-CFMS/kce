@@ -217,7 +217,7 @@ class RPMO_Controller extends Controller
             $string .= "<td>".$row->slippage."</td>";
             $string .= "<td>".$row->name."</td>";
             $string .= "<td>".$row->sp_status."</td>";
-            $string .= "<td><button class='btn btn-success btn-xs' onclick='det_modal(".$row->sp_id.")'>More</button></td>";
+            $string .= "<td><button class='btn btn-success btn-xs' onclick='det_modal(".$row.")'>More</button></td>";
            $string .= "</tr>";
         }
 
@@ -228,28 +228,7 @@ class RPMO_Controller extends Controller
     
     public function new_module_content_modal(Request $req){
 
-        // $results = DB::select( DB::raw("SELECT
-        //         sp_brgy,
-        //         sp.sp_id as sp_id,
-        //         sp_title,
-        //         sp_groupings.grouping as modality,
-        //         planned,
-        //         actual,
-        //         slippage,
-        //         sp_status,
-        //         CONCAT(Lname,', ',Fname) as name
-        //     FROM
-        //         sp,
-        //         sp_groupings,
-        //         assigned_sp,
-        //         users
-        //     WHERE sp.sp_groupings = sp_groupings.id
-        //     AND sp.sp_id = assigned_sp.sp_id
-        //     AND assigned_sp.assigned_to = users.id
-        //     ORDER BY
-        //         sp.id DESC") );
-                
-        // $count = 0;
+        $results = DB::select( DB::raw("SELECT") );
 
         return $req->data;
     } 

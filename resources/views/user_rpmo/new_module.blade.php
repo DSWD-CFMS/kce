@@ -72,6 +72,7 @@ $.ajax({
 });
 
 function det_modal(res){
+	res = JSOM.parse(res)
 	$ID('sp_id_v').innerHTML = res
 	$ID('id01').style.display='block'
 
@@ -80,11 +81,9 @@ function det_modal(res){
 		data : $DATA({'data':res}),
 		method : POST,
 		_async : true,
-		headers : {
-			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-		},
+		headers : {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
 		func : function(res){
-			$print(res)
+			$print(res["sp_id"])
 		}
 	})
 
