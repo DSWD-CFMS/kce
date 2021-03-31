@@ -24,7 +24,7 @@
 
 <div id="id01" class="x-modal">
 	<div class="x-modal-content x-round-large">
-		<div class="x-container">
+		<div class="x-container x-padding">
 			<span onclick="$ID('id01').style.display='none'"
 			class="x-button x-display-topright x-round-large x-red">&times;</span>
 			<h3 class="x-text-blue x-wide">Details for SP # : <b id="sp_id_v"></b></h3>
