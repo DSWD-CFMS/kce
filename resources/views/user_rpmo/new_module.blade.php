@@ -77,6 +77,5 @@ $.ajax({
     }
 });
 function det_modal(res){
-    alert(res)
 }
 </script>
