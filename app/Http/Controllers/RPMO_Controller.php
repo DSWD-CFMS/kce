@@ -229,6 +229,13 @@ class RPMO_Controller extends Controller
     public function new_module_content_modal(Request $req){
         return $req->data;
     } 
+    
+    public function set_date_start(Request $req){
+        $query = Sp::where('sp_id', $req->id;
+        $quert->sp_date_started =  $req->date;
+        $query->sp_status = 'On-going';
+        $query->save();
+    } 
 
     public function iTextMoAPI($number,$message,$apicode,$passwd){
         //##########################################################################

@@ -94,6 +94,19 @@ function set_start_date(){
 	spid = $ID('sp_id_v').innerHTML
 	date_start = $ID('started_date').value
 	$print(date_start)
+	$send({
+		action:'/rpmo/routes/set_date_start',
+		data : $DATA({
+			'date':date_start,
+			'id':spid,
+			}),
+		method : POST,
+		_async : true,
+		headers : {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+		func : function(res){
+			$print(res)
+		}
+	})
 }
 
 
