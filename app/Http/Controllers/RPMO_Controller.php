@@ -218,7 +218,7 @@ class RPMO_Controller extends Controller
             $string .= "<td>".$row->name."</td>";
             $string .= "<td>".$row->sp_status."</td>";
             $string .= `<td>
-                <button data-toggle='modal' class='btn btn-success btn-xs' onclick="det_modal('`.$row->sp_status.`)">
+                <button class='btn btn-success btn-xs' onclick="det_modal('`.$row->sp_status.`)">
                 More</button></td>`;
            $string .= "</tr>";
         }
