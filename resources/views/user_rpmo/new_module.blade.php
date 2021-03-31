@@ -76,7 +76,7 @@ function det_modal(res){
 	$ID('id01').style.display='block'
 
 	$send({
-		action:'/get_sp_details',
+		action:'/rpmo/routes/get_sp_details',
 		data : $DATA({'data':res}),
 		method : POST,
 		_async : true,
