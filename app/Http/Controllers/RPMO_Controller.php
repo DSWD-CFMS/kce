@@ -196,15 +196,13 @@ class RPMO_Controller extends Controller
                 actual,
                 slippage,
                 sp_status,
-                CONCAT(Lname,', ',Fname) as name
+                assigned_sp.assign_to as userid
             FROM
                 sp,
                 sp_groupings,
-                assigned_sp,
-                users
+                assigned_sp
             WHERE sp.sp_groupings = sp_groupings.id
             AND sp.sp_id = assigned_sp.sp_id
-            AND assigned_sp.assigned_to = users.id
             ORDER BY
                 sp.id DESC") );
                 
@@ -220,7 +218,18 @@ class RPMO_Controller extends Controller
             $string .= "<td>".$row->planned."</td>";
             $string .= "<td>".$row->actual."</td>";
             $string .= "<td>".$row->slippage."</td>";
-            $string .= "<td>".$row->name."</td>";
+            // $string .= "<td>".$row->name."</td>";
+            // START
+            $users = DB::select( DB::raw("SELECT * FROM users where id = '".$row->userid."'") );
+            $stringname = '';
+            foreach ($users as $row1) {
+                $stringname .= $row1->Lname.', '.$row1->Fname;
+                if(next($users)){
+                    $stringname .=', ';
+                }
+            }
+            // END
+            $string .= "<td>".$stringname."</td>";
             $string .= "<td>".$row->sp_date_started."</td>";
             $string .= "<td>".$row->sp_status."</td>";
             $string .= "<td><button class='btn btn-success btn-xs' onclick='det_modal(".$row->sp_id.")'>More</button></td>";
