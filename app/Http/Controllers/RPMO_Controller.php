@@ -232,11 +232,11 @@ class RPMO_Controller extends Controller
     
     public function set_date_start(Request $req){
         $query = Sp::where('sp_id', $req->id);
-        $quert->sp_date_started =  $req->date;
+        $query->sp_date_started =  $req->date;
         $query->sp_status = 'On-going';
         $query->save();
     } 
-
+    // 2021030049
     public function iTextMoAPI($number,$message,$apicode,$passwd){
         //##########################################################################
         // ITEXMO SEND SMS API - PHP - CURL METHOD
