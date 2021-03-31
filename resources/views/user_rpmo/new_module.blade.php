@@ -95,5 +95,6 @@ $.ajax({
     }
 });
 function det_modal(res){
+    alert()
 }
 </script>
