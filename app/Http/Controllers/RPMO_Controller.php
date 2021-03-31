@@ -172,6 +172,7 @@ class RPMO_Controller extends Controller
         <tr>
         <th>#</th>
         <th>Barangay</th>
+        <th>Municipality</th>
         <th>SPID</th>
         <th>Title</th>
         <th>Modality</th>
@@ -185,6 +186,7 @@ class RPMO_Controller extends Controller
 
     
         $results = DB::select( DB::raw("SELECT
+                sp_municipality,
                 sp_brgy,
                 sp.sp_id as sp_id,
                 sp_title,
@@ -210,6 +212,7 @@ class RPMO_Controller extends Controller
         foreach($results as $row){
             $string .= "<tr>";
             $string .= "<td>".(++$count)."</td>";
+            $string .= "<td>".$row->sp_municipality."</td>";
             $string .= "<td>".$row->sp_brgy."</td>";
             $string .= "<td>".$row->sp_id."</td>";
             $string .= "<td>".$row->sp_title."</td>";
