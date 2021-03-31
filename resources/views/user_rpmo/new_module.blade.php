@@ -65,6 +65,11 @@ function init(){
 			$('#table_details').DataTable({
 				 'processing': true,
 				 'dom': 'lBfrtip',
+				 aLengthMenu: [
+						[ 10, 25, 50, 100, 200, 500, 1000, -1],
+						[ 10, 25, 50, 100, 200, 500, 1000, "All"]
+					],
+					iDisplayLength: 10,
 				 'buttons': [
 					{
 						extend: 'collection',
