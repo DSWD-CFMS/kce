@@ -220,7 +220,7 @@ class RPMO_Controller extends Controller
             $string .= "<td>".$row->slippage."</td>";
             // $string .= "<td>".$row->name."</td>";
             // START
-            $users = DB::select( DB::raw("SELECT * FROM users where id = '".$row->userid."'") );
+            $users = DB::select( DB::raw("SELECT Fname,Lname FROM users where id = '".$row->userid."'") );
             $stringname = '';
             foreach ($users as $row1) {
                 $stringname .= $row1->Lname.', '.$row1->Fname;
