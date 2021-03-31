@@ -231,7 +231,7 @@ class RPMO_Controller extends Controller
     } 
     
     public function set_date_start(Request $req){
-        $query = Sp::where('sp_id', $req->id;
+        $query = Sp::where('sp_id', $req->id);
         $quert->sp_date_started =  $req->date;
         $query->sp_status = 'On-going';
         $query->save();
