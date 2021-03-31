@@ -17,6 +17,10 @@
 	to {opacity: 1;transform: scale3d(1, 1, 1);}
 }
 
+*{
+	font-size:12px;
+}
+
 </style>
 <div id='content' style='padding:20px;margin:5px;border:1px solid #f5f5f5;'>
 <h4 class='text-center loading'><strong style="color:black;font-size: 20px;">Retrieving Data from the Server...</strong><br><br><i class="fa fa-database  fa-3x fa-fw" style="color:#86ebb8;font-size: 8x;"></i></h4>   
