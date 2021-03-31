@@ -99,9 +99,9 @@ function det_modal(res){
 function set_start_date(){
 	var c = confirm('Are You Sure?');
 	if(c){
-		spid = $ID('sp_id_v').innerHTML
-		date_start = $ID('started_date').value
-		$print(date_start)
+		spid = $ID('sp_id_v').innerHTML;
+		date_start = $ID('started_date').value;
+		$print(date_start);
 		$send({
 			action:'/rpmo/routes/set_date_start',
 			data : $DATA({
@@ -114,6 +114,8 @@ function set_start_date(){
 			func : function(res){
 				// location.reload()
 				init();
+				$ID('id01').style.display='none';
+
 			}
 		})
 	}
