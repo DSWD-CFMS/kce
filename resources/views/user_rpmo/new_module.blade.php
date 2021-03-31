@@ -73,5 +73,14 @@ $.ajax({
 function det_modal(res){
 	$ID('sp_id_v').innerHTML = res
 	$ID('id01').style.display='block'
+
+	$send({
+		action:'/get_sp_details/'+res,
+		method : GET,
+		_async : true,
+		func : function(res){
+			alert(res)
+		}
+	})
 }
 </script>

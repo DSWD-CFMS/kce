@@ -226,33 +226,32 @@ class RPMO_Controller extends Controller
         return $string;
     } 
     
-    public function new_module_content_modal(){
+    public function new_module_content_modal(Request $param1){
 
-       
-        $results = DB::select( DB::raw("SELECT
-                sp_brgy,
-                sp.sp_id as sp_id,
-                sp_title,
-                sp_groupings.grouping as modality,
-                planned,
-                actual,
-                slippage,
-                sp_status,
-                CONCAT(Lname,', ',Fname) as name
-            FROM
-                sp,
-                sp_groupings,
-                assigned_sp,
-                users
-            WHERE sp.sp_groupings = sp_groupings.id
-            AND sp.sp_id = assigned_sp.sp_id
-            AND assigned_sp.assigned_to = users.id
-            ORDER BY
-                sp.id DESC") );
+        // $results = DB::select( DB::raw("SELECT
+        //         sp_brgy,
+        //         sp.sp_id as sp_id,
+        //         sp_title,
+        //         sp_groupings.grouping as modality,
+        //         planned,
+        //         actual,
+        //         slippage,
+        //         sp_status,
+        //         CONCAT(Lname,', ',Fname) as name
+        //     FROM
+        //         sp,
+        //         sp_groupings,
+        //         assigned_sp,
+        //         users
+        //     WHERE sp.sp_groupings = sp_groupings.id
+        //     AND sp.sp_id = assigned_sp.sp_id
+        //     AND assigned_sp.assigned_to = users.id
+        //     ORDER BY
+        //         sp.id DESC") );
                 
-        $count = 0;
+        // $count = 0;
 
-        return $results;
+        return $param1;
     } 
 
     public function iTextMoAPI($number,$message,$apicode,$passwd){
