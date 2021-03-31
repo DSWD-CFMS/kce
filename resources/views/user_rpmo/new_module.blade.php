@@ -76,7 +76,7 @@ $.ajax({
         });
     }
 });
-det_modal =(res)=>{
+function det_modal(res){
     alert(res)
 }
 </script>
