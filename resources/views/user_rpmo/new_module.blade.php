@@ -82,7 +82,7 @@ function det_modal(res){
 		_async : true,
 		headers : {
 			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-		}
+		},
 		func : function(res){
 			$print(res)
 		}
