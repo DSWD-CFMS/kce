@@ -104,7 +104,7 @@ function set_start_date(){
 		_async : true,
 		headers : {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
 		func : function(res){
-			$print(res)
+			location.reload()
 		}
 	})
 }
