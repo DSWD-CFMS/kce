@@ -2160,7 +2160,8 @@ app.controller('DAC_Controller', function($scope,$http,$filter,$timeout) {
 	}
 
   $scope.updating_sp_data = function(type,sp_id){
-    
+    console.log($("#date_"+sp_id))
+    return 0
     if(type == 'sp_estimated_duration' || type == 'sp_days_suspended' || type == 'sp_physical_target'){
 
       if(type == 'sp_estimated_duration'){
@@ -2219,7 +2220,9 @@ app.controller('DAC_Controller', function($scope,$http,$filter,$timeout) {
                 text: "Subproject Data successfuly updated",
                 icon: 'success',
               }).then(function() {
-                 window.location.href="/"+"dac/routes/show_modality";
+                 // window.location.href="/"+"dac/routes/show_modality";
+                 date = nedate
+
               });
             }else;
           }, function myError(response) {});
