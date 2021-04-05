@@ -2221,9 +2221,10 @@ app.controller('DAC_Controller', function($scope,$http,$filter,$timeout) {
                 icon: 'success',
               }).then(function() {
                  // window.location.href="/"+"dac/routes/show_modality";
-                angular.element( document.querySelector("#date_"+sp_id)).html($("#"+type).val());
-                alert($("#"+type).val())
+                // angular.element( document.querySelector("#date_"+sp_id)).html($("#"+type).val());
+                // alert($("#"+type).val())
                 // $scope.maoni = $("#"+type).val();
+                alert(datax.updated_field_value)
                  date = nedate
 
               });
@@ -2297,8 +2298,8 @@ app.controller('DAC_Controller', function($scope,$http,$filter,$timeout) {
                 icon: 'success',
               }).then(function() {
                  // window.location.href="/"+"dac/routes/show_modality";
-                angular.element( document.querySelector("#date_"+sp_id)).html($("#"+datax.updated_field_value));
-                alert($("#"+datax.updated_field_value))
+                // angular.element( document.querySelector("#date_"+sp_id)).html($("#"+datax.updated_field_value));
+                // alert($("#"+datax.updated_field_value))
                 // $scope.maoni = $("#"+type).val();
 
               });
