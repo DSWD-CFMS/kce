@@ -2224,7 +2224,7 @@ app.controller('DAC_Controller', function($scope,$http,$filter,$timeout) {
                 // angular.element( document.querySelector("#date_"+sp_id)).html($("#"+type).val());
                 // alert($("#"+type).val())
                 // $scope.maoni = $("#"+type).val();
-                alert(datax.updated_field_value)
+                console.log(datax.updated_field_value)
                  date = nedate
 
               });
