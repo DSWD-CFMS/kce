@@ -2160,7 +2160,8 @@ app.controller('DAC_Controller', function($scope,$http,$filter,$timeout) {
 	}
 
   $scope.updating_sp_data = function(type,sp_id){
-    console.log($("#date_"+sp_id))
+    id_btn =  angular.element( document.querySelector("#date_"+sp_id) );
+    console.log(id_btn)
     return 0
     if(type == 'sp_estimated_duration' || type == 'sp_days_suspended' || type == 'sp_physical_target'){
 
