@@ -2213,7 +2213,9 @@ app.controller('DAC_Controller', function($scope,$http,$filter,$timeout) {
               url : 'updating_sp_single_data',
               data : datax,
           }).then(function mySuccess(response) {
-            console.log(response.data);
+            // console.log(response.data);
+            angular.element( document.querySelector("#date_"+sp_id)).html(datax.updated_field_value);
+            console.log(datax.updated_field_value)
             if(response.data == 1){
               Swal.fire({
                 title: 'Yahoooo!',
@@ -2221,10 +2223,8 @@ app.controller('DAC_Controller', function($scope,$http,$filter,$timeout) {
                 icon: 'success',
               }).then(function() {
                  // window.location.href="/"+"dac/routes/show_modality";
-                // angular.element( document.querySelector("#date_"+sp_id)).html($("#"+type).val());
                 // alert($("#"+type).val())
                 // $scope.maoni = $("#"+type).val();
-                console.log(datax.updated_field_value)
                  date = nedate
 
               });
