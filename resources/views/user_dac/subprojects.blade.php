@@ -231,7 +231,7 @@
                         </div>
                         <div class="col-lg-4 hov">
                       <small class="text-label-blue"> <b>Target date of completion</b> </small>
-                          <p ng-if="specific_sp_data.sp[0].sp_target_date_of_completion != null" ng-bind="specific_sp_data.sp[0].sp_target_date_of_completion | date:'fullDate'"></p>
+                          <span ng-if="specific_sp_data.sp[0].sp_target_date_of_completion != null" ng-bind="specific_sp_data.sp[0].sp_target_date_of_completion | date:'fullDate'"></span>
                             <a href="" style="text-transform: none !important; font-size:1.1em; font-weight:bold;" class="text-warning" ng-click="updating_sp_data('sp_target_date_of_completion',specific_sp_data.sp[0].sp_id)"> <i class="fa fa-pencil-square-o"></i> Update </a>
                           <br>
                         </div>
