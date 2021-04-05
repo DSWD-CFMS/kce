@@ -61,7 +61,7 @@
               </li>
 
               <li>
-                  <a href="http://crg-kcapps-svr.entdswd.local/finance/hires/frontend/web/index.php?r=assigned-sp" target="_blank"><i class="fa fa-gg"></i> <span class="nav-label">Assigning Module</span></a>
+                  <a href="http://crg-kcapps-svr.entdswd.local/finance/hires/frontend/web/index.php?r=assigned-sp" target="_blank"><i class="fa fa-gg"></i> <span class="nav-label">New Module</span></a>
               </li>
 
               <li>
