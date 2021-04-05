@@ -204,6 +204,9 @@ class RPMO_Controller extends Controller
                 sp.id DESC") );
                 
         $count = 0;
+        // $temp = '';
+        // $stringname = '';
+        $is_repeat = '';
         foreach($results as $row){
             $users = DB::select( DB::raw("SELECT Fname,Lname FROM users,assigned_sp where users.id = assigned_sp.assigned_to  
             AND  assigned_sp.sp_id = '".$row->sp_id."'") );
@@ -275,7 +278,8 @@ class RPMO_Controller extends Controller
             }else if($rq->type == 'Completed'){
                 Assigned_sp::where('sp_id', $rq->sp_id)->update(array('status' => 'Completed'));
                 Sp::where('sp_id', $rq->sp_id)->update(array('sp_status' => 'Completed', 'sp_actual_date_completed' => $rq->date_of_completion));
-            }
+            }else;
+
             // $rpmo_focal = Users::select('Fname','Lname','contact')->where('id',Auth::User()->id)->get();
             // $assigned_to = Assigned_sp::select('assigned_to')->where('sp_id', $rq->sp_id)->get();
 
@@ -301,8 +305,9 @@ class RPMO_Controller extends Controller
 
             DB::commit();
             return 1;
-        }
-        catch (\Exception $e) {
+            // return ['success',$text_data,$rpmo_focal,$dac,$contact_rcis];
+            // all good
+        } catch (\Exception $e) {
             DB::rollback();
             return $e->getMessage();
         }
@@ -427,10 +432,13 @@ class RPMO_Controller extends Controller
         }else{
             $actual_weighted = 0;
         }
+        // WEIGHTED PERCENTAGE
         return [$modality,$groupings_sp,$Count_Ongoing_sp,$Count_Completed_sp,round($actual_weighted,2),$Count_NYS_sp];
     }
 
-    public function show_modality(Request $rq){ return view('user_rpmo.modality');}
+    public function show_modality(Request $rq){
+        return view('user_rpmo.modality');
+    }
     
     public function fetch_rpmo_sps(Request $rq){
         $modality = Assigned_grouping::with('Sp_groupings')->where('assigned_to',Auth::User()->id)->get()->unique('sp_grouping_id');
