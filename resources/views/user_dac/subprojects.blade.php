@@ -90,7 +90,8 @@
 							<span ng-if="all_data.sp[0].sp_logs.length == 0" >NONE</span>
 						</td>
 
-						<td ng-class="{'text-green' : all_data.status == 'Completed'}" ng-bind="all_data.status">---</td>
+						<td ng-class="{'text-green' : all_data.status == 'Completed'}" ng-bind="all_data">---</td>
+						<!-- <td ng-class="{'text-green' : all_data.status == 'Completed'}" ng-bind="all_data.status">---</td> -->
 						@verbatim
 						<td>
 							<a href="" class="btn btn-outline-primary rounded-0 btn-block" style="text-decoration: none !important; text-transform: none !important;" data-toggle="collapse" data-target="#collapseExample{{all_data.sp[0].sp_id}}" aria-expanded="true" aria-controls="collapseExample{{all_data.sp[0].sp_id}}" ng-click="view_specific_sp_data(all_data)">
