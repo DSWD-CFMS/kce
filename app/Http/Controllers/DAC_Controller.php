@@ -55,7 +55,9 @@ use App\CMFS_kalahi_2018_NCDDP_RFR;
 use App\CMFS_kalahi_2019_NCDDP_RFR;
 use App\CMFS_kalahi_2019_BUB_RFR;
 use App\CMFS_kalahi_2020_BUB_RFR;
+use App\CMFS_kalahi_2021_BUB_RFR;
 use App\CMFS_kalahi_2020_NCDDP_RFR;
+use App\CMFS_kalahi_2021_NCDDP_RFR;
 
 class DAC_Controller extends Controller
 {
@@ -194,18 +196,21 @@ class DAC_Controller extends Controller
             ->with('Sp.CMFS_kalahi_2017_BUB_RFR')
             ->with('Sp.CMFS_kalahi_2018_BUB_RFR')
             ->with('Sp.CMFS_kalahi_2020_BUB_RFR')
+            ->with('Sp.CMFS_kalahi_2021_BUB_RFR')
             ->with('Sp.CMFS_kalahi_2015_NCDDP_SP')
             ->with('Sp.CMFS_kalahi_2016_NCDDP_SP')
             ->with('Sp.CMFS_kalahi_2017_NCDDP_SP')
             // ->with('Sp.CMFS_kalahi_2018_NCDDP_SP')
             ->with('Sp.CMFS_kalahi_2019_NCDDP_SP')
             ->with('Sp.CMFS_kalahi_2020_NCDDP_SP')
+            ->with('Sp.CMFS_kalahi_2021_NCDDP_SP')
             ->with('Sp.CMFS_kalahi_2015_NCDDP_RFR')
             ->with('Sp.CMFS_kalahi_2016_NCDDP_RFR')
             ->with('Sp.CMFS_kalahi_2017_NCDDP_RFR')
             ->with('Sp.CMFS_kalahi_2018_NCDDP_RFR')
             ->with('Sp.CMFS_kalahi_2019_NCDDP_RFR')
             ->with('Sp.CMFS_kalahi_2020_NCDDP_RFR')
+            ->with('Sp.CMFS_kalahi_2021_NCDDP_RFR')
             ->where('assigned_to',Auth::User()->id)
             ->orderBy('updated_at','desc')
             ->paginate(100);
@@ -257,11 +262,13 @@ class DAC_Controller extends Controller
                     ->with('CMFS_kalahi_2017_BUB_SP')
                     ->with('CMFS_kalahi_2018_BUB_SP')
                     ->with('CMFS_kalahi_2020_BUB_SP')
+                    ->with('CMFS_kalahi_2021_BUB_SP')
                     ->with('CMFS_kalahi_2015_BUB_RFR')
                     ->with('CMFS_kalahi_2016_BUB_RFR')
                     ->with('CMFS_kalahi_2017_BUB_RFR')
                     ->with('CMFS_kalahi_2018_BUB_RFR')
                     ->with('CMFS_kalahi_2020_BUB_RFR')
+                    ->with('CMFS_kalahi_2021_BUB_RFR')
                     ->where('sp_status','On-going')
                     ->get();
                 }])
@@ -288,11 +295,13 @@ class DAC_Controller extends Controller
                     ->with('CMFS_kalahi_2017_BUB_SP')
                     ->with('CMFS_kalahi_2018_BUB_SP')
                     ->with('CMFS_kalahi_2020_BUB_SP')
+                    ->with('CMFS_kalahi_2021_BUB_SP')
                     ->with('CMFS_kalahi_2015_BUB_RFR')
                     ->with('CMFS_kalahi_2016_BUB_RFR')
                     ->with('CMFS_kalahi_2017_BUB_RFR')
                     ->with('CMFS_kalahi_2018_BUB_RFR')
                     ->with('CMFS_kalahi_2020_BUB_RFR')
+                    ->with('CMFS_kalahi_2021_BUB_RFR')
                     ->where('sp_status','NYS')
                     ->get();
                 }])
@@ -317,11 +326,13 @@ class DAC_Controller extends Controller
                     ->with('CMFS_kalahi_2017_BUB_SP')
                     ->with('CMFS_kalahi_2018_BUB_SP')
                     ->with('CMFS_kalahi_2020_BUB_SP')
+                    ->with('CMFS_kalahi_2021_BUB_SP')
                     ->with('CMFS_kalahi_2015_BUB_RFR')
                     ->with('CMFS_kalahi_2016_BUB_RFR')
                     ->with('CMFS_kalahi_2017_BUB_RFR')
                     ->with('CMFS_kalahi_2018_BUB_RFR')
                     ->with('CMFS_kalahi_2020_BUB_RFR')
+                    ->with('CMFS_kalahi_2021_BUB_RFR')
                     ->where('sp_status','Completed')
                     ->get();
                 }])
@@ -362,12 +373,14 @@ class DAC_Controller extends Controller
                     // ->with('CMFS_kalahi_2018_NCDDP_SP')
                     ->with('CMFS_kalahi_2019_NCDDP_SP')
                     ->with('CMFS_kalahi_2020_NCDDP_SP')
+                    ->with('CMFS_kalahi_2021_NCDDP_SP')
                     ->with('CMFS_kalahi_2015_NCDDP_RFR')
                     ->with('CMFS_kalahi_2016_NCDDP_RFR')
                     ->with('CMFS_kalahi_2017_NCDDP_RFR')
                     ->with('CMFS_kalahi_2018_NCDDP_RFR')
                     ->with('CMFS_kalahi_2019_NCDDP_RFR')
                     ->with('CMFS_kalahi_2020_NCDDP_RFR')
+                    ->with('CMFS_kalahi_2021_NCDDP_RFR')
                     ->where('sp_status','On-going');
                 }])
                 ->with(['Users' => function($query){
@@ -394,12 +407,14 @@ class DAC_Controller extends Controller
                     // ->with('CMFS_kalahi_2018_NCDDP_SP')
                     ->with('CMFS_kalahi_2019_NCDDP_SP')
                     ->with('CMFS_kalahi_2020_NCDDP_SP')
+                    ->with('CMFS_kalahi_2021_NCDDP_SP')
                     ->with('CMFS_kalahi_2015_NCDDP_RFR')
                     ->with('CMFS_kalahi_2016_NCDDP_RFR')
                     ->with('CMFS_kalahi_2017_NCDDP_RFR')
                     ->with('CMFS_kalahi_2018_NCDDP_RFR')
                     ->with('CMFS_kalahi_2019_NCDDP_RFR')
                     ->with('CMFS_kalahi_2020_NCDDP_RFR')
+                    ->with('CMFS_kalahi_2021_NCDDP_RFR')
                     ->where('sp_status','NYS')
                     ->get();
                 }])
@@ -425,12 +440,14 @@ class DAC_Controller extends Controller
                     // ->with('CMFS_kalahi_2018_NCDDP_SP')
                     ->with('CMFS_kalahi_2019_NCDDP_SP')
                     ->with('CMFS_kalahi_2020_NCDDP_SP')
+                    ->with('CMFS_kalahi_2021_NCDDP_SP')
                     ->with('CMFS_kalahi_2015_NCDDP_RFR')
                     ->with('CMFS_kalahi_2016_NCDDP_RFR')
                     ->with('CMFS_kalahi_2017_NCDDP_RFR')
                     ->with('CMFS_kalahi_2018_NCDDP_RFR')
                     ->with('CMFS_kalahi_2019_NCDDP_RFR')
                     ->with('CMFS_kalahi_2020_NCDDP_RFR')
+                    ->with('CMFS_kalahi_2021_NCDDP_RFR')
                     ->where('sp_status','Completed')
                     ->get();
                 }])

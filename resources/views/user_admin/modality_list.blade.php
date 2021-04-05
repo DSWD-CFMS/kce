@@ -136,7 +136,6 @@
                           <i class="fa fa-eye"></i>
                          </button>
                     </div>
-
                   </td>
                 </tr>
               </tbody>
