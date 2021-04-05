@@ -59,6 +59,11 @@
               <li>
                   <a href="{{ url('/admin/routes/show_modality') }}" ><i class="fa fa-list-alt"></i> <span class="nav-label">Modality</span><span class="fa arrow"></span></a>
               </li>
+
+              <li>
+                  <a href="http://crg-kcapps-svr.entdswd.local/finance/hires/frontend/web/index.php?r=assigned-sp" target="_blank"><i class="fa fa-gg"></i> <span class="nav-label">Assigning Module</span></a>
+              </li>
+
               <li>
                 <a href="{{ url('/admin/routes/show_reports') }}" >
                   <i class="fa fa-fw fa-bullhorn"></i>
