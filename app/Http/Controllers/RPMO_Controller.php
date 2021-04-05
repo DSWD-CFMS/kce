@@ -269,7 +269,7 @@ class RPMO_Controller extends Controller
         $query->sp_status = 'On-going';
         $query->save();
 
-        $query2 = Assigned_sp::where('assigned_sp', $req->id)->first();
+        $query2 = Assigned_sp::where('sp_id', $req->id)->first();
         $query2->status = 'On-going';
         $query2->save();
     } 
