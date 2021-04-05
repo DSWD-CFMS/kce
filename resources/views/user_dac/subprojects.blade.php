@@ -250,7 +250,7 @@
                           <small class="text-label-blue"> <b>Actual date completed</b> </small>
                           <p ng-if="specific_sp_data.sp[0].sp_actual_date_completed != null && specific_sp_data.sp[0].sp_actual_date_completed != '0000-00-00 00:00:00'" ng-bind="specific_sp_data.sp[0].sp_actual_date_completed | date:'fullDate'"></p>
 
-                          <p class="mb-0" ng-if="specific_sp_data.sp[0].sp_actual_date_completed == '0000-00-00 00:00:00'">
+                          <p class="mb-0" ng-if="">
                             <a href="" style="text-transform: none !important; font-size:1.1em; font-weight:bold;" class="text-warning" ng-click="updating_sp_data('sp_actual_date_completed',specific_sp_data.sp[0].sp_id)"> <i class="fa fa-pencil-square-o"></i> Update </a>
                           </p>
                         </div>
