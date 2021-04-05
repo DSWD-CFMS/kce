@@ -94,7 +94,7 @@
 						@verbatim
 						<td>
 							<a href="" class="btn btn-outline-primary rounded-0 btn-block" style="text-decoration: none !important; text-transform: none !important;" data-toggle="collapse" data-target="#collapseExample{{all_data.sp[0].sp_id}}" aria-expanded="true" aria-controls="collapseExample{{all_data.sp[0].sp_id}}" ng-click="view_specific_sp_data(all_data)">
-								More...
+								More.....
 							</a>
 						</td>
 
