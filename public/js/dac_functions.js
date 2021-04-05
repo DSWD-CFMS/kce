@@ -2290,7 +2290,10 @@ app.controller('DAC_Controller', function($scope,$http,$filter,$timeout) {
               url : 'updating_sp_single_data',
               data : datax,
           }).then(function mySuccess(response) {
-            console.log(response.data);
+                                                  
+            angular.element( document.querySelector("#date_"+sp_id)).html(datax.updated_field_value);
+            alert(datax.updated_field_value)
+            // console.log(response.data);
             if(response.data == 1){
               Swal.fire({
                 title: 'Yahoooo!',
