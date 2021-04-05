@@ -2163,18 +2163,9 @@ app.controller('DAC_Controller', function($scope,$http,$filter,$timeout) {
     // console.log(id_btn)
     // return 0
     if(type == 'sp_estimated_duration' || type == 'sp_days_suspended' || type == 'sp_physical_target'){
-
-      if(type == 'sp_estimated_duration'){
-        $scope.label = 'Estimated Duration (Days)';
-      };
-
-      if(type == 'sp_days_suspended'){
-        $scope.label = 'Days Suspended (Days)';
-      };
-
-      if(type == 'sp_physical_target'){
-        $scope.label = 'Physical Target: "ex. 5800 Sq. ft" ';
-      };
+      if(type == 'sp_estimated_duration'){$scope.label = 'Estimated Duration (Days)'; };
+      if(type == 'sp_days_suspended'){ $scope.label = 'Days Suspended (Days)';};
+      if(type == 'sp_physical_target'){$scope.label = 'Physical Target: "ex. 5800 Sq. ft" ';};
 
       Swal.fire({
         html:'<small style="float:left;font-weight:bold;">'+ $scope.label +'</small>' +'<br>'+ '<input type="text" id="'+type+'" class="form-control" autofocus>',
@@ -2214,7 +2205,7 @@ app.controller('DAC_Controller', function($scope,$http,$filter,$timeout) {
           }).then(function mySuccess(response) {
             // console.log(response.data);
             angular.element( document.querySelector("#date_"+sp_id)).html(datax.updated_field_value);
-            alert(datax.updated_field_value)
+            // alert(datax.updated_field_value)
 
             if(response.data == 1){
               Swal.fire({
@@ -2223,8 +2214,6 @@ app.controller('DAC_Controller', function($scope,$http,$filter,$timeout) {
                 icon: 'success',
               }).then(function() {
                  // window.location.href="/"+"dac/routes/show_modality";
-                // alert($("#"+type).val())
-                // $scope.maoni = $("#"+type).val();
                  date = nedate
 
               });
@@ -2241,17 +2230,9 @@ app.controller('DAC_Controller', function($scope,$http,$filter,$timeout) {
       })
 
     }else if(type == 'sp_target_date_of_completion' || type == 'sp_actual_date_completed' || type == 'sp_date_of_turnover'){
-      if(type == 'sp_target_date_of_completion'){
-        $scope.label = 'Target Date Completion';
-      };
-
-      if(type == 'sp_actual_date_completed'){
-        $scope.label = 'Actual Date Completed';
-      };
-
-      if(type == 'sp_date_of_turnover'){
-        $scope.label = 'Date of Turnover';
-      };
+      if(type == 'sp_target_date_of_completion'){$scope.label = 'Target Date Completion';};
+      if(type == 'sp_actual_date_completed'){$scope.label = 'Actual Date Completed';};
+      if(type == 'sp_date_of_turnover'){$scope.label = 'Date of Turnover';};
 
       Swal.fire({
         html:'<small style="float:left;font-weight:bold;">'+ $scope.label +'</small>' +'<br>'+ '<input type="date" id="'+type+'" class="form-control" autofocus>' + '<br>',
@@ -2290,9 +2271,9 @@ app.controller('DAC_Controller', function($scope,$http,$filter,$timeout) {
               url : 'updating_sp_single_data',
               data : datax,
           }).then(function mySuccess(response) {
-                                                  
+
             angular.element( document.querySelector("#date_"+sp_id)).html(datax.updated_field_value);
-            alert(datax.updated_field_value)
+            // alert(datax.updated_field_value)
             // console.log(response.data);
             if(response.data == 1){
               Swal.fire({
@@ -2301,10 +2282,6 @@ app.controller('DAC_Controller', function($scope,$http,$filter,$timeout) {
                 icon: 'success',
               }).then(function() {
                  // window.location.href="/"+"dac/routes/show_modality";
-                // angular.element( document.querySelector("#date_"+sp_id)).html($("#"+datax.updated_field_value));
-                // alert($("#"+datax.updated_field_value))
-                // $scope.maoni = $("#"+type).val();
-
               });
             }else;
           }, function myError(response) {});

@@ -287,7 +287,6 @@ Route::middleware(['rpmo'])->group(function () {
 	Route::get('/rpmo/routes/download/{path}', 'RPMO_Controller@download')->name('download');
 	Route::get('/rpmo/routes/download_sp_files/{path}', 'RPMO_Controller@download_sp_files')->name('download_sp_files');
 	Route::post('/rpmo/routes/delete_file/{id}', 'RPMO_Controller@delete_file')->name('delete_file');
-
 	// profile
 	// When
 	Route::get('/rpmo/routes/profile', 'RPMO_Controller@index');
@@ -296,7 +295,6 @@ Route::middleware(['rpmo'])->group(function () {
 		return view('user_rpmo.profile_contents');
 	});
 	// Route::get('/rpmo/routes/profile', 'RPMO_Controller@profile');
-
 	Route::get('/rpmo/routes/show_profile', 'Profile_Controller@show_profile');
 	Route::post('/rpmo/routes/update_profile_photo', 'Profile_Controller@update_profile_photo');
 	Route::post('/rpmo/routes/update_profile_info', 'Profile_Controller@update_profile_info');
