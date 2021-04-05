@@ -207,33 +207,38 @@ class RPMO_Controller extends Controller
                 sp.id DESC") );
                 
         $count = 0;
+        $temp = ''
+        $stringname = '';
+        $is_repeat = '';
         foreach($results as $row){
-            $string .= "<tr>";
-            $string .= "<td>".(++$count)."</td>";
-            $string .= "<td>".$row->sp_municipality."</td>";
-            $string .= "<td>".$row->sp_brgy."</td>";
-            $string .= "<td>".$row->sp_id."</td>";
-            $string .= "<td>".$row->sp_title."</td>";
-            $string .= "<td>".$row->modality."</td>";
-            $string .= "<td>".$row->planned."</td>";
-            $string .= "<td>".$row->actual."</td>";
-            $string .= "<td>".$row->slippage."</td>";
-            // $string .= "<td>".$row->name."</td>";
-            // START
             $users = DB::select( DB::raw("SELECT Fname,Lname FROM users where id = '".$row->userid."'") );
-            $stringname = '';
             foreach ($users as $row1) {
                 $stringname .= $row1->Lname.', '.$row1->Fname;
                 if(next($users)){
                     $stringname .=', ';
                 }
             }
-            // END
-            $string .= "<td>".$stringname."</td>";
-            $string .= "<td>".$row->sp_date_started."</td>";
-            $string .= "<td>".$row->sp_status."</td>";
-            $string .= "<td><button class='btn btn-success btn-xs' onclick='det_modal(".$row->sp_id.")'>More</button></td>";
-            $string .= "</tr>";
+            if($temp!=$stringname){
+                $string .= "<tr>";
+                $string .= "<td>".(++$count)."</td>";
+                $string .= "<td>".$row->sp_municipality."</td>";
+                $string .= "<td>".$row->sp_brgy."</td>";
+                $string .= "<td>".$row->sp_id."</td>";
+                $string .= "<td>".$row->sp_title."</td>";
+                $string .= "<td>".$row->modality."</td>";
+                $string .= "<td>".$row->planned."</td>";
+                $string .= "<td>".$row->actual."</td>";
+                $string .= "<td>".$row->slippage."</td>";
+                // $string .= "<td>".$row->name."</td>";
+                // START
+                // END
+                $string .= "<td>".$stringname."</td>";
+                $string .= "<td>".$row->sp_date_started."</td>";
+                $string .= "<td>".$row->sp_status."</td>";
+                $string .= "<td><button class='btn btn-success btn-xs' onclick='det_modal(".$row->sp_id.")'>More</button></td>";
+                $string .= "</tr>";
+             }
+
         }
 
         $string .= "</tbody></table></div>";
