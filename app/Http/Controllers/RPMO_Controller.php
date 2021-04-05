@@ -204,13 +204,13 @@ class RPMO_Controller extends Controller
                 sp.id DESC") );
                 
         $count = 0;
-        $temp = ''
+        $temp = '';
         $stringname = '';
         $is_repeat = '';
         foreach($results as $row){
-<<<<<<< HEAD
+// <<<<<<< HEAD
             $users = DB::select( DB::raw("SELECT Fname,Lname FROM users where id = '".$row->userid."'") );
-=======
+// =======
             $string .= "<tr>";
             $string .= "<td>".(++$count)."</td>";
             $string .= "<td>".$row->sp_municipality."</td>";
