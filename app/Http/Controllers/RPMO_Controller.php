@@ -204,23 +204,23 @@ class RPMO_Controller extends Controller
                 sp.id DESC") );
                 
         $count = 0;
-        $temp = '';
-        $stringname = '';
+        // $temp = '';
+        // $stringname = '';
         $is_repeat = '';
         foreach($results as $row){
 // <<<<<<< HEAD
             // $users = DB::select( DB::raw("SELECT Fname,Lname FROM users where id = '".$row->userid."'") );
 // =======
-            $string .= "<tr>";
-            $string .= "<td>".(++$count)."</td>";
-            $string .= "<td>".$row->sp_municipality."</td>";
-            $string .= "<td>".$row->sp_brgy."</td>";
-            $string .= "<td>".$row->sp_id."</td>";
-            $string .= "<td>".$row->sp_title."</td>";
-            $string .= "<td>".$row->modality."</td>";
-            $string .= "<td>".$row->planned."</td>";
-            $string .= "<td>".$row->actual."</td>";
-            $string .= "<td>".$row->slippage."</td>";
+            // $string .= "<tr>";
+            // $string .= "<td>".(++$count)."</td>";
+            // $string .= "<td>".$row->sp_municipality."</td>";
+            // $string .= "<td>".$row->sp_brgy."</td>";
+            // $string .= "<td>".$row->sp_id."</td>";
+            // $string .= "<td>".$row->sp_title."</td>";
+            // $string .= "<td>".$row->modality."</td>";
+            // $string .= "<td>".$row->planned."</td>";
+            // $string .= "<td>".$row->actual."</td>";
+            // $string .= "<td>".$row->slippage."</td>";
             // $string .= "<td>".$row->name."</td>";
             // START
             $users = DB::select( DB::raw("SELECT Fname,Lname FROM users,assigned_sp where users.id = assigned_sp.assigned_to  
@@ -233,7 +233,7 @@ class RPMO_Controller extends Controller
                     $stringname .=' | ';
                 }
             }
-            if($temp!=$stringname){
+            // if($temp!=$stringname){
                 $string .= "<tr>";
                 $string .= "<td>".(++$count)."</td>";
                 $string .= "<td>".$row->sp_municipality."</td>";
@@ -252,7 +252,7 @@ class RPMO_Controller extends Controller
                 $string .= "<td>".$row->sp_status."</td>";
                 $string .= "<td><button class='btn btn-success btn-xs' onclick='det_modal(".$row->sp_id.")'>More</button></td>";
                 $string .= "</tr>";
-             }
+            //  }
 
         }
         $string .= "</tbody></table></div>";
