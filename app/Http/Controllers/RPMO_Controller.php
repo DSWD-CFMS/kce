@@ -255,9 +255,7 @@ class RPMO_Controller extends Controller
              }
 
         }
-
         $string .= "</tbody></table></div>";
-
         return $string;
     } 
     
@@ -269,6 +267,10 @@ class RPMO_Controller extends Controller
         $query = Sp::where('sp_id', $req->id)->first();
         $query->sp_date_started =  $req->date;
         $query->sp_status = 'On-going';
+        $query->save();
+
+        $query = Assigned_sp::where('assigned_sp', $req->id)->first();
+        $query->status = 'On-going';
         $query->save();
     } 
     // 2021030049

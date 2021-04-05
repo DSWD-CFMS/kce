@@ -72,7 +72,6 @@
 							<div ng-if="all_data.sp[0].sp_logs.length > 0" ng-repeat="logs_planned in all_data.sp[0].sp_logs track by $index">
 								<span ng-show="$last" ng-bind="(logs_planned.sp_logs_planned) + '%'" ></span>
 							</div>
-
 							<span ng-if="all_data.sp[0].sp_logs.length == 0" >NONE</span>
 						</td>
 
@@ -90,7 +89,6 @@
 							<span ng-if="all_data.sp[0].sp_logs.length == 0" >NONE</span>
 						</td>
 
-						<!-- <td ng-class="{'text-green' : all_data.status == 'Completed'}" ng-bind="all_data">---</td> -->
 						<td ng-class="{'text-green' : all_data.status == 'Completed'}" ng-bind="all_data.status">---</td>
 						@verbatim
 						<td>

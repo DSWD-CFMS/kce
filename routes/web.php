@@ -54,7 +54,6 @@ Route::get('/fetch_gallery_Image/{id}','Gallery_Controller@fetch_gallery_Image')
 
 Route::get('/get_profile_photo/{photos_id}', 'Profile_Controller@get_profile_photo');
 Route::get('/delete_file/{photos_id}', 'Profile_Controller@get_profile_photo');
-
 /*
 |--------------------------------------------------------------------------
 | CMFS CONTROLLER ROUTES
@@ -298,13 +297,9 @@ Route::middleware(['rpmo'])->group(function () {
 	Route::get('/rpmo/routes/show_profile', 'Profile_Controller@show_profile');
 	Route::post('/rpmo/routes/update_profile_photo', 'Profile_Controller@update_profile_photo');
 	Route::post('/rpmo/routes/update_profile_info', 'Profile_Controller@update_profile_info');
-	
-
 }); //End of RPMO
 
-
 Route::middleware(['dac'])->group(function () {
-
 	// When
 	Route::get('/dac/routes', 'DAC_Controller@index')->name('dac');
 	// URL TEMPLATE
