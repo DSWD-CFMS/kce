@@ -195,14 +195,11 @@ class RPMO_Controller extends Controller
                 sp_date_started,
                 actual,
                 slippage,
-                sp_status,
-                assigned_sp.assigned_to as userid
+                sp_status
             FROM
                 sp,
-                sp_groupings,
-                assigned_sp
+                sp_groupings
             WHERE sp.sp_groupings = sp_groupings.id
-            AND sp.sp_id = assigned_sp.sp_id
             ORDER BY
                 sp.id DESC") );
                 
@@ -211,11 +208,29 @@ class RPMO_Controller extends Controller
         $stringname = '';
         $is_repeat = '';
         foreach($results as $row){
+<<<<<<< HEAD
             $users = DB::select( DB::raw("SELECT Fname,Lname FROM users where id = '".$row->userid."'") );
+=======
+            $string .= "<tr>";
+            $string .= "<td>".(++$count)."</td>";
+            $string .= "<td>".$row->sp_municipality."</td>";
+            $string .= "<td>".$row->sp_brgy."</td>";
+            $string .= "<td>".$row->sp_id."</td>";
+            $string .= "<td>".$row->sp_title."</td>";
+            $string .= "<td>".$row->modality."</td>";
+            $string .= "<td>".$row->planned."</td>";
+            $string .= "<td>".$row->actual."</td>";
+            $string .= "<td>".$row->slippage."</td>";
+            // $string .= "<td>".$row->name."</td>";
+            // START
+            $users = DB::select( DB::raw("SELECT Fname,Lname FROM users,assigned_sp where users.id = assigned_sp.assigned_to  
+            AND  assigned_sp.sp_id = '".$row->sp_id."'") );
+            $stringname = '';
+>>>>>>> c099e5e399a60cfab378bd2d86a1990ede1b3864
             foreach ($users as $row1) {
                 $stringname .= $row1->Lname.', '.$row1->Fname;
                 if(next($users)){
-                    $stringname .=', ';
+                    $stringname .=' | ';
                 }
             }
             if($temp!=$stringname){
