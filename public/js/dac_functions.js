@@ -2221,8 +2221,8 @@ app.controller('DAC_Controller', function($scope,$http,$filter,$timeout) {
                 icon: 'success',
               }).then(function() {
                  // window.location.href="/"+"dac/routes/show_modality";
-                // angular.element( document.querySelector("#date_"+sp_id)).innerHTML=$("#"+type).val();
-                $scope.maoni = $("#"+type).val();
+                angular.element( document.querySelector("#date_"+sp_id)).html($("#"+type).val());
+                // $scope.maoni = $("#"+type).val();
                  date = nedate
 
               });
@@ -2296,8 +2296,8 @@ app.controller('DAC_Controller', function($scope,$http,$filter,$timeout) {
                 icon: 'success',
               }).then(function() {
                  // window.location.href="/"+"dac/routes/show_modality";
-                // angular.element( document.querySelector("#date_"+sp_id)).innerText=$("#"+datax.updated_field_value);
-                $scope.maoni = $("#"+type).val();
+                angular.element( document.querySelector("#date_"+sp_id)).html($("#"+datax.updated_field_value));
+                // $scope.maoni = $("#"+type).val();
 
               });
             }else;
