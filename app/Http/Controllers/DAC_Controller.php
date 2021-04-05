@@ -164,7 +164,6 @@ class DAC_Controller extends Controller
             }else{
                 $actual_weighted = 0;
             }
-            // WEIGHTED PERCENTAGE
             return [$modality,$grouped_status,$sp_ongoing_all_sp_logs,$actual_weighted,$sp_count_groupby_modality];
 
             // return [$modality,$sp_ongoing,$sp_ongoing_all_sp_logs,$Completed,$sp_nys,$actual_weighted];

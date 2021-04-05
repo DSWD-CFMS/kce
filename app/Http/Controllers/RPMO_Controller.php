@@ -204,29 +204,11 @@ class RPMO_Controller extends Controller
                 sp.id DESC") );
                 
         $count = 0;
-        // $temp = '';
-        // $stringname = '';
-        $is_repeat = '';
         foreach($results as $row){
-// <<<<<<< HEAD
-            // $users = DB::select( DB::raw("SELECT Fname,Lname FROM users where id = '".$row->userid."'") );
-// =======
-            // $string .= "<tr>";
-            // $string .= "<td>".(++$count)."</td>";
-            // $string .= "<td>".$row->sp_municipality."</td>";
-            // $string .= "<td>".$row->sp_brgy."</td>";
-            // $string .= "<td>".$row->sp_id."</td>";
-            // $string .= "<td>".$row->sp_title."</td>";
-            // $string .= "<td>".$row->modality."</td>";
-            // $string .= "<td>".$row->planned."</td>";
-            // $string .= "<td>".$row->actual."</td>";
-            // $string .= "<td>".$row->slippage."</td>";
-            // $string .= "<td>".$row->name."</td>";
-            // START
             $users = DB::select( DB::raw("SELECT Fname,Lname FROM users,assigned_sp where users.id = assigned_sp.assigned_to  
             AND  assigned_sp.sp_id = '".$row->sp_id."'") );
             $stringname = '';
-// >>>>>>> c099e5e399a60cfab378bd2d86a1990ede1b3864
+            // >>>>>>> c099e5e399a60cfab378bd2d86a1990ede1b3864
             foreach ($users as $row1) {
                 $stringname .= $row1->Lname.', '.$row1->Fname;
                 if(next($users)){
@@ -243,10 +225,7 @@ class RPMO_Controller extends Controller
                 $string .= "<td>".$row->modality."</td>";
                 $string .= "<td>".$row->planned."</td>";
                 $string .= "<td>".$row->actual."</td>";
-                $string .= "<td>".$row->slippage."</td>";
-                // $string .= "<td>".$row->name."</td>";
-                // START
-                // END
+                $string .= "<td>".$row->slippage."</td>"
                 $string .= "<td>".$stringname."</td>";
                 $string .= "<td>".$row->sp_date_started."</td>";
                 $string .= "<td>".$row->sp_status."</td>";
@@ -259,9 +238,7 @@ class RPMO_Controller extends Controller
         return $string;
     } 
     
-    public function new_module_content_modal(Request $req){
-        return $req->data;
-    } 
+    public function new_module_content_modal(Request $req){ return $req->data; } 
     
     public function set_date_start(Request $req){
         $query = Sp::where('sp_id', $req->id)->first();
@@ -273,22 +250,17 @@ class RPMO_Controller extends Controller
         $query2->status = 'On-going';
         $query2->save();
     } 
-    // 2021030049
+
     public function iTextMoAPI($number,$message,$apicode,$passwd){
-        //##########################################################################
-        // ITEXMO SEND SMS API - PHP - CURL METHOD
-        // Visit www.itexmo.com/developers.php for more info about this API
-        //##########################################################################
         $ch = curl_init();
         $itexmo = array('1' => $number, '2' => $message, '3' => $apicode, 'passwd' => $passwd);
         curl_setopt($ch, CURLOPT_URL,"https://www.itexmo.com/php_api/api.php");
         curl_setopt($ch, CURLOPT_POST, 1);
-         curl_setopt($ch, CURLOPT_POSTFIELDS, 
-                  http_build_query($itexmo));
+        curl_setopt($ch, CURLOPT_POSTFIELDS, 
+        http_build_query($itexmo));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         return curl_exec ($ch);
         curl_close ($ch);
-        //##########################################################################
     }
 
     public function update_sp_status(Request $rq){
@@ -303,8 +275,7 @@ class RPMO_Controller extends Controller
             }else if($rq->type == 'Completed'){
                 Assigned_sp::where('sp_id', $rq->sp_id)->update(array('status' => 'Completed'));
                 Sp::where('sp_id', $rq->sp_id)->update(array('sp_status' => 'Completed', 'sp_actual_date_completed' => $rq->date_of_completion));
-            }else;
-
+            }
             // $rpmo_focal = Users::select('Fname','Lname','contact')->where('id',Auth::User()->id)->get();
             // $assigned_to = Assigned_sp::select('assigned_to')->where('sp_id', $rq->sp_id)->get();
 
@@ -330,9 +301,8 @@ class RPMO_Controller extends Controller
 
             DB::commit();
             return 1;
-            // return ['success',$text_data,$rpmo_focal,$dac,$contact_rcis];
-            // all good
-        } catch (\Exception $e) {
+        }
+        catch (\Exception $e) {
             DB::rollback();
             return $e->getMessage();
         }
@@ -457,13 +427,10 @@ class RPMO_Controller extends Controller
         }else{
             $actual_weighted = 0;
         }
-        // WEIGHTED PERCENTAGE
         return [$modality,$groupings_sp,$Count_Ongoing_sp,$Count_Completed_sp,round($actual_weighted,2),$Count_NYS_sp];
     }
 
-    public function show_modality(Request $rq){
-        return view('user_rpmo.modality');
-    }
+    public function show_modality(Request $rq){ return view('user_rpmo.modality');}
     
     public function fetch_rpmo_sps(Request $rq){
         $modality = Assigned_grouping::with('Sp_groupings')->where('assigned_to',Auth::User()->id)->get()->unique('sp_grouping_id');
