@@ -209,7 +209,7 @@ class RPMO_Controller extends Controller
         $is_repeat = '';
         foreach($results as $row){
 // <<<<<<< HEAD
-            $users = DB::select( DB::raw("SELECT Fname,Lname FROM users where id = '".$row->userid."'") );
+            // $users = DB::select( DB::raw("SELECT Fname,Lname FROM users where id = '".$row->userid."'") );
 // =======
             $string .= "<tr>";
             $string .= "<td>".(++$count)."</td>";
