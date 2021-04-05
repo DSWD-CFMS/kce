@@ -2160,7 +2160,8 @@ app.controller('DAC_Controller', function($scope,$http,$filter,$timeout) {
 	}
 
   $scope.updating_sp_data = function(type,sp_id){
-    
+    // console.log(id_btn)
+    // return 0
     if(type == 'sp_estimated_duration' || type == 'sp_days_suspended' || type == 'sp_physical_target'){
 
       if(type == 'sp_estimated_duration'){
@@ -2205,21 +2206,27 @@ app.controller('DAC_Controller', function($scope,$http,$filter,$timeout) {
             updated_field:type,
             updated_field_value:$("#"+type).val(),
           }
-          console.log(datax);
-
+          // console.log(datax);
           $http({
               method : "POST",
               url : 'updating_sp_single_data',
               data : datax,
           }).then(function mySuccess(response) {
-            console.log(response.data);
+            // console.log(response.data);
+            angular.element( document.querySelector("#date_"+sp_id)).html(datax.updated_field_value);
+            alert(datax.updated_field_value)
+
             if(response.data == 1){
               Swal.fire({
                 title: 'Yahoooo!',
                 text: "Subproject Data successfuly updated",
                 icon: 'success',
               }).then(function() {
-                 window.location.href="/"+"dac/routes/show_modality";
+                 // window.location.href="/"+"dac/routes/show_modality";
+                // alert($("#"+type).val())
+                // $scope.maoni = $("#"+type).val();
+                 date = nedate
+
               });
             }else;
           }, function myError(response) {});
@@ -2283,14 +2290,21 @@ app.controller('DAC_Controller', function($scope,$http,$filter,$timeout) {
               url : 'updating_sp_single_data',
               data : datax,
           }).then(function mySuccess(response) {
-            console.log(response.data);
+                                                  
+            angular.element( document.querySelector("#date_"+sp_id)).html(datax.updated_field_value);
+            alert(datax.updated_field_value)
+            // console.log(response.data);
             if(response.data == 1){
               Swal.fire({
                 title: 'Yahoooo!',
                 text: "Subproject Data successfuly updated",
                 icon: 'success',
               }).then(function() {
-                 window.location.href="/"+"dac/routes/show_modality";
+                 // window.location.href="/"+"dac/routes/show_modality";
+                // angular.element( document.querySelector("#date_"+sp_id)).html($("#"+datax.updated_field_value));
+                // alert($("#"+datax.updated_field_value))
+                // $scope.maoni = $("#"+type).val();
+
               });
             }else;
           }, function myError(response) {});

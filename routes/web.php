@@ -369,7 +369,6 @@ Route::middleware(['dac'])->group(function () {
 	Route::get('/dac/routes/view_planned_sched/{sp_id}', 'DAC_Controller@view_planned_sched');
 	
 	Route::get('/dac/routes/fetch_specific_modality_sp_logs_length/{sp_id}', 'DAC_Controller@fetch_specific_modality_sp_logs_length');
-
 	// profile
 	// When
 	Route::get('/dac/routes/profile', 'DAC_Controller@index');

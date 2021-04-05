@@ -204,13 +204,13 @@ class RPMO_Controller extends Controller
                 sp.id DESC") );
                 
         $count = 0;
-        $temp = ''
+        $temp = '';
         $stringname = '';
         $is_repeat = '';
         foreach($results as $row){
-<<<<<<< HEAD
+// <<<<<<< HEAD
             $users = DB::select( DB::raw("SELECT Fname,Lname FROM users where id = '".$row->userid."'") );
-=======
+// =======
             $string .= "<tr>";
             $string .= "<td>".(++$count)."</td>";
             $string .= "<td>".$row->sp_municipality."</td>";
@@ -226,7 +226,7 @@ class RPMO_Controller extends Controller
             $users = DB::select( DB::raw("SELECT Fname,Lname FROM users,assigned_sp where users.id = assigned_sp.assigned_to  
             AND  assigned_sp.sp_id = '".$row->sp_id."'") );
             $stringname = '';
->>>>>>> c099e5e399a60cfab378bd2d86a1990ede1b3864
+// >>>>>>> c099e5e399a60cfab378bd2d86a1990ede1b3864
             foreach ($users as $row1) {
                 $stringname .= $row1->Lname.', '.$row1->Fname;
                 if(next($users)){
