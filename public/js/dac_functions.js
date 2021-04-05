@@ -2206,8 +2206,7 @@ app.controller('DAC_Controller', function($scope,$http,$filter,$timeout) {
             updated_field:type,
             updated_field_value:$("#"+type).val(),
           }
-          console.log(datax);
-
+          // console.log(datax);
           $http({
               method : "POST",
               url : 'updating_sp_single_data',
@@ -2215,7 +2214,8 @@ app.controller('DAC_Controller', function($scope,$http,$filter,$timeout) {
           }).then(function mySuccess(response) {
             // console.log(response.data);
             angular.element( document.querySelector("#date_"+sp_id)).html(datax.updated_field_value);
-            console.log(datax.updated_field_value)
+            alert(datax.updated_field_value)
+
             if(response.data == 1){
               Swal.fire({
                 title: 'Yahoooo!',
