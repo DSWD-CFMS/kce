@@ -2294,7 +2294,9 @@ app.controller('DAC_Controller', function($scope,$http,$filter,$timeout) {
                 text: "Subproject Data successfuly updated",
                 icon: 'success',
               }).then(function() {
-                 window.location.href="/"+"dac/routes/show_modality";
+                 // window.location.href="/"+"dac/routes/show_modality";
+                angular.element( document.querySelector("#date_"+sp_id)).innerHTML=$("#"+type);
+                 
               });
             }else;
           }, function myError(response) {});
