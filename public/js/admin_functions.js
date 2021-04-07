@@ -1088,9 +1088,6 @@ $scope.assign_add_modality = function(modality,id){
       }
 
     });
-
-
-
   }
 
   $scope.view_specific_sp_data = function(data){
@@ -1124,20 +1121,16 @@ $scope.assign_add_modality = function(modality,id){
         $scope.chart_labels.push($scope.planned_sched[x].sp_logs_planned_target_date);
       }
 
-
       console.log($scope.chart_slippage);
       console.log($scope.chart_planned);
       console.log($scope.chart_actual);
       console.log($scope.chart_labels);
 
       $scope.chart_planned_sched($scope.chart_slippage,$scope.chart_planned,$scope.chart_actual,$scope.chart_labels);
-    }, function myError(response) {
-
-    });
+    }, function myError(response) {});
   }
 
   $scope.chart_planned_sched = function(chart_slippage,chart_planned,chart_actual,chart_labels){
-    ////////////// CHARTS
     var ctx = document.getElementById("myChart").getContext('2d');
     var config = {
         type: 'line',
