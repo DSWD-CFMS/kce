@@ -208,21 +208,6 @@ class RPMO_Controller extends Controller
         // $stringname = '';
         $is_repeat = '';
         foreach($results as $row){
-            // <<<<<<< HEAD
-            // $users = DB::select( DB::raw("SELECT Fname,Lname FROM users where id = '".$row->userid."'") );
-            // =======
-            // $string .= "<tr>";
-            // $string .= "<td>".(++$count)."</td>";
-            // $string .= "<td>".$row->sp_municipality."</td>";
-            // $string .= "<td>".$row->sp_brgy."</td>";
-            // $string .= "<td>".$row->sp_id."</td>";
-            // $string .= "<td>".$row->sp_title."</td>";
-            // $string .= "<td>".$row->modality."</td>";
-            // $string .= "<td>".$row->planned."</td>";
-            // $string .= "<td>".$row->actual."</td>";
-            // $string .= "<td>".$row->slippage."</td>";
-            // $string .= "<td>".$row->name."</td>";
-            // START
             $users = DB::select( DB::raw("SELECT Fname,Lname FROM users,assigned_sp where users.id = assigned_sp.assigned_to  
             AND  assigned_sp.sp_id = '".$row->sp_id."'") );
             $stringname = '';
@@ -243,10 +228,7 @@ class RPMO_Controller extends Controller
                 $string .= "<td>".$row->modality."</td>";
                 $string .= "<td>".$row->planned."</td>";
                 $string .= "<td>".$row->actual."</td>";
-                $string .= "<td>".$row->slippage."</td>";
-                // $string .= "<td>".$row->name."</td>";
-                // START
-                // END
+                $string .= "<td>".$row->slippage."</td>"
                 $string .= "<td>".$stringname."</td>";
                 $string .= "<td>".$row->sp_date_started."</td>";
                 $string .= "<td>".$row->sp_status."</td>";
