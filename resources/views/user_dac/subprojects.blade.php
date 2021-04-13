@@ -115,67 +115,50 @@
 								<div class="col-lg-6">
 									<div class="row">
 										<div class="col-lg-3 hov">
-											<small class="text-label-blue"> <b>Groupings</b> </small>
-													<p>
-														<span ng-if="specific_sp_data.sp[0].sp_groupings.id == 1">
-															KKB
-														</span>
-
-														<span ng-if="specific_sp_data.sp[0].sp_groupings.id == 2">
-															MAKILAHOK
-														</span>
-
-														<span ng-if="specific_sp_data.sp[0].sp_groupings.id == 3">
-															NCDDP
-														</span>
-
-														<span ng-if="specific_sp_data.sp[0].sp_groupings.id == 4">
-															IP CDD
-														</span>
-
-														<span ng-if="specific_sp_data.sp[0].sp_groupings.id == 5">
-															CCL
-														</span>
-
-														<span ng-if="specific_sp_data.sp[0].sp_groupings.id == 6">
-															L&E
-														</span>
-													</p>
+											<small class="text-label-blue"> <b>Groupings</b></small>
+											<p>
+												<span ng-if="specific_sp_data.sp[0].sp_groupings.id == 1">KKB</span>
+												<span ng-if="specific_sp_data.sp[0].sp_groupings.id == 2">MAKILAHOK</span>
+												<span ng-if="specific_sp_data.sp[0].sp_groupings.id == 3">NCDDP</span>
+												<span ng-if="specific_sp_data.sp[0].sp_groupings.id == 4">IP CDD</span>
+												<span ng-if="specific_sp_data.sp[0].sp_groupings.id == 5">CCL</span>
+												<span ng-if="specific_sp_data.sp[0].sp_groupings.id == 6">L&E</span>
+											</p>
 										</div>
 
 										<div class="col-lg-3 hov">
 											<small class="text-label-blue"> <b>Province</b> </small>
-													<p ng-bind="specific_sp_data.sp[0].sp_province">SURIGAO DEL SUR</p>
+											<p ng-bind="specific_sp_data.sp[0].sp_province">SURIGAO DEL SUR</p>
 										</div>
 										<div class="col-lg-3 hov">
 											<small class="text-label-blue"> <b>Municipality</b> </small>
-													<p ng-bind="specific_sp_data.sp[0].sp_municipality">Marihatag</p>
+											<p ng-bind="specific_sp_data.sp[0].sp_municipality">Marihatag</p>
 										</div>
 										<div class="col-lg-3 hov">
 											<small class="text-label-blue"> <b>Barangay</b> </small>
-													<p ng-bind="specific_sp_data.sp[0].sp_brgy">AMONTAY</p> 
+											<p ng-bind="specific_sp_data.sp[0].sp_brgy">AMONTAY</p> 
 										</div>
 
 										<div class="col-lg-3 hov">
 											<small class="text-label-blue"> <b>Sp Category</b> </small>
-													<p ng-bind="specific_sp_data.sp[0].sp_category.category">Enterprise</p>
+											<p ng-bind="specific_sp_data.sp[0].sp_category.category">Enterprise</p>
 										</div>
 										<div class="col-lg-3 hov">
 											<small class="text-label-blue"> <b>Sp Type</b> </small>
-													<p ng-bind="specific_sp_data.sp[0].sp_type.type">Others</p>
+											<p ng-bind="specific_sp_data.sp[0].sp_type.type">Others</p>
 										</div>
 										<div class="col-lg-3 hov">
 											<small class="text-label-blue"> <b>Physical target</b> </small>
-													<p ng-if="specific_sp_data.sp[0].sp_physical_target != null || specific_sp_data.sp[0].sp_physical_target == ''" ng-bind="specific_sp_data.sp[0].sp_physical_target"></p>
+											<p ng-if="specific_sp_data.sp[0].sp_physical_target != null || specific_sp_data.sp[0].sp_physical_target == ''" ng-bind="specific_sp_data.sp[0].sp_physical_target"></p>
 
-													<p class="mb-0" ng-if="specific_sp_data.sp[0].sp_physical_target == null">
-														<a href="" style="text-transform: none !important; font-size:1.1em; font-weight:bold;" class="text-warning" ng-click="updating_sp_data('sp_physical_target',specific_sp_data.sp[0].sp_id)"> <i class="fa fa-pencil-square-o"></i> Update </a>
-													</p>
+											<p class="mb-0" ng-if="specific_sp_data.sp[0].sp_physical_target == null">
+												<a href="" style="text-transform: none !important; font-size:1.1em; font-weight:bold;" class="text-warning" ng-click="updating_sp_data('sp_physical_target',specific_sp_data.sp[0].sp_id)"> <i class="fa fa-pencil-square-o"></i> Update </a>
+											</p>
 										</div>
 										<div class="col-lg-3 hov">
 											<small class="text-label-blue"> <b>Total Project Cost</b> </small>
 											<span ng-bind="specific_sp_data.sp[0].sp_project_cost | currency:'₱'"></span>
-<!--                           <p ng-if="specific_sp_data.sp[0].c_m_f_s_kalahi_2015__b_u_b__s_p != null">
+												<!--<p ng-if="specific_sp_data.sp[0].c_m_f_s_kalahi_2015__b_u_b__s_p != null">
 														<span ng-bind="total_project_cost | currency:'₱'"></span>
 													</p>
 													<p ng-if="specific_sp_data.sp[0].c_m_f_s_kalahi_2016__b_u_b__s_p != null">
@@ -192,7 +175,7 @@
 													</p> -->
 
 													<!-- NCDDP -->
-<!--                           <p ng-if="specific_sp_data.sp[0].c_m_f_s_kalahi_2015__n_c_d_d_p__s_p != null">
+												<!--<p ng-if="specific_sp_data.sp[0].c_m_f_s_kalahi_2015__n_c_d_d_p__s_p != null">
 														<span ng-bind="total_project_cost | currency:'₱'"></span>
 													</p>
 													<p ng-if="specific_sp_data.sp[0].c_m_f_s_kalahi_2016__n_c_d_d_p__s_p != null">
@@ -216,50 +199,48 @@
 
 								<div class="col-lg-6">
 									<div class="row">
-												<div class="col-lg-4 hov">
+										<div class="col-lg-4 hov">
 											<small class="text-label-blue"> <b>Date started</b> </small>
-													<p ng-bind="specific_sp_data.sp[0].sp_date_started | date:'fullDate'">0000-00-00</p>
-												</div>
-												<div class="col-lg-4 hov">
+											<p ng-bind="specific_sp_data.sp[0].sp_date_started | date:'fullDate'">0000-00-00</p>
+										</div>
+										<div class="col-lg-4 hov">
 											<small class="text-label-blue"> <b>Estimated duration</b> </small>
-													<p ng-if="specific_sp_data.sp[0].sp_estimated_duration != null" ng-bind="specific_sp_data.sp[0].sp_estimated_duration + ' days'"></p>
-
-													<p class="mb-0" ng-if="specific_sp_data.sp[0].sp_estimated_duration == null">
-														<a href="" style="text-transform: none !important; font-size:1.1em; font-weight:bold;" class="text-warning" ng-click="updating_sp_data('sp_estimated_duration',specific_sp_data.sp[0].sp_id)"> <i class="fa fa-pencil-square-o"></i> Update </a>
-													</p>
-												</div>
-												<div class="col-lg-4 hov">
+											<p ng-if="specific_sp_data.sp[0].sp_estimated_duration != null" ng-bind="specific_sp_data.sp[0].sp_estimated_duration + ' days'"></p>
+											<p class="mb-0" ng-if="specific_sp_data.sp[0].sp_estimated_duration == null">
+												<a href="" style="text-transform: none !important; font-size:1.1em; font-weight:bold;" class="text-warning" ng-click="updating_sp_data('sp_estimated_duration',specific_sp_data.sp[0].sp_id)"> <i class="fa fa-pencil-square-o"></i> Update </a>
+											</p>
+										</div>
+										<div class="col-lg-4 hov">
 											<small class="text-label-blue"> <b>Target date of completion</b> </small><br>
-													<span ng-attr-id="{{'date_'+specific_sp_data.sp[0].sp_id}}" ng-bind-html='maoni' ng-if="specific_sp_data.sp[0].sp_target_date_of_completion != null" ng-bind="specific_sp_data.sp[0].sp_target_date_of_completion | date:'fullDate' "></span><br>
-														<a href="" style="text-transform: none !important; font-size:1.1em; font-weight:bold;" class="text-warning" ng-click="updating_sp_data('sp_target_date_of_completion',specific_sp_data.sp[0].sp_id)"> <i class="fa fa-pencil-square-o"></i> Update </a>
-													<br>
-												</div>
-												
-												<div class="col-lg-4 hov">
-													<small class="text-label-blue"> <b>Days suspended</b> </small>
-													<p class="mb-0" ng-bind="(specific_sp_data.sp[0].sp_days_suspended) + ' Days'"></p>
-													<p class="mb-0">
-														<a href="" style="text-transform: none !important; font-size:1.1em; font-weight:bold;" class="text-warning" ng-click="updating_sp_data('sp_days_suspended',specific_sp_data.sp[0].sp_id)"> <i class="fa fa-pencil-square-o"></i> Update </a>
-													</p>
-												</div>
+											<span ng-attr-id="{{'date_'+specific_sp_data.sp[0].sp_id}}" ng-bind-html='maoni' ng-if="specific_sp_data.sp[0].sp_target_date_of_completion != null" ng-bind="specific_sp_data.sp[0].sp_target_date_of_completion | date:'fullDate' "></span><br>
+												<a href="" style="text-transform: none !important; font-size:1.1em; font-weight:bold;" class="text-warning" ng-click="updating_sp_data('sp_target_date_of_completion',specific_sp_data.sp[0].sp_id)"><i class="fa fa-pencil-square-o"></i> Update </a>
+											<br>
+										</div>
+										<div class="col-lg-4 hov">
+											<small class="text-label-blue"> <b>Days suspended</b> </small>
+											<p class="mb-0" ng-bind="(specific_sp_data.sp[0].sp_days_suspended) + ' Days'"></p>
+											<p class="mb-0">
+												<a href="" style="text-transform: none !important; font-size:1.1em; font-weight:bold;" class="text-warning" ng-click="updating_sp_data('sp_days_suspended',specific_sp_data.sp[0].sp_id)"> <i class="fa fa-pencil-square-o"></i> Update </a>
+											</p>
+										</div>
 
-												<div class="col-lg-4 hov">
-													<small class="text-label-blue"> <b>Actual date completed</b> </small>
-													<p ng-if="specific_sp_data.sp[0].sp_actual_date_completed != null && specific_sp_data.sp[0].sp_actual_date_completed != '0000-00-00 00:00:00'" ng-bind="specific_sp_data.sp[0].sp_actual_date_completed | date:'fullDate'"></p>
+										<div class="col-lg-4 hov">
+											<small class="text-label-blue"> <b>Actual date completed</b> </small>
+											<p ng-if="specific_sp_data.sp[0].sp_actual_date_completed != null && specific_sp_data.sp[0].sp_actual_date_completed != '0000-00-00 00:00:00'" ng-bind="specific_sp_data.sp[0].sp_actual_date_completed | date:'fullDate'"></p>
 
-													<p class="mb-0">
-														<a href="" style="text-transform: none !important; font-size:1.1em; font-weight:bold;" class="text-warning" ng-click="updating_sp_data('sp_actual_date_completed',specific_sp_data.sp[0].sp_id)"> <i class="fa fa-pencil-square-o"></i> Update </a>
-													</p>
-												</div>
+											<p class="mb-0">
+												<a href="" style="text-transform: none !important; font-size:1.1em; font-weight:bold;" class="text-warning" ng-click="updating_sp_data('sp_actual_date_completed',specific_sp_data.sp[0].sp_id)"> <i class="fa fa-pencil-square-o"></i> Update </a>
+											</p>
+										</div>
 
-												<div class="col-lg-4 hov">
-													<small class="text-label-blue"> <b>Date of turn over</b> </small>
-													<p ng-if="specific_sp_data.sp[0].sp_date_of_turnover != null" ng-bind="specific_sp_data.sp[0].sp_date_of_turnover | date:'fullDate'"></p>
+										<div class="col-lg-4 hov">
+											<small class="text-label-blue"> <b>Date of turn over</b> </small>
+											<p ng-if="specific_sp_data.sp[0].sp_date_of_turnover != null" ng-bind="specific_sp_data.sp[0].sp_date_of_turnover | date:'fullDate'"></p>
 
-													<p class="mb-0" ng-if="specific_sp_data.sp[0].sp_date_of_turnover == null">
-														<a href="" style="text-transform: none !important; font-size:1.1em; font-weight:bold;" class="text-warning" ng-click="updating_sp_data('sp_date_of_turnover',specific_sp_data.sp[0].sp_id)"> <i class="fa fa-pencil-square-o"></i> Update </a>
-													</p>
-												</div>
+											<p class="mb-0" ng-if="specific_sp_data.sp[0].sp_date_of_turnover == null">
+												<a href="" style="text-transform: none !important; font-size:1.1em; font-weight:bold;" class="text-warning" ng-click="updating_sp_data('sp_date_of_turnover',specific_sp_data.sp[0].sp_id)"> <i class="fa fa-pencil-square-o"></i> Update </a>
+											</p>
+										</div>
 									</div>
 								</div>
 

@@ -123,7 +123,6 @@ class DAC_Controller extends Controller
                 }])->whereIn('sp_id',$sp_data)->whereNotNull('sp_logs_actual')->get()->groupBy('sp_id');
 
                 if(sizeof($ddd) > 0){
-
                     $sp_cost_data = [];
                     foreach ($ddd as $key) {
                         foreach ($key as $xx) {
