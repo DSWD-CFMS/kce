@@ -54,7 +54,7 @@
 						<th scope="col">ACTUAL</th>
 						<th scope="col">SLIPPAGE</th>
 						<th scope="col">STATUS</th>
-						<th scope="col">ACTIONS</th>
+						<th scope="col">ACTION</th>
 					</tr>
 				</thead>
 				<tbody style="overflow: none !important;">
