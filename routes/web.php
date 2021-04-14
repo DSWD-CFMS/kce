@@ -173,7 +173,6 @@ Route::middleware(['admin'])->group(function () {
 	Route::get('/admin/routes/show_profile', 'Profile_Controller@show_profile');
 	Route::post('/admin/routes/update_profile_photo', 'Profile_Controller@update_profile_photo');
 	Route::post('/admin/routes/update_profile_info', 'Profile_Controller@update_profile_info');
-
 	Route::get('/admin/routes/delete_user/{user_id}', 'ADMIN_Controller@delete_user');
 
 }); //End of ADMIN
@@ -232,9 +231,7 @@ Route::middleware(['rpmo'])->group(function () {
 	Route::post('/rpmo/routes/set_date_start', 'RPMO_Controller@set_date_start');
 
 	// URL TEMPLATE
-	Route::get('/rpmo/routes/my_modality_contents', function () {
-	       return view('user_rpmo.my_modalities');
-	});
+	Route::get('/rpmo/routes/my_modality_contents', function () { return view('user_rpmo.my_modalities');});
 	Route::get('/rpmo/routes/fetch_rpmo_modality_sp/{modality}', 'RPMO_Controller@fetch_rpmo_modality_sp');
 	// Route::view('/rpmo/routes/reports', 'reports')->name('reports');
 	// Route::view('/rpmo/uploads', 'uploads')->name('uploads');
@@ -243,9 +240,7 @@ Route::middleware(['rpmo'])->group(function () {
 	// When
 	Route::get('/rpmo/routes/show_reports', 'RPMO_Controller@index');
 	// URL TEMPLATE
-	Route::get('/rpmo/routes/reports', function () {
-	       return view('user_rpmo.report_contents');
-	});
+	Route::get('/rpmo/routes/reports', function () { return view('user_rpmo.report_contents');});
 	Route::get('/rpmo/routes/fetch_reports_modality', 'RPMO_Controller@fetch_reports_modality');
 
 	Route::get('/rpmo/routes/fetch_all_for_export', 'RPMO_Controller@fetch_all_for_export');
@@ -257,25 +252,19 @@ Route::middleware(['rpmo'])->group(function () {
 	// When
 	Route::get('/rpmo/routes/files', 'RPMO_Controller@index');
 	// URL TEMPLATE
-	Route::get('/rpmo/routes/file_contents', function () {
-	       return view('user_rpmo.files');
-	});
+	Route::get('/rpmo/routes/file_contents', function () {return view('user_rpmo.files');});
 
 	// MY FILES
 	// When
 	Route::get('/rpmo/routes/files/myfiles', 'RPMO_Controller@index');
 	// URL TEMPLATE
-	Route::get('/rpmo/routes/myfiles', function () {
-	       return view('user_rpmo.myfiles');
-	});
+	Route::get('/rpmo/routes/myfiles', function () {return view('user_rpmo.myfiles');});
 	Route::get('/rpmo/routes/files/fetch_my_all_file', 'RPMO_Controller@fetch_my_all_file');
 	// ALL FILES
 	// When
 	Route::get('/rpmo/routes/files/allfiles', 'RPMO_Controller@index');
 	// URL TEMPLATE
-	Route::get('/rpmo/routes/allfiles', function () {
-	       return view('user_rpmo.allfiles');
-	});
+	Route::get('/rpmo/routes/allfiles', function () {return view('user_rpmo.allfiles');});
 	Route::get('/rpmo/routes/files/fetch_all_file', 'RPMO_Controller@fetch_all_file');
 
 	Route::get('/rpmo/routes/show_file', 'RPMO_Controller@show_file');

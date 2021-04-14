@@ -228,7 +228,7 @@ class RPMO_Controller extends Controller
                 $string .= "<td>".$row->modality."</td>";
                 $string .= "<td>".$row->planned."</td>";
                 $string .= "<td>".$row->actual."</td>";
-                $string .= "<td>".$row->slippage."</td>"
+                $string .= "<td>".$row->slippage."</td>";
                 $string .= "<td>".$stringname."</td>";
                 $string .= "<td>".$row->sp_date_started."</td>";
                 $string .= "<td>".$row->sp_status."</td>";
