@@ -212,6 +212,7 @@ class DAC_Controller extends Controller
             ->with('Sp.CMFS_kalahi_2019_NCDDP_RFR')
             ->with('Sp.CMFS_kalahi_2020_NCDDP_RFR')
             ->with('Sp.CMFS_kalahi_2021_NCDDP_RFR')
+            ->where('assigned_to',59)
             // ->where('assigned_to',Auth::User()->id)
             ->orderBy('updated_at','desc')
             ->paginate(100);
