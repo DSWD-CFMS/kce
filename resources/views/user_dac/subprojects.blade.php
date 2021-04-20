@@ -349,9 +349,7 @@
 
 												<p ng-if="specific_sp_data.sp[0].sp_logs.length == 0"> NOT APPLICABLE </p>
 
-												<a ng-if="specific_sp_data.status == 'On-going'" class="text-warning" style="text-transform: none; font-size:1.1em; font-weight:bold;" href="" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#update_Sp" > <i class="fa fa-pencil-square-o"></i> Update</a>
-
-												<!-- <a ng-if="specific_sp_data.status == 'On-going' && specific_sp_logs_length.length > 0" class="text-warning" style="text-transform: none; font-size:1.1em; font-weight:bold;" href="" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#update_Sp" > <i class="fa fa-pencil-square-o"></i> Update</a> -->
+												<a ng-if="specific_sp_data.status == 'On-going' && specific_sp_logs_length.length > 0" class="text-warning" style="text-transform: none; font-size:1.1em; font-weight:bold;" href="" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#update_Sp" > <i class="fa fa-pencil-square-o"></i> Update</a>
 										</div>
 
 <!--                     <div class="col hov" ng-show="update_sp_data == true" ng-cloak>
