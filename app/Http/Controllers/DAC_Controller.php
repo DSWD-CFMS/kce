@@ -176,9 +176,9 @@ class DAC_Controller extends Controller
             $modality = Assigned_sp::with('Sp_groupings')->where('assigned_to',Auth::User()->id)->get()->unique('assigned_grouping');
 
             $subprojects = Assigned_sp::with('Sp')
-            ->with(['Sp.Sp_logs' => function($query){
-                return $query->whereNotNull('sp_logs_actual')->orderBy('id')->get();
-            }])
+            // ->with(['Sp.Sp_logs' => function($query){
+            //     return $query->whereNotNull('sp_logs_actual')->orderBy('id')->get();
+            // }])
             ->with('Sp.Sp_pmr')
             ->with('Sp.Sp_pmr.Sp_pmr_logs')
             ->with('Sp.Sp_pmr.Sp_pmr_remarks_logs')
