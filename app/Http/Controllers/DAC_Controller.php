@@ -185,7 +185,7 @@ class DAC_Controller extends Controller
             ->with('Sp.Sp_groupings')
             ->with('Sp.Sp_category')
             ->with('Sp.Sp_type')
-            // ->where('assigned_grouping',$modality[0]->assigned_grouping)
+            ->where('assigned_grouping',$modality[0]->assigned_grouping)
             ->with('Sp.CMFS_kalahi_2015_BUB_SP')
             ->with('Sp.CMFS_kalahi_2016_BUB_SP')
             ->with('Sp.CMFS_kalahi_2017_BUB_SP')
