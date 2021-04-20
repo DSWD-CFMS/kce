@@ -252,6 +252,7 @@ class RPMO_Controller extends Controller
         $query2 = Assigned_sp::where('sp_id', $req->id)->first();
         $query2->status = 'On-going';
         $query2->save();
+        echo "<script>alert(".$req->id.")</script>";
     } 
 
     public function iTextMoAPI($number,$message,$apicode,$passwd){
