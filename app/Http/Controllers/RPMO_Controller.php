@@ -245,7 +245,7 @@ class RPMO_Controller extends Controller
     
     public function set_date_start(Request $req){
         $querry1 = DB::select( DB::raw(" UPDATE `sp` SET `sp_date_started`='".$req->date." 00:00:00' ,`sp_status` = 'On-going' WHERE `sp_id` =".$req->id." ;") );
-        $querry2 = DB::select( DB::raw(" UPDATE `assigned_sp` SET `sp_status` = 'On-going' WHERE `sp_id`='".$req->id."' ;") );
+        $querry2 = DB::select( DB::raw(" UPDATE `assigned_sp` SET `status` = 'On-going' WHERE `sp_id`='".$req->id."' ;") );
         // $query = Sp::where('sp_id', $req->id)->first();
         // $query->sp_date_started =  $req->date;
         // $query->sp_status = 'On-going';
