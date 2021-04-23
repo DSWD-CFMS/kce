@@ -248,8 +248,8 @@ class RPMO_Controller extends Controller
 		$querry2 = DB::select( DB::raw(" 
 			UPDATE sp, assigned_sp
 			SET sp.sp_date_started = '".$req->date." 00:00:00',
-				sp.sp_status = 'On-Going',
-				assigned_sp.status = 'On-Going'
+				sp.sp_status = 'On-going',
+				assigned_sp.status = 'On-going'
 			WHERE
 				assigned_sp.sp_id = ".$req->id."
 				AND sp.sp_id = ".$req->id.";
