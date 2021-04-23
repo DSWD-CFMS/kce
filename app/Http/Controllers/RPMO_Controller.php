@@ -256,7 +256,7 @@ class RPMO_Controller extends Controller
         $query2->status = 'On-going';
         $query2->save();
 
-        return $req;
+        return $req->date;
     } 
 
     public function iTextMoAPI($number,$message,$apicode,$passwd){
