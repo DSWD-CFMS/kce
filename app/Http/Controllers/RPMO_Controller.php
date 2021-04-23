@@ -244,14 +244,14 @@ class RPMO_Controller extends Controller
     public function new_module_content_modal(Request $req){ return $req->data; } 
     
     public function set_date_start(Request $req){
-        // $query = Sp::where('sp_id', $req->id)->first();
-        $query = Sp::where('sp_id', $req->id);
+        $query = Sp::where('sp_id', $req->id)->first();
+        // $query = Sp::where('sp_id', $req->id);
         $query->sp_date_started =  $req->date;
         $query->sp_status = 'On-going';
         $query->save();
 
-        // $query2 = Assigned_sp::where('sp_id', $req->id)->first();
-        $query2 = Assigned_sp::where('sp_id', $req->id);
+        $query2 = Assigned_sp::where('sp_id', $req->id)->first();
+        // $query2 = Assigned_sp::where('sp_id', $req->id);
         // $query2->sp_date_started =  $req->date;
         $query2->status = 'On-going';
         $query2->save();
