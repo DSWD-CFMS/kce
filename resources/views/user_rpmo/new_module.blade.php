@@ -122,8 +122,8 @@ function set_start_date(){
 			func : function(res){
 				// location.reload()
 				// $print(res);
-				// alert(res);
-				init();
+				alert(res);
+				// init();
 				$ID('id01').style.display='none';
 
 			}
