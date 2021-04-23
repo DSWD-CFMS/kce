@@ -319,7 +319,7 @@
 												<a href="" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#plan_history" ng-click="view_planned_sched(specific_sp_data.sp_id)">View Track history</a>
 											</div>
 
-											<p ng-if="specific_sp_data.status == 'On-going'"> NOT APPLICABLE <br>
+											<p ng-if="specific_sp_data.status == 'On-going' || specific_sp_data.status == 'On-Going'"> NOT APPLICABLE <br>
 												<a href="" data-toggle="modal" data-target="#planned_modal" ng-click="planned(assigned_sp.sp[0].sp_id)" >Create SP plan <i class="fa fa-pencil-square-o"></i></a>
 											</p>
 
