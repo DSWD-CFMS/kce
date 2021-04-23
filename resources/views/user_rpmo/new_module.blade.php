@@ -121,6 +121,7 @@ function set_start_date(){
 			headers : {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
 			func : function(res){
 				// location.reload()
+				alert(res)
 				init();
 				$ID('id01').style.display='none';
 
