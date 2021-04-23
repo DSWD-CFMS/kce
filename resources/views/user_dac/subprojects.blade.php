@@ -376,7 +376,8 @@
 											</div>
 										</div> -->
 										<!-- Slippage -->
-
+										<div class="col hov" ng-bind="" ng-bind="specific_sp_data" ng-cloak>
+										</div>
 									</div>
 								</div>
 
