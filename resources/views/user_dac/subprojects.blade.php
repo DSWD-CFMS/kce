@@ -311,7 +311,8 @@
 										<!-- Planned -->
 										<div class="col hov" ng-if="update_sp_data == false" ng-cloak>
 											<small style="color: #fd7e14 !important;"> <b>Planned</b> </small>
-											<div  ng-if="specific_sp_data.sp[0].sp_logs.length > 0 || specific_sp_logs_length.length > 0">
+											<div  ng-if="">
+											<!-- <div  ng-if="specific_sp_data.sp[0].sp_logs.length > 0 || specific_sp_logs_length.length > 0"> -->
 												<div ng-show="$first" ng-repeat="logs_planned in specific_sp_logs_length track by $index">
 													<span ng-bind="(logs_planned.sp_logs_planned) +'%'" ></span> <br>
 													<small ng-show="$first" class="text-label-blue">Deadline: </small><small ng-show="$first" ng-bind="logs_planned.sp_logs_planned_target_date | date:'fullDate'"></small> <br>
