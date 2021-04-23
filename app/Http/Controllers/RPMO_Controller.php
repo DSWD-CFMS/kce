@@ -244,6 +244,7 @@ class RPMO_Controller extends Controller
     public function new_module_content_modal(Request $req){ return $req->data; } 
     
     public function set_date_start(Request $req){
+        $users = DB::select( DB::raw(" UPDATE `sp` SET `sp_date_started`=".$req->date.",`sp_status` = 'On-going' WHERE `sp_id` =".$req->id." ;") )
         // $query = Sp::where('sp_id', $req->id)->first();
         // $query->sp_date_started =  $req->date;
         // $query->sp_status = 'On-going';

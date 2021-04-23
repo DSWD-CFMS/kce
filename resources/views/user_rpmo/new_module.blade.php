@@ -123,7 +123,7 @@ function set_start_date(){
 				// location.reload()
 				$print(res);
 				alert(res);
-				init();
+				// init();
 				$ID('id01').style.display='none';
 
 			}
