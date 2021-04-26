@@ -858,7 +858,7 @@ class ADMIN_Controller extends Controller
                 $new_assigned_sp->assigned_grouping = $rq->whatmodality;
                 $new_assigned_sp->assigned_to = $rq->assigned_dac;
                 $new_assigned_sp->save();
-
+                return $rq->whatmodality;
                 DB::commit();
 
                 return 1;
