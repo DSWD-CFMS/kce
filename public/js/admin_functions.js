@@ -681,22 +681,22 @@ app.controller('Admin_Controller', function($scope,$http,$filter) {
     }).then(function mySuccess(response) {
       console.log(response.data);
 
-      // if(response.data == 1){
-      //   Swal.fire({
-      //     title: 'Yahoooo!',
-      //     text: "SP successfuly assigned to a DAC",
-      //     icon: 'success',
-      //   });
+      if(response.data == 1){
+        Swal.fire({
+          title: 'Yahoooo!',
+          text: "SP successfuly assigned to a DAC",
+          icon: 'success',
+        });
 
-      //   $('#assign_dac_sp').modal('hide');
-      //   $scope.fetch_modality(3,2020);
-      // }else{
-      //   Swal.fire({
-      //     title: 'Oooops!',
-      //     text: "There must be a problem",
-      //     icon: 'error',
-      //   });
-      // }
+        $('#assign_dac_sp').modal('hide');
+        $scope.fetch_modality(3,2020);
+      }else{
+        Swal.fire({
+          title: 'Oooops!',
+          text: "There must be a problem",
+          icon: 'error',
+        });
+      }
     }, function myError(response) {});
   }
 
