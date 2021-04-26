@@ -112,6 +112,7 @@ class ADMIN_Controller extends Controller
             if ( ! isset($all_sp_data[1])) {
                $all_sp_data[1] = null;
             }
+            //BORN EDIT
             foreach ($all_sp_data[1] as $key) {
                 array_push($sp_id, $key->sp_id);
             }
