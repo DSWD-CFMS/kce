@@ -671,7 +671,7 @@ app.controller('Admin_Controller', function($scope,$http,$filter) {
     $scope.data = data;
     $scope.data.assigned_dac = document.getElementById('ass_dac').value.replace("number:","");
     console.log("--------------vvvv--------------");
-    console.log($scope.data);
+    console.log(data);
     console.log("--------------^^^^^---------------");
     // return;
     // $http({
