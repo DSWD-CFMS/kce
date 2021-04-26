@@ -117,16 +117,33 @@
                         <i class="fa fa-bookmark"></i>
                         </button> -->
                       <!-- <div ng-bind="all_data"> -- </div> -->
-                      <button ng-if="all_data.sp != null" class="btn btn-outline-primary btn-sm rounded-0" data-backdrop="static" data-keyboard="false" data-target="#assign_dac_sp" data-toggle="modal" ng-click="Assigned_SP(all_data)" data-toggle="tooltip" data-placement="top" title="Assigned a DAC">
+                      <button class="btn btn-outline-primary btn-sm rounded-0" data-backdrop="static" data-keyboard="false" data-target="#assign_dac_sp" data-toggle="modal" ng-click="Assigned_SP(all_data)" data-toggle="tooltip" data-placement="top" title="Assigned a DAC">
+                          <i class="fa fa-street-view"></i>
+                         </button>
+                      </div>
+                        <button class="btn btn-outline-warning btn-sm rounded-0" data-backdrop="static" data-keyboard="false" data-target="#planned_modal" data-toggle="modal" ng-click="view_specific_sp_data(all_data)" data-toggle="tooltip" data-placement="top" title="Add SP Plan">
+                        <i class="fa fa-pencil-square-o"></i>
+                        </button>
+<!--                         <button ng-if="all_data.sp.sp_logs.length == 0 && all_data.cancelled != 1" class="btn btn-outline-warning btn-sm rounded-0" data-backdrop="static" data-keyboard="false" data-target="#planned_modal" data-toggle="modal" ng-click="view_specific_sp_data(all_data)" data-toggle="tooltip" data-placement="top" title="Add SP Plan">
+                        <i class="fa fa-pencil-square-o"></i>
+                        </button> -->
+                      <div class="input-group-prepend">
+                        <button class="btn btn-outline-danger btn-sm rounded-0" ng-click="delete_sp_plan(all_data.sp.sp_id,all_data.sp.sp_groupings,all_data.sp.sp_implementation)" data-toggle="tooltip" data-placement="top" title="Delete SP Plan">
+                        <i class="fa fa-trash"></i>
+                        </button>
+                      </div>
+                        <button class="btn btn-outline-info btn-sm rounded-0" data-backdrop="static" data-keyboard="false" data-target="#plan_history" data-toggle="modal" ng-click="view_planned_sched(all_data)" data-toggle="tooltip" data-placement="top" title="View SP History">
+                          <i class="fa fa-eye"></i>
+                         </button>
+                         <!-- ------------------------------------------------------ -->
+<!--                       <button ng-if="all_data.sp != null" class="btn btn-outline-primary btn-sm rounded-0" data-backdrop="static" data-keyboard="false" data-target="#assign_dac_sp" data-toggle="modal" ng-click="Assigned_SP(all_data)" data-toggle="tooltip" data-placement="top" title="Assigned a DAC">
                           <i class="fa fa-street-view"></i>
                          </button>
                       </div>
                         <button ng-if="all_data.sp != null" class="btn btn-outline-warning btn-sm rounded-0" data-backdrop="static" data-keyboard="false" data-target="#planned_modal" data-toggle="modal" ng-click="view_specific_sp_data(all_data)" data-toggle="tooltip" data-placement="top" title="Add SP Plan">
                         <i class="fa fa-pencil-square-o"></i>
                         </button>
-<!--                         <button ng-if="all_data.sp.sp_logs.length == 0 && all_data.cancelled != 1" class="btn btn-outline-warning btn-sm rounded-0" data-backdrop="static" data-keyboard="false" data-target="#planned_modal" data-toggle="modal" ng-click="view_specific_sp_data(all_data)" data-toggle="tooltip" data-placement="top" title="Add SP Plan">
-                        <i class="fa fa-pencil-square-o"></i>
-                        </button> -->
+
                       <div class="input-group-prepend">
                         <button ng-if="all_data.sp.sp_logs.length > 0 && all_data.cancelled != 1" class="btn btn-outline-danger btn-sm rounded-0" ng-click="delete_sp_plan(all_data.sp.sp_id,all_data.sp.sp_groupings,all_data.sp.sp_implementation)" data-toggle="tooltip" data-placement="top" title="Delete SP Plan">
                         <i class="fa fa-trash"></i>
@@ -134,7 +151,7 @@
                       </div>
                         <button ng-if="all_data.sp.sp_logs.length > 0 && all_data.cancelled != 1" class="btn btn-outline-info btn-sm rounded-0" data-backdrop="static" data-keyboard="false" data-target="#plan_history" data-toggle="modal" ng-click="view_planned_sched(all_data)" data-toggle="tooltip" data-placement="top" title="View SP History">
                           <i class="fa fa-eye"></i>
-                         </button>
+                        </button> -->
                     </div>
                   </td>
                 </tr>

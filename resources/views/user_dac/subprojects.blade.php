@@ -515,7 +515,7 @@
 								</div>
 
 								<div class="col-lg-12">
-									<button ng-if="specific_sp_data.status == 'Completed' || specific_sp_data.status == 'On-going'" type="button" style="border-radius: 100px;" class="btn btn-outline-primary mb-2" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#plan_history" ng-click="view_planned_sched(specific_sp_data.sp_id)"> <i class="fa fa-pencil"></i> View Track history </button>
+									<button ng-if="specific_sp_data.status == 'Completed' || specific_sp_data.status == 'On-going' || specific_sp_data.status == 'On-Going'" type="button" style="border-radius: 100px;" class="btn btn-outline-primary mb-2" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#plan_history" ng-click="view_planned_sched(specific_sp_data.sp_id)"> <i class="fa fa-pencil"></i> View Track history </button>
 
 									<button type="button" class="btn btn-outline-info mb-2" style="border-radius: 100px;" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#add_files"> <i class="fa fa-paperclip"></i> Attach a file </button>
 
