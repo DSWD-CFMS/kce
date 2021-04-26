@@ -855,10 +855,10 @@ class ADMIN_Controller extends Controller
 
                 $new_assigned_sp = new Assigned_sp;
                 $new_assigned_sp->sp_id = $rq->sp['sp_id'];
-                $new_assigned_sp->assigned_grouping = $rq->whatmodality;
+                $new_assigned_sp->assigned_grouping = $rq->sp['sp_groupings'];
+                // $new_assigned_sp->assigned_grouping = $rq->whatmodality;
                 $new_assigned_sp->assigned_to = $rq->assigned_dac;
                 $new_assigned_sp->save();
-                return $rq->whatmodality;
                 DB::commit();
 
                 return 1;
