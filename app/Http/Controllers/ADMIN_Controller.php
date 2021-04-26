@@ -104,7 +104,7 @@ class ADMIN_Controller extends Controller
             ->with(['Sp_logs' => function($x){
                 $x->whereNotNull('sp_logs_actual')->get();
             }])
-            ->where('sp_implementation', 2020)
+            ->whereIn('sp_implementation', [2020,2021])
             ->whereIn('sp_status',['Completed','On-going'])
             ->get()->groupBy('sp_groupings');
 
@@ -173,7 +173,7 @@ class ADMIN_Controller extends Controller
             ->with(['Sp_logs' => function($x){
                 $x->whereNotNull('sp_logs_actual')->get();
             }])
-            ->where('sp_implementation', 2020)
+            ->whereIn('sp_implementation', [2020,2021])
             ->whereIn('sp_status',['Completed','On-going'])
             ->get()->groupBy('sp_groupings');
 
@@ -237,7 +237,7 @@ class ADMIN_Controller extends Controller
             ->with(['Sp_logs' => function($x){
                 $x->whereNotNull('sp_logs_actual')->get();
             }])
-            ->where('sp_implementation', 2020)
+            ->whereIn('sp_implementation', [2020,2021])
             ->whereIn('sp_status',['Completed','On-going'])
             ->get()->groupBy('sp_groupings');
 
@@ -301,7 +301,7 @@ class ADMIN_Controller extends Controller
             ->with(['Sp_logs' => function($x){
                 $x->whereNotNull('sp_logs_actual')->get();
             }])
-            ->where('sp_implementation', 2020)
+            ->whereIn('sp_implementation', [2020,2021])
             ->whereIn('sp_status',['Completed','On-going'])
             ->get()->groupBy('sp_groupings');
 
@@ -366,7 +366,7 @@ class ADMIN_Controller extends Controller
             ->with(['Sp_logs' => function($x){
                 $x->whereNotNull('sp_logs_actual')->get();
             }])
-            ->where('sp_implementation', 2020)
+            ->whereIn('sp_implementation', [2020,2021])
             ->whereIn('sp_status',['Completed','On-going'])
             ->get()->groupBy('sp_groupings');
 
@@ -430,7 +430,7 @@ class ADMIN_Controller extends Controller
             ->with(['Sp_logs' => function($x){
                 $x->whereNotNull('sp_logs_actual')->get();
             }])
-            ->where('sp_implementation', 2020)
+            ->whereIn('sp_implementation', [2020,2021])
             ->whereIn('sp_status',['Completed','On-going'])
             ->get()->groupBy('sp_groupings');
 
