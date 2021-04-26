@@ -109,12 +109,13 @@ class ADMIN_Controller extends Controller
             ->get()->groupBy('sp_groupings');
 
             $sp_id = [];
+            //BORN EDIT
             if ( ! isset($all_sp_data[1])) {
                $all_sp_data[1] = null;
-            }
-            //BORN EDIT
-            foreach ($all_sp_data[1] as $key) {
-                array_push($sp_id, $key->sp_id);
+            }else{
+                foreach ($all_sp_data[1] as $key) {
+                    array_push($sp_id, $key->sp_id);
+                }
             }
 
             $ddd = Sp_logs::select('sp_id','sp_logs_actual')
