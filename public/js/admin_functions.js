@@ -670,32 +670,34 @@ app.controller('Admin_Controller', function($scope,$http,$filter) {
   $scope.assign_SP = function(data){
     $scope.data = data;
     $scope.data.assigned_dac = document.getElementById('ass_dac').value.replace("number:","");
-    // console.log($scope.assigned_dac);
+    console.log("--------------------------------");
+    console.log($scope.data);
+    console.log("--------------------------------");
     // return;
-    $http({
-      method : "POST",
-      url : 'assign_SP',
-      data: $scope.data,
-    }).then(function mySuccess(response) {
-      console.log(response.data);
+    // $http({
+    //   method : "POST",
+    //   url : 'assign_SP',
+    //   data: $scope.data,
+    // }).then(function mySuccess(response) {
+    //   console.log(response.data);
 
-      if(response.data == 1){
-        Swal.fire({
-          title: 'Yahoooo!',
-          text: "SP successfuly assigned to a DAC",
-          icon: 'success',
-        });
+    //   if(response.data == 1){
+    //     Swal.fire({
+    //       title: 'Yahoooo!',
+    //       text: "SP successfuly assigned to a DAC",
+    //       icon: 'success',
+    //     });
 
-        $('#assign_dac_sp').modal('hide');
-        $scope.fetch_modality(3,2020);
-      }else{
-        Swal.fire({
-          title: 'Oooops!',
-          text: "There must be a problem",
-          icon: 'error',
-        });
-      }
-    }, function myError(response) {});
+    //     $('#assign_dac_sp').modal('hide');
+    //     $scope.fetch_modality(3,2020);
+    //   }else{
+    //     Swal.fire({
+    //       title: 'Oooops!',
+    //       text: "There must be a problem",
+    //       icon: 'error',
+    //     });
+    //   }
+    // }, function myError(response) {});
   }
 
   $scope.fetch_users = function(){
