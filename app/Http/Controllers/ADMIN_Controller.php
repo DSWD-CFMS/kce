@@ -109,6 +109,9 @@ class ADMIN_Controller extends Controller
             ->get()->groupBy('sp_groupings');
 
             $sp_id = [];
+            if ( ! isset($all_sp_data[1])) {
+               $all_sp_data[1] = null;
+            }
             foreach ($all_sp_data[1] as $key) {
                 array_push($sp_id, $key->sp_id);
             }
