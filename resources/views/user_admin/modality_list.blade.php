@@ -117,7 +117,7 @@
 												<i class="fa fa-bookmark"></i>
 												</button> -->
 											<!-- <div ng-bind="all_data"> -- </div> -->
-											<button ng-if="all_data.sp == null" class="btn btn-outline-primary btn-sm rounded-0" data-backdrop="static" data-keyboard="false" data-target="#assign_dac_sp" data-toggle="modal" ng-click="Assigned_SP(all_data)" data-toggle="tooltip" data-placement="top" title="Assigned a DAC">
+											<button ng-if="all_data.sp == null" class="btn btn-outline-primary btn-sm rounded-0" ng-click="Assigned_SP(all_data)" data-toggle="tooltip" data-placement="top" title="Assigned a DAC">
 													<i class="fa fa-gear"></i>
 												</button>
 
