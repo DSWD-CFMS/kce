@@ -900,13 +900,11 @@ class ADMIN_Controller extends Controller
             	}else if($rq->modality == 3){
                     return 'NCDDP';
             	}else if($rq->modality == 4){
-
                     $CMFS_IPCDD_2020 = new CMFS_IPCDD_2020;
                     $CMFS_IPCDD_2020->setConnection('mysql3');
                     // Total Project Cost =  Grant + lcc_cash + lcc_in_kind
                     $multi = $CMFS_IPCDD_2020->select('id','brgy_code','sp_title','grant','lcc_cash','lcc_in_kind','cadt')->with('CMFS_brgy.CMFS_muni.CMFS_prov')->where('is_waived',0)->get();
                     return [$multi,$sp_cat,$sp_type,$dac,$rpmo];
-
             	}else if($rq->modality == 5){
             		return 'CCL';
             	}else if($rq->modality == 6){
