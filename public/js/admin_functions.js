@@ -670,9 +670,9 @@ app.controller('Admin_Controller', function($scope,$http,$filter) {
   $scope.assign_SP = function(data){
     $scope.data = data;
     $scope.data.assigned_dac = document.getElementById('ass_dac').value.replace("number:","");
-    console.log("--------------------------------");
+    console.log("--------------vvvv--------------");
     console.log($scope.data);
-    console.log("--------------------------------");
+    console.log("--------------^^^^^---------------");
     // return;
     // $http({
     //   method : "POST",
