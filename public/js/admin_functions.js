@@ -634,7 +634,7 @@ app.controller('Admin_Controller', function($scope,$http,$filter) {
 
   $scope.import_to_kce = function(datas){
     $send({
-      action : "/import_kce",
+      action : "/admin/routes/import_kce",
       data: datas,
       method : "POST",
       func : (res)=>{
