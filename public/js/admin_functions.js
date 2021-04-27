@@ -580,6 +580,7 @@ app.controller('Admin_Controller', function($scope,$http,$filter) {
         for(var x = 0; x < $scope.sp_per_modality.length; x++){
           $scope.sp_per_modality[x].date_encoded = $scope.parse_date($scope.sp_per_modality[x].date_encoded);
           if($scope.sp_per_modality[x].hasOwnProperty('modality')){
+                                                                     console.log($scope.sp_per_modality[x].modality)
             if($scope.sp_per_modality[x].modality == 'PAMANA'){
               $scope.sp_per_modality[x].whatmodality = 4;
             }
