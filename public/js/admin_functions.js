@@ -567,8 +567,7 @@ app.controller('Admin_Controller', function($scope,$http,$filter) {
       method : "GET",
       url : 'fetch_modality/'+modality_type+'/'+year,
     }).then(function mySuccess(response) {
-        console.log(response.data);
-        alert(response.data[0])
+        console.log(response.data[0]);
         $scope.sp_per_modality = response.data[0];
         $scope.sp_category = response.data[1];
         $scope.sp_type = response.data[2];
