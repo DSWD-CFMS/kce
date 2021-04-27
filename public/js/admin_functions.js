@@ -573,6 +573,8 @@ app.controller('Admin_Controller', function($scope,$http,$filter) {
         $scope.sp_type = response.data[2];
         $scope.dac = response.data[3];
         $scope.rpmo = response.data[4];
+        $scope.sp_per_modality[x].whatmodality = modality_type;
+
 
         for(var x = 0; x < $scope.sp_per_modality.length; x++){
           $scope.sp_per_modality[x].date_encoded = $scope.parse_date($scope.sp_per_modality[x].date_encoded);
