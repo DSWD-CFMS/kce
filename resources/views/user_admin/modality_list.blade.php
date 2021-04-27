@@ -80,21 +80,20 @@
 										</span>
 									</td>
 									<td>
-										<span ng-if="modality_type_no == 3" ng-bind="all_data.sp_id"></span>
-										<span ng-if="modality_type_no == 4" ng-bind="all_data.id"></span>
+										<span ng-if="" ng-bind="all_data.sp_id"></span> | <span ng-if="" ng-bind="all_data.id"></span>
 									</td>
 									<td ng-bind="all_data.sp_title">SP TITLE</td>
 									<td ng-if="modality_type_no == 4">
 										<span ng-bind="all_data.cadt"></span>
 									</td>
 										<td >
-											<!-- <span ng-bind="all_data.brgy.cities.city_name | uppercase"></span> -->
+											<span ng-bind="all_data.brgy.cities.city_name | uppercase"></span>
 											<span ng-bind="all_data.sp.sp_municipality | uppercase">
 												MUNICIPALITY
 											</span>
 										</td>
 										<td>
-											<!-- <span  ng-bind="all_data.brgy.brgy_name | uppercase"></span> -->
+											<span  ng-bind="all_data.brgy.brgy_name | uppercase"></span>
 											<span ng-bind="all_data.sp.sp_brgy | uppercase">
 												BARANGAY
 											</span>
