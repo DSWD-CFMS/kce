@@ -645,7 +645,7 @@ app.controller('Admin_Controller', function($scope,$http,$filter) {
 
     $http({
       method : "POST",
-      url : 'import_kce',
+      url : 'import_to_kce',
       data: datas,
     }).then(function mySuccess(response) {
       console.log(response.data);
