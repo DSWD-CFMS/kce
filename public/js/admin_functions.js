@@ -653,12 +653,9 @@ app.controller('Admin_Controller', function($scope,$http,$filter) {
       if(response.data == 1){
         Swal.fire({
           title: 'Yahoooo!',
-          text: response,
+          text: response.data,
           icon: 'success',
         });
-
-        $('#assign_dac_sp').modal('hide');
-        $scope.fetch_modality(3,2020);
       }else{
         Swal.fire({
           title: 'Oooops!',
