@@ -636,12 +636,12 @@ app.controller('Admin_Controller', function($scope,$http,$filter) {
   }
 
   $scope.import_to_kce = function(datas,modality){
-    $send({
-      action : "/admin/routes/import_to_kce",
-      data: datas,
-      headers : {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+    $http({
       method : "POST",
-      func : (res)=>{
+      url : 'encode_SP',
+      data: datas,
+    })then(
+      (res)=>{
         Swal.fire({
           title: 'Import Done!',
           text: "SP successfuly import to KCE",
@@ -651,8 +651,14 @@ app.controller('Admin_Controller', function($scope,$http,$filter) {
         $print(datas)
         $print("------^^^-----")
         $print(res)
-      }
-    })
+      })
+    // $send({
+    //   action : "/admin/routes/import_to_kce",
+    //   data: (datas),
+    //   headers : {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+    //   method : "POST",
+    //   func : 
+    // })
 
     // $scope.cmfs_sp_data = data;
     // console.log($scope.cmfs_sp_data);
