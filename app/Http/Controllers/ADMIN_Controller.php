@@ -552,7 +552,16 @@ class ADMIN_Controller extends Controller
     // BORN UDPATE-----------------
     public function import_to_kce(Request $rq){
         ob_start('ob_gzhandler');
-            return "HELLO";
+            // $addnew = new Sp;
+            // $addnew->sp_groupings = $rq->whatmodality;
+            // $addnew->sp_id = $rq->sp_id;
+            // $addnew->sp_title = $rq->sp_title;
+            // $addnew->sp_category = $rq->sp_cat_data;
+            // $addnew->sp_type = $rq->sp_typ_data;
+
+            // $rq->sp_batch;
+            // $addnew->save();
+         return $rq;
         ob_end_flush();
     }
 
