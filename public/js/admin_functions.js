@@ -650,6 +650,7 @@ app.controller('Admin_Controller', function($scope,$http,$filter) {
         $print("------vvv-----")
         $print(datas)
         $print("------^^^-----")
+        $print(res)
       }
     })
 
