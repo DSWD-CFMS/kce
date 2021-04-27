@@ -638,7 +638,7 @@ app.controller('Admin_Controller', function($scope,$http,$filter) {
   $scope.import_to_kce = function(datas,modality){
     $http({
       method : "POST",
-      url : 'encode_SP',
+      url : 'import_to_kce',
       data: datas,
     }).then(
       function mySuccess(res){
