@@ -573,9 +573,9 @@ app.controller('Admin_Controller', function($scope,$http,$filter) {
         $scope.sp_type = response.data[2];
         $scope.dac = response.data[3];
         $scope.rpmo = response.data[4];
-        
-        // $arr2 = array('whatmodality'=>$scope.modality_type_no);
-        // $scope.sp_per_modality[x]['whatmodality'] = $scope.sp_per_modality[x]['whatmodality'] +$arr2;
+
+        $arr2 = ['whatmodality'=>$scope.modality_type_no];
+        $scope.sp_per_modality[x]['whatmodality'] = $scope.sp_per_modality[x]['whatmodality'] +$arr2;
 
 
         for(var x = 0; x < $scope.sp_per_modality.length; x++){
