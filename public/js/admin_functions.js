@@ -647,7 +647,9 @@ app.controller('Admin_Controller', function($scope,$http,$filter) {
           text: "SP successfuly import to KCE",
           icon: 'success',
         });
-        alert(datas.sp_id)
+        $print("------vvv-----")
+        $print(datas)
+        $print("------^^^-----")
       }
     })
 
