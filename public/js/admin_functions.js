@@ -648,21 +648,13 @@ app.controller('Admin_Controller', function($scope,$http,$filter) {
       url : 'import_to_kce',
       data: datas,
     }).then(function mySuccess(response) {
-      console.log(response.data);
-
-      if(response.data == 1){
+      // console.log(response.data);
         Swal.fire({
           title: 'Yahoooo!',
-          text: response.data,
+          text: response,
           icon: 'success',
         });
-      }else{
-        Swal.fire({
-          title: 'Oooops!',
-          text: "There must be a problem",
-          icon: 'error',
-        });
-      }
+
     }, function myError(response) {});
     // $scope.cmfs_sp_data = data;
     // console.log($scope.cmfs_sp_data);

@@ -552,7 +552,7 @@ class ADMIN_Controller extends Controller
     // BORN UDPATE-----------------
     public function import_to_kce(Request $rq){
         ob_start('ob_gzhandler');
-            return $rq;
+            return "HELLO";
         ob_end_flush();
     }
 
