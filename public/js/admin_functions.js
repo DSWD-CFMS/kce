@@ -632,30 +632,17 @@ app.controller('Admin_Controller', function($scope,$http,$filter) {
     console.log($scope.cmfs_sp_data);
   }
 
-  $scope.import_to_kce = function(datas){
-    // $send({
-    //   action : "/admin/routes/import_kce",
-    //   data: datas,
-    //   headers : {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-    //   method : "POST",
-    //   func : (res)=>{
-    //     alert(res)
-    //   }
-    // })
-
-    $http({
-      method : "POST",
-      url : 'import_to_kce',
+  $scope.import_to_kce = function(datas,modality){
+    $send({
+      action : "/admin/routes/import_to_kce",
       data: datas,
-    }).then(function mySuccess(response) {
-      // console.log(response.data);
-        Swal.fire({
-          title: 'Yahoooo!',
-          text: response.data,
-          icon: 'success',
-        });
+      headers : {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+      method : "POST",
+      func : (res)=>{
+        alert(modality)
+      }
+    })
 
-    }, function myError(response) {});
     // $scope.cmfs_sp_data = data;
     // console.log($scope.cmfs_sp_data);
   }

@@ -117,7 +117,7 @@
 												<i class="fa fa-bookmark"></i>
 												</button> -->
 											<!-- <div ng-bind="all_data"> -- </div> -->
-											<button ng-if="all_data.sp == null" class="btn btn-outline-primary btn-sm rounded-0" ng-click="import_to_kce(all_data)" data-toggle="tooltip" data-placement="top" title="Import to KCE">
+											<button ng-if="all_data.sp == null" class="btn btn-outline-primary btn-sm rounded-0" ng-click="import_to_kce(all_data,all_data.sp.sp_groupings)" data-toggle="tooltip" data-placement="top" title="Import to KCE">
 												Import to KCE
 													<i class="fa fa-download"></i>
 												</button>

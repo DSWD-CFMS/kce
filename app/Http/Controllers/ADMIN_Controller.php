@@ -552,6 +552,8 @@ class ADMIN_Controller extends Controller
     // BORN UDPATE-----------------
     public function import_to_kce(Request $rq){
         ob_start('ob_gzhandler');
+            $modality = array('kkb','makilahok','ncddp','ipcdd','ccl','lande','pamana','kc-af');
+            // array_search('green', $array);
             // $addnew = new Sp;
             // $addnew->sp_groupings = $rq->whatmodality;
             // $addnew->sp_id = $rq->sp_id;
