@@ -551,7 +551,7 @@ class ADMIN_Controller extends Controller
 
     // BORN UDPATE-----------------
     public function import_to_kce(Request $rq){
-        // ob_start('ob_gzhandler');
+        ob_start('ob_gzhandler');
         $modality = array('kkb','makilahok','ncddp','ipcdd','ccl','lande','pamana','kc-af');
         $g_id = array_search(strtolower($rq['modality']), $modality)+1;
         $sqls = "
@@ -560,8 +560,9 @@ class ADMIN_Controller extends Controller
             VALUES ('".$g_id."','".$rq->sp_id."','".$rq->sp_title."','".$rq->prov_name."','".$rq->city_name."','".$rq->brgy_name."','".$rq->grant."','NYS','".$rq->date_encoded."','".$rq->date_encoded."','"."FROM_CFMS_NEW_BTN');
                  ";
         $users = DB::select( DB::raw($sqls));
+        
         return $sqls;      
-        // ob_end_flush();
+        ob_end_flush();
     }
 
     public function user_list(Request $rq){
