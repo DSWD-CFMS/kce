@@ -633,15 +633,40 @@ app.controller('Admin_Controller', function($scope,$http,$filter) {
   }
 
   $scope.import_to_kce = function(datas){
-    $send({
-      action : "/admin/routes/import_kce",
-      data: datas,
-      headers : {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+    // $send({
+    //   action : "/admin/routes/import_kce",
+    //   data: datas,
+    //   headers : {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+    //   method : "POST",
+    //   func : (res)=>{
+    //     alert(res)
+    //   }
+    // })
+
+    $http({
       method : "POST",
-      func : (res)=>{
-        alert(res)
+      url : 'import_kce',
+      data: datas,
+    }).then(function mySuccess(response) {
+      console.log(response.data);
+
+      if(response.data == 1){
+        Swal.fire({
+          title: 'Yahoooo!',
+          text: response,
+          icon: 'success',
+        });
+
+        $('#assign_dac_sp').modal('hide');
+        $scope.fetch_modality(3,2020);
+      }else{
+        Swal.fire({
+          title: 'Oooops!',
+          text: "There must be a problem",
+          icon: 'error',
+        });
       }
-    })
+    }, function myError(response) {});
     // $scope.cmfs_sp_data = data;
     // console.log($scope.cmfs_sp_data);
   }
