@@ -551,15 +551,15 @@ class ADMIN_Controller extends Controller
 
     // BORN UDPATE-----------------
     public function import_to_kce(Request $rq){
+        ob_start('ob_gzhandler');
             return $rq;
-        // ob_start('ob_gzhandler');
         //     $sp_cat = Sp_category::select('id','category')->get();
         //     $sp_type = Sp_type::select('id','type')->get();
         //     $dac = Users::select('id','Fname','Lname', 'contact')->where('role','DAC')->get();
         //     $rpmo = Users::select('id','Fname','Lname', 'contact')->where('role','RPMO')->get();
 
         //     return [$sp_cat,$sp_type,$dac,$rpmo];
-        // ob_end_flush();
+        ob_end_flush();
     }
 
     public function user_list(Request $rq){
