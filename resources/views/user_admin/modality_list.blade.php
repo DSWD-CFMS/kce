@@ -80,7 +80,7 @@
 										</span>
 									</td>
 									<td>
-										<span ng-bind="all_data.sp_id"></span> | <span ng-bind="all_data.id"></span>
+										<span ng-bind="all_data.sp_id"></span> :: <span ng-bind="all_data.id"></span>
 									</td>
 									<td ng-bind="all_data.sp_title">SP TITLE</td>
 									<td ng-if="modality_type_no == 4">
