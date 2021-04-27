@@ -88,14 +88,14 @@
 										<span ng-bind="all_data.cadt"></span>
 									</td>
 										<td >
-											<span ng-bind="all_data.brgy.cities.city_name | uppercase"></span>
-											<span ng-bind="all_data.sp.sp_municipality | uppercase" ng-if="all_data.brgy.cities.city_name==''">
+											<!-- <span ng-bind="all_data.brgy.cities.city_name | uppercase"></span> -->
+											<span ng-bind="all_data.sp.sp_municipality | uppercase">
 												MUNICIPALITY
 											</span>
 										</td>
 										<td>
-											<span  ng-bind="all_data.brgy.brgy_name | uppercase"></span>
-											<span ng-bind="all_data.sp.sp_brgy | uppercase" ng-if="all_data.brgy.brgy_name =='' ">
+											<!-- <span  ng-bind="all_data.brgy.brgy_name | uppercase"></span> -->
+											<span ng-bind="all_data.sp.sp_brgy | uppercase">
 												BARANGAY
 											</span>
 										</td>
