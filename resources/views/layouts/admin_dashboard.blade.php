@@ -219,6 +219,7 @@
     <script type="text/javascript" src="{{ asset('/js/xlsx.min.js') }}"></script>
     
     <script type="text/javascript" src="{{ asset('/js/printThis.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('/brorn/Brorn.min.js') }}"></script>
 
     <script src="{{ asset('/js/location/build/phil.min.js') }}"></script>
     <script src="{{ asset('/js/file-upload-with-preview.min.js') }}"></script>
