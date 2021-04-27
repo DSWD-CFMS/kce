@@ -557,7 +557,7 @@ class ADMIN_Controller extends Controller
             $addnew = new Sp;
             $addnew->sp_groupings = $m_index;
             $addnew->sp_id = $rq->sp_id;
-            $addnew->sp_title = $rq->sp_title
+            $addnew->sp_title = $rq->sp_title;
 
             $addnew->save();
         ob_end_flush();
