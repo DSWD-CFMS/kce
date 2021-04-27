@@ -639,7 +639,7 @@ app.controller('Admin_Controller', function($scope,$http,$filter) {
       headers : {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
       method : "POST",
       func : (res)=>{
-        alert(modality)
+        alert(datas.whatmodality)
       }
     })
 
