@@ -650,7 +650,7 @@ app.controller('Admin_Controller', function($scope,$http,$filter) {
         $print("------vvv-----")
         $print(datas)
         $print("------^^^-----")
-        $print(res)
+        $print(res.data)
       })
     // $send({
     //   action : "/admin/routes/import_to_kce",
