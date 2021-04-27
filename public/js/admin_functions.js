@@ -651,7 +651,7 @@ app.controller('Admin_Controller', function($scope,$http,$filter) {
       // console.log(response.data);
         Swal.fire({
           title: 'Yahoooo!',
-          text: response,
+          text: response.data,
           icon: 'success',
         });
 
