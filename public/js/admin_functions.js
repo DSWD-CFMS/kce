@@ -640,8 +640,8 @@ app.controller('Admin_Controller', function($scope,$http,$filter) {
       method : "POST",
       url : 'encode_SP',
       data: datas,
-    })then(
-      (res)=>{
+    }).then(
+      function mySuccess(res){
         Swal.fire({
           title: 'Import Done!',
           text: "SP successfuly import to KCE",
