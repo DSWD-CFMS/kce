@@ -636,6 +636,7 @@ app.controller('Admin_Controller', function($scope,$http,$filter) {
     $send({
       action : "/admin/routes/import_kce",
       data: datas,
+      headers : {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
       method : "POST",
       func : (res)=>{
         alert(res)
