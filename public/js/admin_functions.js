@@ -632,6 +632,19 @@ app.controller('Admin_Controller', function($scope,$http,$filter) {
     console.log($scope.cmfs_sp_data);
   }
 
+  $scope.import_to_kce = function(datas){
+    $send({
+      action : "/import_kce",
+      data: datas,
+      method : "POST",
+      func : (res)=>{
+        alert(res)
+      }
+    })
+    // $scope.cmfs_sp_data = data;
+    console.log($scope.cmfs_sp_data);
+  }
+
   $scope.encode_SP = function(data){
     $scope.data = data;
     $scope.data.sp_cat_data = $scope.sp_cat_data;

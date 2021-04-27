@@ -174,6 +174,7 @@ Route::middleware(['admin'])->group(function () {
 	Route::post('/admin/routes/update_profile_photo', 'Profile_Controller@update_profile_photo');
 	Route::post('/admin/routes/update_profile_info', 'Profile_Controller@update_profile_info');
 	Route::get('/admin/routes/delete_user/{user_id}', 'ADMIN_Controller@delete_user');
+	Route::post('/admin/routes/import_kce', 'ADMIN_Controller@import_kce');
 
 }); //End of ADMIN
 
