@@ -87,8 +87,22 @@
 									<td ng-if="modality_type_no == 4">
 										<span ng-bind="all_data.cadt"></span>
 									</td>
-									<td ng-bind="all_data.brgy.cities.city_name | uppercase">MUNICIPALITY</td>
-									<td ng-bind="all_data.brgy.brgy_name | uppercase">BARANGAY</td>
+									<span ng-if="modality_type_no != 4">
+										<td ng-bind="all_data.brgy.cities.city_name | uppercase">
+											MUNICIPALITY
+										</td>
+										<td ng-bind="all_data.brgy.brgy_name | uppercase">
+											BARANGAY
+										</td>
+									</span>
+									<span ng-if="modality_type_no == 4">
+										<td ng-bind="all_data.sp.sp_municipality | uppercase">
+											MUNICIPALITY
+										</td>
+										<td ng-bind="all_data.sp.sp_brgy | uppercase">
+											BARANGAY
+										</td>
+									</span>
 
 									<td>
 										<span ng-if="all_data.cancelled == 0">
