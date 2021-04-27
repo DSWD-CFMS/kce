@@ -561,7 +561,7 @@ class ADMIN_Controller extends Controller
 
             // $rq->sp_batch;
             // $addnew->save();
-         return $rq;
+         return $rq->sp_id;
         ob_end_flush();
     }
 
