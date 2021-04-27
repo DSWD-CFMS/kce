@@ -553,13 +553,13 @@ class ADMIN_Controller extends Controller
     public function import_to_kce(Request $rq){
         ob_start('ob_gzhandler');
             $modality = array('kkb','makilahok','ncddp','ipcdd','ccl','lande','pamana','kc-af');
-            // $m_index = array_search(strtolower($rq->modality), $array);
-            $addnew = new Sp;
-            // $addnew->sp_groupings = $m_index;
-            $addnew->sp_id = $rq->sp_id;
-            $addnew->sp_title = $rq->sp_title;
+            $g_id = array_search(strtolower($rq->modality), $array);
+            $users = DB::select( DB::raw("
+                        INSERT IGNORE INTO `sp`
+                        (`sp_groupings`,`sp_id`, `sp_title`,`sp_province`, `sp_municipality`, `sp_brgy`, `sp_project_cost`, `sp_status`,`created_at`,`updated_at`,`remarks`)
+                        VALUES ('".$g_id."','".$rq["sp_id"]."','".$rq["sp_title"]."','".$rq["prov_name"]."','".$rq["city_name"]."','".$rq["brgy_name"]."','".$rq["grant"]."','NYS','".$rq["date_encoded"]."','".$rq["date_encoded"]."','"."FROM_CFMS_NEW_BTN');
+                     "));
 
-            $addnew->save();
         ob_end_flush();
     }
 
