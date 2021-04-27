@@ -553,17 +553,13 @@ class ADMIN_Controller extends Controller
     public function import_to_kce(Request $rq){
         ob_start('ob_gzhandler');
             $modality = array('kkb','makilahok','ncddp','ipcdd','ccl','lande','pamana','kc-af');
-            // array_search('green', $array);
-            // $addnew = new Sp;
-            // $addnew->sp_groupings = $rq->whatmodality;
-            // $addnew->sp_id = $rq->sp_id;
-            // $addnew->sp_title = $rq->sp_title;
-            // $addnew->sp_category = $rq->sp_cat_data;
-            // $addnew->sp_type = $rq->sp_typ_data;
+            $m_index = array_search(strtolower($rq->modality), $array);
+            $addnew = new Sp;
+            $addnew->sp_groupings = $m_index;
+            $addnew->sp_id = $rq->sp_id;
+            $addnew->sp_title = $rq->sp_title
 
-            // $rq->sp_batch;
-            // $addnew->save();
-         return $rq->sp_id;
+            $addnew->save();
         ob_end_flush();
     }
 

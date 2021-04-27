@@ -642,7 +642,12 @@ app.controller('Admin_Controller', function($scope,$http,$filter) {
       headers : {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
       method : "POST",
       func : (res)=>{
-        alert(datas.modality)
+        Swal.fire({
+          title: 'Import Done!',
+          text: "SP successfuly import to KCE",
+          icon: 'success',
+        });
+        alert(datas.sp_id)
       }
     })
 
