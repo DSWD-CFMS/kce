@@ -553,7 +553,7 @@ class ADMIN_Controller extends Controller
     public function import_to_kce(Request $rq){
         // ob_start('ob_gzhandler');
         $modality = array('kkb','makilahok','ncddp','ipcdd','ccl','lande','pamana','kc-af');
-        $g_id = array_search(strtolower($rq['modality']), $array);
+        $g_id = array_search(strtolower($rq['modality']), $modality);
         $sqls = "
             INSERT IGNORE INTO `sp`
             (`sp_groupings`,`sp_id`, `sp_title`,`sp_province`, `sp_municipality`, `sp_brgy`, `sp_project_cost`, `sp_status`,`created_at`,`updated_at`,`remarks`)
