@@ -558,9 +558,9 @@ class ADMIN_Controller extends Controller
             INSERT IGNORE INTO `sp`
             (`sp_groupings`,`sp_id`, `sp_title`,`sp_province`, `sp_municipality`, `sp_brgy`, `sp_project_cost`, `sp_status`,`created_at`,`updated_at`,`remarks`)
             VALUES ('".$g_id."','".$rq["sp_id"]."','".$rq["sp_title"]."','".$rq["prov_name"]."','".$rq["city_name"]."','".$rq["brgy_name"]."','".$rq["grant"]."','NYS','".$rq["date_encoded"]."','".$rq["date_encoded"]."','"."FROM_CFMS_NEW_BTN');
-                 "
+                 ";
         // $users = DB::select( DB::raw($sqls));
-        return $sqls           
+        return $sqls;      
         // ob_end_flush();
     }
 
