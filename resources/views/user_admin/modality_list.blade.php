@@ -89,13 +89,13 @@
 									</td>
 										<td >
 											<span ng-bind="all_data.brgy.cities.city_name | uppercase"></span>
-											<span ng-bind="all_data.sp.sp_municipality | uppercase">
+											<span ng-bind="all_data.sp.sp_municipality | uppercase" ng-if="all_data.brgy.cities.city_name==''">
 												MUNICIPALITY
 											</span>
 										</td>
 										<td>
 											<span  ng-bind="all_data.brgy.brgy_name | uppercase"></span>
-											<span ng-bind="all_data.sp.sp_brgy | uppercase">
+											<span ng-bind="all_data.sp.sp_brgy | uppercase" ng-if="all_data.brgy.brgy_name =='' ">
 												BARANGAY
 											</span>
 										</td>
