@@ -643,7 +643,7 @@ app.controller('Admin_Controller', function($scope,$http,$filter) {
       }
     })
     // $scope.cmfs_sp_data = data;
-    console.log($scope.cmfs_sp_data);
+    // console.log($scope.cmfs_sp_data);
   }
 
   $scope.encode_SP = function(data){

@@ -551,7 +551,7 @@ class ADMIN_Controller extends Controller
 
     // BORN UDPATE-----------------
     public function import_to_kce(Request $rq){
-        ob_start('ob_gzhandler');
+        // ob_start('ob_gzhandler');
             return $rq;
         //     $sp_cat = Sp_category::select('id','category')->get();
         //     $sp_type = Sp_type::select('id','type')->get();
@@ -559,7 +559,7 @@ class ADMIN_Controller extends Controller
         //     $rpmo = Users::select('id','Fname','Lname', 'contact')->where('role','RPMO')->get();
 
         //     return [$sp_cat,$sp_type,$dac,$rpmo];
-        ob_end_flush();
+        // ob_end_flush();
     }
 
     public function user_list(Request $rq){
