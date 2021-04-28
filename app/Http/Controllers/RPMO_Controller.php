@@ -224,7 +224,7 @@ class RPMO_Controller extends Controller
             // if($temp!=$stringname){
                 $string .= "<tr>";
                 $string .= "<td>".(++$count)."</td>";
-                $string .= "<td>".$row->sp_municipality."-".$bub"</td>";
+                $string .= "<td>".$row->sp_municipality."-".$bub."</td>";
                 $string .= "<td>".$row->sp_brgy."</td>";
                 $string .= "<td>".$row->sp_id."</td>";
                 $string .= "<td>".$row->sp_title."</td>";
