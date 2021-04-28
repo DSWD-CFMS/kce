@@ -705,6 +705,7 @@ app.controller('Admin_Controller', function($scope,$http,$filter) {
     console.log("--------------vvvv--------------");
     console.log(data);
     console.log("--------------^^^^^---------------");
+    alert(document.getElementById('ass_dac').value.replace("number:",""))
     // return;
     $http({
       method : "POST",
