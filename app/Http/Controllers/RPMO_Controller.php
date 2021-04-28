@@ -224,8 +224,8 @@ class RPMO_Controller extends Controller
             // if($temp!=$stringname){
                 $string .= "<tr>";
                 $string .= "<td>".(++$count)."</td>";
-                $string .= "<td onclick=console.log('".$bub->id."')>".$row->sp_municipality."-</td>";
-                $string .= "<td onclick=console.log('".$nc->id."')>".$row->sp_brgy."</td>";
+                $string .= "<td onclick=console.log('".$bub."')>".$row->sp_municipality."-</td>";
+                $string .= "<td onclick=console.log('".$nc."')>".$row->sp_brgy."</td>";
                 $string .= "<td>".$row->sp_id."</td>";
                 $string .= "<td>".$row->sp_title."</td>";
                 $string .= "<td>".$row->modality."</td>";
