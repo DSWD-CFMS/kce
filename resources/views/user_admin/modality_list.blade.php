@@ -94,7 +94,6 @@
 											<span  ng-bind="all_data.brgy.brgy_name | uppercase"></span>
 											<span ng-bind="all_data.sp.sp_brgy | uppercase"></span>
 										</td>
-									</cvft>
 
 									<td>
 										<span ng-if="all_data.cancelled == 0">

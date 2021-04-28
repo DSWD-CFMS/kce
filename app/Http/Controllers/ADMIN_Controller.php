@@ -848,29 +848,20 @@ class ADMIN_Controller extends Controller
                     $cadt->cadt_no = $rq->sp_cadt;
                     $cadt->save();
                 }
-
-
 				DB::commit();
-
 				return 1;
-                // all good
             } catch (\Exception $e) {
                 DB::rollback();
             	return $e->getMessage();
-                // something went wrong
             }
         ob_end_flush();
-    	// Insert assigned_sp
-    	// Inesert assigned grouping
     }
 
     public function assign_SP(Request $rq){
         // Insert sp
         ob_start('ob_gzhandler');
             DB::beginTransaction();
-
-            try {
-
+            try{
                 $new_assigned_sp = new Assigned_sp;
                 $new_assigned_sp->sp_id = $rq->sp_id;
                 $new_assigned_sp->assigned_grouping = $rq->sp['sp_groupings'];
@@ -878,13 +869,10 @@ class ADMIN_Controller extends Controller
                 $new_assigned_sp->assigned_to = $rq->assigned_dac;
                 $new_assigned_sp->save();
                 DB::commit();
-
                 return 1;
-                // all good
-            } catch (\Exception $e) {
+            }catch (\Exception $e) {
                 DB::rollback();
                 return $e->getMessage();
-                // something went wrong
             }
         ob_end_flush();
     }
