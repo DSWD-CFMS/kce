@@ -211,8 +211,6 @@ class RPMO_Controller extends Controller
         foreach($results as $row){
             $users = DB::select( DB::raw("SELECT Fname,Lname FROM users,assigned_sp where users.id = assigned_sp.assigned_to  
             AND  assigned_sp.sp_id = '".$row->sp_id."'") );
-            $bub = CMFS_kalahi_2020_BUB_RFR::where("id",$row->sp_id)->get();
-            $nc = CMFS_kalahi_2020_NCDDP_RFR::where("sp_id",$row->sp_id)->get();
             $stringname = '';
             // >>>>>>> c099e5e399a60cfab378bd2d86a1990ede1b3864
             foreach ($users as $row1) {
@@ -224,8 +222,8 @@ class RPMO_Controller extends Controller
             // if($temp!=$stringname){
                 $string .= "<tr>";
                 $string .= "<td>".(++$count)."</td>";
-                $string .= "<td onclick=console.log('".$bub."')>".$row->sp_municipality."-</td>";
-                $string .= "<td onclick=console.log('".$nc."')>".$row->sp_brgy."</td>";
+                $string .= "<td>".$row->sp_municipality."-</td>";
+                $string .= "<td >".$row->sp_brgy."</td>";
                 $string .= "<td>".$row->sp_id."</td>";
                 $string .= "<td>".$row->sp_title."</td>";
                 $string .= "<td>".$row->modality."</td>";
