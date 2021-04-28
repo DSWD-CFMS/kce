@@ -88,15 +88,11 @@
 									</td>
 										<td >
 											<span ng-bind="all_data.brgy.cities.city_name | uppercase"></span>
-											<span ng-bind="all_data.sp.sp_municipality | uppercase">
-												MUNICIPALITY
-											</span>
+											<span ng-bind="all_data.sp.sp_municipality | uppercase"></span>
 										</td>
 										<td>
 											<span  ng-bind="all_data.brgy.brgy_name | uppercase"></span>
-											<span ng-bind="all_data.sp.sp_brgy | uppercase">
-												BARANGAY
-											</span>
+											<span ng-bind="all_data.sp.sp_brgy | uppercase"></span>
 										</td>
 									</cvft>
 
