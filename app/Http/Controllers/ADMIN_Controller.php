@@ -863,7 +863,7 @@ class ADMIN_Controller extends Controller
             DB::beginTransaction();
             try{
                 $new_assigned_sp = new Assigned_sp;
-                $new_assigned_sp->sp_id = $rq->sp_id;
+                $new_assigned_sp->sp_id = $rq->sp["sp_id"];
                 $new_assigned_sp->assigned_grouping = $rq->sp['sp_groupings'];
                 // $new_assigned_sp->assigned_grouping = $rq->whatmodality;
                 $new_assigned_sp->assigned_to = $rq->assigned_dac;
