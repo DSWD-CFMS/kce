@@ -902,7 +902,7 @@ class ADMIN_Controller extends Controller
             	}else if($rq->modality == 3){
                     return 'NCDDP';
             	}else if($rq->modality == 4){
-                    $CMFS_IPCDD_2020 = new CMFS_IPCDD_2020;
+                    $CMFS_IPCDD_2020 = new CMFS_IPCDD_2020; //BORN --
                     $CMFS_IPCDD_2020->setConnection('mysql3');
                     // Total Project Cost =  Grant + lcc_cash + lcc_in_kind
                     $multi = $CMFS_IPCDD_2020->select('id','brgy_code','sp_title','grant','lcc_cash','lcc_in_kind','cadt')->with('CMFS_brgy.CMFS_muni.CMFS_prov')->where('is_waived',0)->get();
@@ -1002,7 +1002,6 @@ class ADMIN_Controller extends Controller
             try {
                 Sp_logs::where('sp_id',$rq->sp_id)->delete();
                 DB::commit();
-
                 return 1;
                 // all good
             } catch (\Exception $e) {

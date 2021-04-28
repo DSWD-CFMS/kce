@@ -167,7 +167,8 @@ class RPMO_Controller extends Controller
     } 
     
     public function new_module_content_table(){
-        $string = "<div class='table-responsive'><table class='display dataTable no-footer' id='table_details' cellspacing='0' width='100%'>
+    
+    $string = "<div class='table-responsive'><table class='display dataTable no-footer' id='table_details' cellspacing='0' width='100%'>
         <thead>
         <tr>
         <th>#</th>
@@ -210,6 +211,8 @@ class RPMO_Controller extends Controller
         foreach($results as $row){
             $users = DB::select( DB::raw("SELECT Fname,Lname FROM users,assigned_sp where users.id = assigned_sp.assigned_to  
             AND  assigned_sp.sp_id = '".$row->sp_id."'") );
+            $bub = CMFS_kalahi_2021_BUB_SP::where("sp_id",$row->sp_id)->get()
+            $nc = CMFS_kalahi_2021_NCDDP_SP::where("sp_id",$row->sp_id)->get();
             $stringname = '';
             // >>>>>>> c099e5e399a60cfab378bd2d86a1990ede1b3864
             foreach ($users as $row1) {
@@ -221,7 +224,7 @@ class RPMO_Controller extends Controller
             // if($temp!=$stringname){
                 $string .= "<tr>";
                 $string .= "<td>".(++$count)."</td>";
-                $string .= "<td>".$row->sp_municipality."</td>";
+                $string .= "<td>".$row->sp_municipality."-".$bub"</td>";
                 $string .= "<td>".$row->sp_brgy."</td>";
                 $string .= "<td>".$row->sp_id."</td>";
                 $string .= "<td>".$row->sp_title."</td>";
