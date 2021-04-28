@@ -802,9 +802,8 @@ class ADMIN_Controller extends Controller
                     // $addnew->sp_cycle = $rq->sp_cyle;
                     // $addnew->sp_batch = $rq->sp_batch;
                     $addnew->save();
-
-                }else{
-
+                }
+                else{
                     $addnew = new Sp;
                     $addnew->sp_groupings = $rq->whatmodality;
                     $addnew->sp_id = $rq->id;
@@ -833,15 +832,14 @@ class ADMIN_Controller extends Controller
                     $new_assigned_sp->assigned_grouping = $rq->whatmodality;
                     $new_assigned_sp->assigned_to = $rq->assigned_dac;
                     $new_assigned_sp->save();
-                }else{
+                }
+                else{
                     $new_assigned_sp = new Assigned_sp;
                     $new_assigned_sp->sp_id = $rq->id;
                     $new_assigned_sp->assigned_grouping = $rq->whatmodality;
                     $new_assigned_sp->assigned_to = $rq->assigned_dac;
                     $new_assigned_sp->save();
                 }
-
-
                 if($rq->sp_modality_type == 4){
                     $cadt = new Cadt;
                     $cadt->sp_id = $rq->sp_id_data;
@@ -902,7 +900,7 @@ class ADMIN_Controller extends Controller
             	}else if($rq->modality == 3){
                     return 'NCDDP';
             	}else if($rq->modality == 4){
-                    $CMFS_IPCDD_2020 = new CMFS_IPCDD_2020; //BORN --
+                    $CMFS_IPCDD_2020 = new CMFS_IPCDD_2020;
                     $CMFS_IPCDD_2020->setConnection('mysql3');
                     // Total Project Cost =  Grant + lcc_cash + lcc_in_kind
                     $multi = $CMFS_IPCDD_2020->select('id','brgy_code','sp_title','grant','lcc_cash','lcc_in_kind','cadt')->with('CMFS_brgy.CMFS_muni.CMFS_prov')->where('is_waived',0)->get();
