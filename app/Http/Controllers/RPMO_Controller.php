@@ -211,7 +211,7 @@ class RPMO_Controller extends Controller
         foreach($results as $row){
             $users = DB::select( DB::raw("SELECT Fname,Lname FROM users,assigned_sp where users.id = assigned_sp.assigned_to  
             AND  assigned_sp.sp_id = '".$row->sp_id."'") );
-            $bub = CMFS_kalahi_2021_BUB_SP::where("sp_id",$row->sp_id)->get()
+            $bub = CMFS_kalahi_2021_BUB_SP::where("sp_id",$row->sp_id)->get();
             $nc = CMFS_kalahi_2021_NCDDP_SP::where("sp_id",$row->sp_id)->get();
             $stringname = '';
             // >>>>>>> c099e5e399a60cfab378bd2d86a1990ede1b3864
