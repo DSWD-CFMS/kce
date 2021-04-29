@@ -648,7 +648,8 @@ app.controller('Admin_Controller', function($scope,$http,$filter) {
           icon: 'success',
         });
         $print("------vvv-----")
-        // $print(datas)
+        $print(datas)
+        $print("===")
         $print(res.data)
         $print("------^^^-----")
       })
