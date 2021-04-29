@@ -560,7 +560,7 @@ class ADMIN_Controller extends Controller
             VALUES ('".$g_id."','".$rq->id."','".$rq->sp_title."','".$rq->prov_name."','".$rq->city_name."','".$rq->brgy_name."','".$rq->grant."','NYS','".$rq->date_encoded."','".$rq->date_encoded."','"."FROM_CFMS_NEW_BTN');
                  "));
 
-         $ret = "','".$rq->id."','".$rq->sp_title."','".$rq->prov_name."','".$rq->city_name."','".$rq->brgy_name."','"
+         $ret = "','".$rq->id."','".$rq->sp_title."','".$rq->prov_name."','".$rq->city_name."','".$rq->brgy_name."','";
         // return $spsp; 
         return $ret;    
         ob_end_flush();
