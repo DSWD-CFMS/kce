@@ -562,7 +562,7 @@ class ADMIN_Controller extends Controller
 
          $ret = "','".$rq->id."','".$rq->sp_title."','".$rq->prov_name."','".$rq->city_name."','".$rq->brgy_name."','"
         // return $spsp; 
-        return $ret    
+        return $ret;    
         ob_end_flush();
     }
 
