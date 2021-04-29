@@ -636,6 +636,7 @@ app.controller('Admin_Controller', function($scope,$http,$filter) {
   }
 
   $scope.import_to_kce = function(datas,modality){
+    $print(datas)
     $http({
       method : "POST",
       url : 'import_to_kce',
@@ -648,7 +649,6 @@ app.controller('Admin_Controller', function($scope,$http,$filter) {
           icon: 'success',
         });
         $print("------vvv-----")
-        $print(datas)
         $print("===")
         $print(res.data)
         $print("------^^^-----")
