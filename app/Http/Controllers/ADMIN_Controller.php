@@ -557,10 +557,10 @@ class ADMIN_Controller extends Controller
         $spsp = DB::select( DB::raw("
             INSERT IGNORE INTO `sp`
             (`sp_groupings`,`sp_id`, `sp_title`,`sp_province`, `sp_municipality`, `sp_brgy`, `sp_project_cost`, `sp_status`,`created_at`,`updated_at`,`remarks`)
-            VALUES ('".$g_id."','".$rq->id."','".$rq->sp_title."','".$rq->prov_name."','".$rq->city_name."','".$rq->brgy_name."','".$rq->grant."','NYS','".$rq->date_encoded."','".$rq->date_encoded."','"."FROM_CFMS_NEW_BTN');
+            VALUES ('".$g_id."','".$rq->id."','".$rq->sp_title."','".$rq->brgy->cities->provinces->prov_name."','".$rq->brgy->cities->city_name."','".$rq->brgy->brgy_name."','".$rq->grant."','NYS','".$rq->date_encoded."','".$rq->date_encoded."','"."FROM_CFMS_NEW_BTN');
                  "));
 
-         $ret = "','".$rq->id."','".$rq->sp_title."','".$rq->prov_name."','".$rq->city_name."','".$rq->brgy_name."','";
+         $ret = "','".$rq->sp_title."','".$rq->brgy->cities->provinces->prov_name."','".$rq->brgy->cities->city_name."','".$rq->brgy->brgy_name."','";
         // return $spsp; 
         return $ret;    
         ob_end_flush();
