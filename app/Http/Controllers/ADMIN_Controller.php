@@ -563,7 +563,7 @@ class ADMIN_Controller extends Controller
 
         //  $ret = "','".$rq->sp_title."','".$rq->brgy->cities->provinces->prov_name."','".$rq->brgy->cities->city_name."','".$rq->brgy->brgy_name."','";
         // return $spsp; 
-        return $rq->brgy;    
+        return $rq['brgy'];    
         ob_end_flush();
     }
 
