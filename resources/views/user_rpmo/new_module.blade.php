@@ -90,6 +90,8 @@ function init(){
 init();
 
 function det_modal(res){
+	// render_specific_sp(all_data)
+	render_specific_sp(res)
 	$ID('sp_id_v').innerHTML = res
 	$ID('id01').style.display='block'
 	// $send({
