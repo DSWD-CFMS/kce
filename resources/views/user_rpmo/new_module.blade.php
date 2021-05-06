@@ -46,6 +46,8 @@
 				<!-- <button class="x-btn x-orange">RFR Tracking</button> -->
 				<!-- <button class="x-btn x-green">SPCR Tracking</button> -->
 		      	<button type="button" style="border-radius: 100px;" class="btn btn-outline-primary mb-2" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#plan_history" ng-click="view_planned_sched($ID('sp_id_v').innerHTML)"> <i class="fa fa-history"></i> View Track history </button>
+		      	<button data-backdrop="static" data-keyboard="false" data-target="#SpecificSP_Modal" data-toggle="modal" class="btn btn-outline-primary rounded-0 btn-block" ng-click="render_specific_sp(all_data)"> View <i class="fa fa-eye"></i>
+                </button>
 			</div>
 		</div>
 	</div>
@@ -92,7 +94,6 @@ init();
 
 function det_modal(res){
 	// render_specific_sp(all_data)
-	render_specific_sp(res)
 	$ID('sp_id_v').innerHTML = res
 	$ID('id01').style.display='block'
 	// $send({
@@ -105,6 +106,7 @@ function det_modal(res){
 	// 		$print(res)
 	// 	}
 	// })
+
 }
 
 function set_start_date(){
@@ -135,6 +137,273 @@ function set_start_date(){
 	
 }
 
+
+var app = angular.module('Admin_RCIS_Function', []);
+
+app.directive('errSrc', function() {
+  return {
+    link: function(scope, element, attrs) {
+      element.bind('error', function() {
+        if (attrs.src != attrs.errSrc) {
+          attrs.$set('src', attrs.errSrc);
+        }
+      });
+      
+      attrs.$observe('ngSrc', function(value) {
+        if (!value && attrs.errSrc) {
+          attrs.$set('src', attrs.errSrc);
+        }
+      });
+    }
+  }
+});
+
+app.controller('Admin_RCIS_Controller', function($scope,$http,$filter) {
+		$scope.render_specific_sp = function(data){
+		console.log(data);
+		$scope.specific_sp_data = data;
+
+	    // BUB
+	    if($scope.specific_sp_data.c_m_f_s_kalahi_2015__b_u_b__s_p != null){
+	      $scope.paramObj = {
+	        grant: $scope.specific_sp_data.c_m_f_s_kalahi_2015__b_u_b__s_p.grant,
+	        contigency: $scope.specific_sp_data.c_m_f_s_kalahi_2015__b_u_b__s_p.contigency,
+	        other_amount: $scope.specific_sp_data.c_m_f_s_kalahi_2015__b_u_b__s_p.other_amount,
+	        lcc_community: $scope.specific_sp_data.c_m_f_s_kalahi_2015__b_u_b__s_p.lcc_community,
+	        lcc_community_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2015__b_u_b__s_p.lcc_community_ik,
+	        lcc_blgu: $scope.specific_sp_data.c_m_f_s_kalahi_2015__b_u_b__s_p.lcc_blgu,
+	        lcc_blgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2015__b_u_b__s_p.lcc_blgu_ik,
+	        lcc_mlgu: $scope.specific_sp_data.c_m_f_s_kalahi_2015__b_u_b__s_p.lcc_mlgu,
+	        lcc_mlgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2015__b_u_b__s_p.lcc_mlgu_ik,
+	        lcc_plgu: $scope.specific_sp_data.c_m_f_s_kalahi_2015__b_u_b__s_p.lcc_plgu,
+	        lcc_plgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2015__b_u_b__s_p.lcc_plgu_ik,
+	        lcc_others: $scope.specific_sp_data.c_m_f_s_kalahi_2015__b_u_b__s_p.lcc_others,
+	        lcc_others_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2015__b_u_b__s_p.lcc_others_ik,
+	        lcc_cash: $scope.specific_sp_data.c_m_f_s_kalahi_2015__b_u_b__s_p.lcc_cash,
+	        lcc_in_kind: $scope.specific_sp_data.c_m_f_s_kalahi_2015__b_u_b__s_p.lcc_in_kind,
+	      }
+	      $scope.total_project_cost = $scope.get_total_project_cost($scope.paramObj); 
+	    
+	    }else if($scope.specific_sp_data.c_m_f_s_kalahi_2016__b_u_b__s_p != null){
+	      $scope.paramObj = {
+	        grant: $scope.specific_sp_data.c_m_f_s_kalahi_2016__b_u_b__s_p.grant,
+	        contigency: $scope.specific_sp_data.c_m_f_s_kalahi_2016__b_u_b__s_p.contigency,
+	        other_amount: $scope.specific_sp_data.c_m_f_s_kalahi_2016__b_u_b__s_p.other_amount,
+	        lcc_community: $scope.specific_sp_data.c_m_f_s_kalahi_2016__b_u_b__s_p.lcc_community,
+	        lcc_community_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2016__b_u_b__s_p.lcc_community_ik,
+	        lcc_blgu: $scope.specific_sp_data.c_m_f_s_kalahi_2016__b_u_b__s_p.lcc_blgu,
+	        lcc_blgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2016__b_u_b__s_p.lcc_blgu_ik,
+	        lcc_mlgu: $scope.specific_sp_data.c_m_f_s_kalahi_2016__b_u_b__s_p.lcc_mlgu,
+	        lcc_mlgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2016__b_u_b__s_p.lcc_mlgu_ik,
+	        lcc_plgu: $scope.specific_sp_data.c_m_f_s_kalahi_2016__b_u_b__s_p.lcc_plgu,
+	        lcc_plgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2016__b_u_b__s_p.lcc_plgu_ik,
+	        lcc_others: $scope.specific_sp_data.c_m_f_s_kalahi_2016__b_u_b__s_p.lcc_others,
+	        lcc_others_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2016__b_u_b__s_p.lcc_others_ik,
+	        lcc_cash: $scope.specific_sp_data.c_m_f_s_kalahi_2016__b_u_b__s_p.lcc_cash,
+	        lcc_in_kind: $scope.specific_sp_data.c_m_f_s_kalahi_2016__b_u_b__s_p.lcc_in_kind,
+	      }
+	      $scope.total_project_cost = $scope.get_total_project_cost($scope.paramObj); 
+	    
+	    }else if($scope.specific_sp_data.c_m_f_s_kalahi_2017__b_u_b__s_p != null){
+	      $scope.paramObj = {
+	        grant: $scope.specific_sp_data.c_m_f_s_kalahi_2017__b_u_b__s_p.grant,
+	        contigency: $scope.specific_sp_data.c_m_f_s_kalahi_2017__b_u_b__s_p.contigency,
+	        other_amount: $scope.specific_sp_data.c_m_f_s_kalahi_2017__b_u_b__s_p.other_amount,
+	        lcc_community: $scope.specific_sp_data.c_m_f_s_kalahi_2017__b_u_b__s_p.lcc_community,
+	        lcc_community_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2017__b_u_b__s_p.lcc_community_ik,
+	        lcc_blgu: $scope.specific_sp_data.c_m_f_s_kalahi_2017__b_u_b__s_p.lcc_blgu,
+	        lcc_blgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2017__b_u_b__s_p.lcc_blgu_ik,
+	        lcc_mlgu: $scope.specific_sp_data.c_m_f_s_kalahi_2017__b_u_b__s_p.lcc_mlgu,
+	        lcc_mlgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2017__b_u_b__s_p.lcc_mlgu_ik,
+	        lcc_plgu: $scope.specific_sp_data.c_m_f_s_kalahi_2017__b_u_b__s_p.lcc_plgu,
+	        lcc_plgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2017__b_u_b__s_p.lcc_plgu_ik,
+	        lcc_others: $scope.specific_sp_data.c_m_f_s_kalahi_2017__b_u_b__s_p.lcc_others,
+	        lcc_others_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2017__b_u_b__s_p.lcc_others_ik,
+	        lcc_cash: $scope.specific_sp_data.c_m_f_s_kalahi_2017__b_u_b__s_p.lcc_cash,
+	        lcc_in_kind: $scope.specific_sp_data.c_m_f_s_kalahi_2017__b_u_b__s_p.lcc_in_kind,
+	      }
+	      $scope.total_project_cost = $scope.get_total_project_cost($scope.paramObj); 
+
+	    }else if($scope.specific_sp_data.c_m_f_s_kalahi_2018__b_u_b__s_p != null){
+	      $scope.paramObj = {
+	        grant: $scope.specific_sp_data.c_m_f_s_kalahi_2018__b_u_b__s_p.grant,
+	        contigency: $scope.specific_sp_data.c_m_f_s_kalahi_2018__b_u_b__s_p.contigency,
+	        other_amount: $scope.specific_sp_data.c_m_f_s_kalahi_2018__b_u_b__s_p.other_amount,
+	        lcc_community: $scope.specific_sp_data.c_m_f_s_kalahi_2018__b_u_b__s_p.lcc_community,
+	        lcc_community_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2018__b_u_b__s_p.lcc_community_ik,
+	        lcc_blgu: $scope.specific_sp_data.c_m_f_s_kalahi_2018__b_u_b__s_p.lcc_blgu,
+	        lcc_blgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2018__b_u_b__s_p.lcc_blgu_ik,
+	        lcc_mlgu: $scope.specific_sp_data.c_m_f_s_kalahi_2018__b_u_b__s_p.lcc_mlgu,
+	        lcc_mlgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2018__b_u_b__s_p.lcc_mlgu_ik,
+	        lcc_plgu: $scope.specific_sp_data.c_m_f_s_kalahi_2018__b_u_b__s_p.lcc_plgu,
+	        lcc_plgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2018__b_u_b__s_p.lcc_plgu_ik,
+	        lcc_others: $scope.specific_sp_data.c_m_f_s_kalahi_2018__b_u_b__s_p.lcc_others,
+	        lcc_others_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2018__b_u_b__s_p.lcc_others_ik,
+	        lcc_cash: $scope.specific_sp_data.c_m_f_s_kalahi_2018__b_u_b__s_p.lcc_cash,
+	        lcc_in_kind: $scope.specific_sp_data.c_m_f_s_kalahi_2018__b_u_b__s_p.lcc_in_kind,
+	      }
+	      $scope.total_project_cost = $scope.get_total_project_cost($scope.paramObj); 
+	    
+	    }else if($scope.specific_sp_data.c_m_f_s_kalahi_2020__b_u_b__s_p != null){
+	      $scope.paramObj = {
+	        grant: $scope.specific_sp_data.c_m_f_s_kalahi_2020__b_u_b__s_p.grant,
+	        contigency: $scope.specific_sp_data.c_m_f_s_kalahi_2020__b_u_b__s_p.contigency,
+	        other_amount: $scope.specific_sp_data.c_m_f_s_kalahi_2020__b_u_b__s_p.other_amount,
+	        lcc_community: $scope.specific_sp_data.c_m_f_s_kalahi_2020__b_u_b__s_p.lcc_community,
+	        lcc_community_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2020__b_u_b__s_p.lcc_community_ik,
+	        lcc_blgu: $scope.specific_sp_data.c_m_f_s_kalahi_2020__b_u_b__s_p.lcc_blgu,
+	        lcc_blgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2020__b_u_b__s_p.lcc_blgu_ik,
+	        lcc_mlgu: $scope.specific_sp_data.c_m_f_s_kalahi_2020__b_u_b__s_p.lcc_mlgu,
+	        lcc_mlgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2020__b_u_b__s_p.lcc_mlgu_ik,
+	        lcc_plgu: $scope.specific_sp_data.c_m_f_s_kalahi_2020__b_u_b__s_p.lcc_plgu,
+	        lcc_plgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2020__b_u_b__s_p.lcc_plgu_ik,
+	        lcc_others: $scope.specific_sp_data.c_m_f_s_kalahi_2020__b_u_b__s_p.lcc_others,
+	        lcc_others_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2020__b_u_b__s_p.lcc_others_ik,
+	        lcc_cash: $scope.specific_sp_data.c_m_f_s_kalahi_2020__b_u_b__s_p.lcc_cash,
+	        lcc_in_kind: $scope.specific_sp_data.c_m_f_s_kalahi_2020__b_u_b__s_p.lcc_in_kind,
+	      }
+	      $scope.total_project_cost = $scope.get_total_project_cost($scope.paramObj); 
+
+	    }else;
+
+	    // NCDDP
+
+	    if($scope.specific_sp_data.c_m_f_s_kalahi_2015__n_c_d_d_p__s_p != null){
+	      $scope.paramObj = {
+	        grant: $scope.specific_sp_data.c_m_f_s_kalahi_2015__n_c_d_d_p__s_p.grant,
+	        contigency: $scope.specific_sp_data.c_m_f_s_kalahi_2015__n_c_d_d_p__s_p.contigency,
+	        other_amount: $scope.specific_sp_data.c_m_f_s_kalahi_2015__n_c_d_d_p__s_p.other_amount,
+	        lcc_community: $scope.specific_sp_data.c_m_f_s_kalahi_2015__n_c_d_d_p__s_p.lcc_community,
+	        lcc_community_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2015__n_c_d_d_p__s_p.lcc_community_ik,
+	        lcc_blgu: $scope.specific_sp_data.c_m_f_s_kalahi_2015__n_c_d_d_p__s_p.lcc_blgu,
+	        lcc_blgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2015__n_c_d_d_p__s_p.lcc_blgu_ik,
+	        lcc_mlgu: $scope.specific_sp_data.c_m_f_s_kalahi_2015__n_c_d_d_p__s_p.lcc_mlgu,
+	        lcc_mlgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2015__n_c_d_d_p__s_p.lcc_mlgu_ik,
+	        lcc_plgu: $scope.specific_sp_data.c_m_f_s_kalahi_2015__n_c_d_d_p__s_p.lcc_plgu,
+	        lcc_plgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2015__n_c_d_d_p__s_p.lcc_plgu_ik,
+	        lcc_others: $scope.specific_sp_data.c_m_f_s_kalahi_2015__n_c_d_d_p__s_p.lcc_others,
+	        lcc_others_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2015__n_c_d_d_p__s_p.lcc_others_ik,
+	        lcc_cash: $scope.specific_sp_data.c_m_f_s_kalahi_2015__n_c_d_d_p__s_p.lcc_cash,
+	        lcc_in_kind: $scope.specific_sp_data.c_m_f_s_kalahi_2015__n_c_d_d_p__s_p.lcc_in_kind,
+	      }
+	      $scope.total_project_cost = $scope.get_total_project_cost($scope.paramObj); 
+	    
+	    }else if($scope.specific_sp_data.c_m_f_s_kalahi_2016__n_c_d_d_p__s_p != null){
+	      $scope.paramObj = {
+	        grant: $scope.specific_sp_data.c_m_f_s_kalahi_2016__n_c_d_d_p__s_p.grant,
+	        contigency: $scope.specific_sp_data.c_m_f_s_kalahi_2016__n_c_d_d_p__s_p.contigency,
+	        other_amount: $scope.specific_sp_data.c_m_f_s_kalahi_2016__n_c_d_d_p__s_p.other_amount,
+	        lcc_community: $scope.specific_sp_data.c_m_f_s_kalahi_2016__n_c_d_d_p__s_p.lcc_community,
+	        lcc_community_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2016__n_c_d_d_p__s_p.lcc_community_ik,
+	        lcc_blgu: $scope.specific_sp_data.c_m_f_s_kalahi_2016__n_c_d_d_p__s_p.lcc_blgu,
+	        lcc_blgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2016__n_c_d_d_p__s_p.lcc_blgu_ik,
+	        lcc_mlgu: $scope.specific_sp_data.c_m_f_s_kalahi_2016__n_c_d_d_p__s_p.lcc_mlgu,
+	        lcc_mlgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2016__n_c_d_d_p__s_p.lcc_mlgu_ik,
+	        lcc_plgu: $scope.specific_sp_data.c_m_f_s_kalahi_2016__n_c_d_d_p__s_p.lcc_plgu,
+	        lcc_plgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2016__n_c_d_d_p__s_p.lcc_plgu_ik,
+	        lcc_others: $scope.specific_sp_data.c_m_f_s_kalahi_2016__n_c_d_d_p__s_p.lcc_others,
+	        lcc_others_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2016__n_c_d_d_p__s_p.lcc_others_ik,
+	        lcc_cash: $scope.specific_sp_data.c_m_f_s_kalahi_2016__n_c_d_d_p__s_p.lcc_cash,
+	        lcc_in_kind: $scope.specific_sp_data.c_m_f_s_kalahi_2016__n_c_d_d_p__s_p.lcc_in_kind,
+	      }
+	      $scope.total_project_cost = $scope.get_total_project_cost($scope.paramObj); 
+	    
+	    }else if($scope.specific_sp_data.c_m_f_s_kalahi_2017__n_c_d_d_p__s_p != null){
+	      $scope.paramObj = {
+	        grant: $scope.specific_sp_data.c_m_f_s_kalahi_2017__n_c_d_d_p__s_p.grant,
+	        contigency: $scope.specific_sp_data.c_m_f_s_kalahi_2017__n_c_d_d_p__s_p.contigency,
+	        other_amount: $scope.specific_sp_data.c_m_f_s_kalahi_2017__n_c_d_d_p__s_p.other_amount,
+	        lcc_community: $scope.specific_sp_data.c_m_f_s_kalahi_2017__n_c_d_d_p__s_p.lcc_community,
+	        lcc_community_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2017__n_c_d_d_p__s_p.lcc_community_ik,
+	        lcc_blgu: $scope.specific_sp_data.c_m_f_s_kalahi_2017__n_c_d_d_p__s_p.lcc_blgu,
+	        lcc_blgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2017__n_c_d_d_p__s_p.lcc_blgu_ik,
+	        lcc_mlgu: $scope.specific_sp_data.c_m_f_s_kalahi_2017__n_c_d_d_p__s_p.lcc_mlgu,
+	        lcc_mlgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2017__n_c_d_d_p__s_p.lcc_mlgu_ik,
+	        lcc_plgu: $scope.specific_sp_data.c_m_f_s_kalahi_2017__n_c_d_d_p__s_p.lcc_plgu,
+	        lcc_plgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2017__n_c_d_d_p__s_p.lcc_plgu_ik,
+	        lcc_others: $scope.specific_sp_data.c_m_f_s_kalahi_2017__n_c_d_d_p__s_p.lcc_others,
+	        lcc_others_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2017__n_c_d_d_p__s_p.lcc_others_ik,
+	        lcc_cash: $scope.specific_sp_data.c_m_f_s_kalahi_2017__n_c_d_d_p__s_p.lcc_cash,
+	        lcc_in_kind: $scope.specific_sp_data.c_m_f_s_kalahi_2017__n_c_d_d_p__s_p.lcc_in_kind,
+	      }
+	      $scope.total_project_cost = $scope.get_total_project_cost($scope.paramObj); 
+
+	    }else if($scope.specific_sp_data.c_m_f_s_kalahi_2018__n_c_d_d_p__s_p != null){
+	      $scope.paramObj = {
+	        grant: $scope.specific_sp_data.c_m_f_s_kalahi_2018__n_c_d_d_p__s_p.grant,
+	        contigency: $scope.specific_sp_data.c_m_f_s_kalahi_2018__n_c_d_d_p__s_p.contigency,
+	        other_amount: $scope.specific_sp_data.c_m_f_s_kalahi_2018__n_c_d_d_p__s_p.other_amount,
+	        lcc_community: $scope.specific_sp_data.c_m_f_s_kalahi_2018__n_c_d_d_p__s_p.lcc_community,
+	        lcc_community_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2018__n_c_d_d_p__s_p.lcc_community_ik,
+	        lcc_blgu: $scope.specific_sp_data.c_m_f_s_kalahi_2018__n_c_d_d_p__s_p.lcc_blgu,
+	        lcc_blgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2018__n_c_d_d_p__s_p.lcc_blgu_ik,
+	        lcc_mlgu: $scope.specific_sp_data.c_m_f_s_kalahi_2018__n_c_d_d_p__s_p.lcc_mlgu,
+	        lcc_mlgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2018__n_c_d_d_p__s_p.lcc_mlgu_ik,
+	        lcc_plgu: $scope.specific_sp_data.c_m_f_s_kalahi_2018__n_c_d_d_p__s_p.lcc_plgu,
+	        lcc_plgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2018__n_c_d_d_p__s_p.lcc_plgu_ik,
+	        lcc_others: $scope.specific_sp_data.c_m_f_s_kalahi_2018__n_c_d_d_p__s_p.lcc_others,
+	        lcc_others_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2018__n_c_d_d_p__s_p.lcc_others_ik,
+	        lcc_cash: $scope.specific_sp_data.c_m_f_s_kalahi_2018__n_c_d_d_p__s_p.lcc_cash,
+	        lcc_in_kind: $scope.specific_sp_data.c_m_f_s_kalahi_2018__n_c_d_d_p__s_p.lcc_in_kind,
+	      }
+	      $scope.total_project_cost = $scope.get_total_project_cost($scope.paramObj); 
+	    
+	    }else if($scope.specific_sp_data.c_m_f_s_kalahi_2019__n_c_d_d_p__s_p != null){
+	      $scope.paramObj = {
+	        grant: $scope.specific_sp_data.c_m_f_s_kalahi_2019__n_c_d_d_p__s_p.grant,
+	        contigency: $scope.specific_sp_data.c_m_f_s_kalahi_2019__n_c_d_d_p__s_p.contigency,
+	        other_amount: $scope.specific_sp_data.c_m_f_s_kalahi_2019__n_c_d_d_p__s_p.other_amount,
+	        lcc_community: $scope.specific_sp_data.c_m_f_s_kalahi_2019__n_c_d_d_p__s_p.lcc_community,
+	        lcc_community_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2019__n_c_d_d_p__s_p.lcc_community_ik,
+	        lcc_blgu: $scope.specific_sp_data.c_m_f_s_kalahi_2019__n_c_d_d_p__s_p.lcc_blgu,
+	        lcc_blgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2019__n_c_d_d_p__s_p.lcc_blgu_ik,
+	        lcc_mlgu: $scope.specific_sp_data.c_m_f_s_kalahi_2019__n_c_d_d_p__s_p.lcc_mlgu,
+	        lcc_mlgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2019__n_c_d_d_p__s_p.lcc_mlgu_ik,
+	        lcc_plgu: $scope.specific_sp_data.c_m_f_s_kalahi_2019__n_c_d_d_p__s_p.lcc_plgu,
+	        lcc_plgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2019__n_c_d_d_p__s_p.lcc_plgu_ik,
+	        lcc_others: $scope.specific_sp_data.c_m_f_s_kalahi_2019__n_c_d_d_p__s_p.lcc_others,
+	        lcc_others_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2019__n_c_d_d_p__s_p.lcc_others_ik,
+	        lcc_cash: $scope.specific_sp_data.c_m_f_s_kalahi_2019__n_c_d_d_p__s_p.lcc_cash,
+	        lcc_in_kind: $scope.specific_sp_data.c_m_f_s_kalahi_2019__n_c_d_d_p__s_p.lcc_in_kind,
+	      }
+	      $scope.total_project_cost = $scope.get_total_project_cost($scope.paramObj); 
+	    
+	    }else if($scope.specific_sp_data.c_m_f_s_kalahi_2020__n_c_d_d_p__s_p != null){
+	      $scope.paramObj = {
+	        grant: $scope.specific_sp_data.c_m_f_s_kalahi_2020__n_c_d_d_p__s_p.grant,
+	        contigency: $scope.specific_sp_data.c_m_f_s_kalahi_2020__n_c_d_d_p__s_p.contigency,
+	        other_amount: $scope.specific_sp_data.c_m_f_s_kalahi_2020__n_c_d_d_p__s_p.other_amount,
+	        lcc_community: $scope.specific_sp_data.c_m_f_s_kalahi_2020__n_c_d_d_p__s_p.lcc_community,
+	        lcc_community_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2020__n_c_d_d_p__s_p.lcc_community_ik,
+	        lcc_blgu: $scope.specific_sp_data.c_m_f_s_kalahi_2020__n_c_d_d_p__s_p.lcc_blgu,
+	        lcc_blgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2020__n_c_d_d_p__s_p.lcc_blgu_ik,
+	        lcc_mlgu: $scope.specific_sp_data.c_m_f_s_kalahi_2020__n_c_d_d_p__s_p.lcc_mlgu,
+	        lcc_mlgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2020__n_c_d_d_p__s_p.lcc_mlgu_ik,
+	        lcc_plgu: $scope.specific_sp_data.c_m_f_s_kalahi_2020__n_c_d_d_p__s_p.lcc_plgu,
+	        lcc_plgu_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2020__n_c_d_d_p__s_p.lcc_plgu_ik,
+	        lcc_others: $scope.specific_sp_data.c_m_f_s_kalahi_2020__n_c_d_d_p__s_p.lcc_others,
+	        lcc_others_ik: $scope.specific_sp_data.c_m_f_s_kalahi_2020__n_c_d_d_p__s_p.lcc_others_ik,
+	        lcc_cash: $scope.specific_sp_data.c_m_f_s_kalahi_2020__n_c_d_d_p__s_p.lcc_cash,
+	        lcc_in_kind: $scope.specific_sp_data.c_m_f_s_kalahi_2020__n_c_d_d_p__s_p.lcc_in_kind,
+	      }
+	      $scope.total_project_cost = $scope.get_total_project_cost($scope.paramObj); 
+	    
+	    }else;
+
+		console.log($scope.specific_sp_data.sp_actual_date_completed);
+		// for(x = 0; x < $scope.specific_sp_data.data.length; x++){
+          $scope.specific_sp_data.sp_rfr_first_tranche_date = $scope.parse_date($scope.specific_sp_data.sp_rfr_first_tranche_date);
+          $scope.specific_sp_data.sp_date_started = $scope.parse_date($scope.specific_sp_data.sp_date_started);
+          $scope.specific_sp_data.sp_date_of_turnover = $scope.parse_date($scope.specific_sp_data.sp_date_of_turnover);
+          $scope.specific_sp_data.sp_target_date_of_completion = $scope.parse_date($scope.specific_sp_data.sp_target_date_of_completion);
+          $scope.specific_sp_data.sp_actual_date_completed = $scope.parse_date($scope.specific_sp_data.sp_actual_date_completed);
+
+          for(y = 0; y < $scope.specific_sp_data.sp_logs.length; y++){
+            $scope.specific_sp_data.sp_logs[y].updated_at = $scope.parse_date($scope.specific_sp_data.sp_logs[y].updated_at);
+          }
+        // }
+	}
+});
 
 
 </script>
