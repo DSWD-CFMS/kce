@@ -1,5 +1,6 @@
 <link href="{{ asset('dataTables/datatablesnew.min.css') }}" rel="stylesheet">
 <link href="{{ asset('dataTables/w3.css') }}" rel="stylesheet">
+<script type="text/javascript" src="{{ asset('js/admin_rcis_functions.js') }}" ></script>
 <style>
 
 .loading {
