@@ -64,7 +64,7 @@
 	<div class="table-responsive" style="height: 400px;">
 			<table class="table table-bordered1">
 				<tbody style="overflow-y: auto !important; overflow-x: none !important;">
-					<tr  ng-class="{'text-green' : all_data.status == 'Completed','text-yellow' : all_data.status == 'On-going'}" style="font-size: 11px;" ng-repeat="all_data in bars = (my_modality.data | filter:search_data_modality) track by $index">
+					<tr  ng-class="[all_data.status == 'Completed'? 'text-green' : 'text-red']" style="font-size: 11px;" ng-repeat="all_data in bars = (my_modality.data | filter:search_data_modality) track by $index">
 
 						<td ng-class="{'text-green' : all_data.status == 'Completed'}" ng-bind="all_data.sp[0].sp_title"></td>
 						<td ng-class="{'text-green' : all_data.status == 'Completed'}" ng-bind="all_data.sp[0].sp_municipality | uppercase"></td>
