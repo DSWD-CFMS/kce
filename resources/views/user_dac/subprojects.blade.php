@@ -1,3 +1,5 @@
+    <link href="{{ asset('/css/w3.css') }}" rel="stylesheet">
+
 <div class="row wrapper animated fadeInRight ecommerce px-0 pb-0 " ng-init="my_subprojects()">
 	<div class="col-lg-12 my-2">
 		<label class="text-muted"><small size="1"><span ng-if="my_modality.from!=null" ng-bind="'Showing records '+my_modality.from+'-'+my_modality.to+' out of '+my_modality.total"></span></small></label>
