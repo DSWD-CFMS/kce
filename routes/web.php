@@ -230,6 +230,7 @@ Route::middleware(['rpmo'])->group(function () {
 	Route::get('/rpmo/routes/new_module_content_table', 'RPMO_Controller@new_module_content_table');
 	Route::post('/rpmo/routes/get_sp_details', 'RPMO_Controller@new_module_content_modal');
 	Route::post('/rpmo/routes/set_date_start', 'RPMO_Controller@set_date_start');
+	Route::post('/rpmo/routes/get_sp_by_id', 'RPMO_Controller@get_sp_by_id');
 
 	// URL TEMPLATE
 	Route::get('/rpmo/routes/my_modality_contents', function () { return view('user_rpmo.my_modalities');});

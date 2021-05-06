@@ -492,10 +492,19 @@ app.directive('errSrc', function() {
 app.controller('Admin_RCIS_Controller', function($scope,$http,$filter) {
 		$scope.render_specific_sp = function(data){
 		console.log(data);
+
 		$scope.specific_sp_data = data;
 
-	    // BUB
-	    if($scope.specific_sp_data.c_m_f_s_kalahi_2015__b_u_b__s_p != null){
+		$send({
+			action:'/rpmo/routes/set_date_start',
+			data : $DATA({
+				'id':$ID('sp_id_v').innerHTML = res
+				}),
+			method : POST,
+			_async : true,
+			headers : {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+			func : function(data){
+				if($scope.specific_sp_data.c_m_f_s_kalahi_2015__b_u_b__s_p != null){
 	      $scope.paramObj = {
 	        grant: $scope.specific_sp_data.c_m_f_s_kalahi_2015__b_u_b__s_p.grant,
 	        contigency: $scope.specific_sp_data.c_m_f_s_kalahi_2015__b_u_b__s_p.contigency,
@@ -732,6 +741,10 @@ app.controller('Admin_RCIS_Controller', function($scope,$http,$filter) {
           for(y = 0; y < $scope.specific_sp_data.sp_logs.length; y++){
             $scope.specific_sp_data.sp_logs[y].updated_at = $scope.parse_date($scope.specific_sp_data.sp_logs[y].updated_at);
           }
+			}
+		})
+	    // BUB
+	    
         // }
 	}
 });

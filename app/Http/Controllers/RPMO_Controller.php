@@ -244,15 +244,15 @@ class RPMO_Controller extends Controller
     
     public function set_date_start(Request $req){
         // $querry1 = DB::select( DB::raw(" UPDATE `sp` SET `sp_date_started`='".$req->date." 00:00:00' ,`sp_status` = 'On-going' WHERE `sp_id` =".$req->id." ;") );
-		$querry2 = DB::select( DB::raw(" 
-			UPDATE sp, assigned_sp
-			SET sp.sp_date_started = '".$req->date." 00:00:00',
-				sp.sp_status = 'On-going',
-				assigned_sp.status = 'On-going'
-			WHERE
-				assigned_sp.sp_id = ".$req->id."
-				AND sp.sp_id = ".$req->id.";
-		;") );
+        $querry2 = DB::select( DB::raw(" 
+            UPDATE sp, assigned_sp
+            SET sp.sp_date_started = '".$req->date." 00:00:00',
+                sp.sp_status = 'On-going',
+                assigned_sp.status = 'On-going'
+            WHERE
+                assigned_sp.sp_id = ".$req->id."
+                AND sp.sp_id = ".$req->id.";
+        ;") );
         // $query = Sp::where('sp_id', $req->id)->first();
         // $query->sp_date_started =  $req->date;
         // $query->sp_status = 'On-going';
@@ -262,6 +262,13 @@ class RPMO_Controller extends Controller
         // $query2->status = 'On-going';
         // $query2->save();
         return $req;
+    } 
+
+    
+    public function get_sp_by_id(Request $id){
+        // $querry1 = DB::select( DB::raw(" UPDATE `sp` SET `sp_date_started`='".$req->date." 00:00:00' ,`sp_status` = 'On-going' WHERE `sp_id` =".$req->id." ;") );
+        $querry2 = DB::select( DB::raw("SELECT * FROM `sp` WHERE `sp_id`='".$id."';") );
+        return $querry2;
     } 
 
     public function iTextMoAPI($number,$message,$apicode,$passwd){
