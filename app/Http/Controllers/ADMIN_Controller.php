@@ -630,7 +630,6 @@ class ADMIN_Controller extends Controller
             }
         ob_end_flush();
 
-
     }
 
     public function show_modality(){
@@ -642,7 +641,6 @@ class ADMIN_Controller extends Controller
             DB::beginTransaction();
             try {
                 if($rq->modality == 1 || $rq->modality == 2 || $rq->modality == 4 || $rq->modality == 5 || $rq->modality == 6){
-
                     if($rq->year == 2015){
                         $CMFS_kalahi_2015_BUB_SP = CMFS_kalahi_2015_BUB_SP::with('sp.assigned_sp.users')->with('sp.sp_logs')->with('brgy.cities.provinces.region')->get();
                         $sp_cat = Sp_category::select('id','category')->get();
@@ -693,7 +691,6 @@ class ADMIN_Controller extends Controller
                         $rpmo = Users::select('id','Fname','Lname', 'contact')->where('role','RPMO')->get();
                         return [$CMFS_kalahi_2021_BUB_SP,$sp_cat,$sp_type,$dac,$rpmo];
                     }else;
-
                 }else{
 
                     if($rq->year == 2014){
