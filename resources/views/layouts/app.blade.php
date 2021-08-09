@@ -226,7 +226,7 @@
     <script src="{{asset('ispinia/js/plugins/toastr/toastr.min.js')}}"></script>
 
     <!-- brorn JS -->
-    <script src="{{asset('brorn/Brorn.js')}}"></script>
+    <script src="{{asset('brorn/Brorn.min.js')}}"></script>
 
   <!-- Angular JS -->
   <script type="text/javascript" src="{{ asset('/js/angular/angular.js') }}"></script>
