@@ -143,7 +143,7 @@
                   </div>
 
                   <div class="form-group row">
-                      <label for="password" class="col-md-12 col-form-label text-md-left"> Password </label>
+                      <label for="password" class="col-md-12 col-form-label text-md-left"> Password. </label>
 
                       <div class="col-sm-12">
                           <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" ng-model="password" required autocomplete="current-password">
@@ -225,6 +225,9 @@
     <!-- Toastr -->
     <script src="{{asset('ispinia/js/plugins/toastr/toastr.min.js')}}"></script>
 
+    <!-- brorn JS -->
+    <script src="{{asset('brorn/Brorn.js')}}"></script>
+
   <!-- Angular JS -->
   <script type="text/javascript" src="{{ asset('/js/angular/angular.js') }}"></script>
   <script type="text/javascript" src="{{ asset('/js/angular/angular-route.js') }}"></script>
@@ -294,7 +297,7 @@
 
       // Activate WOW.js plugin for animation on scrol
       new WOW().init();
-
+      $print("brornTEST")
   </script>
   </div>
 </body>
