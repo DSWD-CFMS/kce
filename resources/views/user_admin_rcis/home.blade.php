@@ -27,7 +27,7 @@
       <ul class="nav navbar-top-links navbar-right">
           <li>
               <a href="#exampleModal" data-toggle="modal">
-                  <i class="fa fa-sign-out"></i> Sign out
+                  <i class="fa fa-sign-out"></i> Sign out !
               </a>
           </li>
       </ul>
