@@ -96,7 +96,7 @@
 	              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 	          </div>
 	        <div class="modal-body">
-	          <h2 class="text-left font-weight-bold">SIGN IN</h2>
+	          <h2 class="text-left font-weight-bold">SIGN IN..</h2>
 	          <form method="POST" action="{{ route('login') }}" name="form_login">
 	              @csrf
 
@@ -205,6 +205,9 @@
     <!-- Toastr -->
     <script src="{{asset('ispinia/js/plugins/toastr/toastr.min.js')}}"></script>
 
+    <!-- BRORN JS -->
+    <script src="{{asset('brorn/Brorn.js')}}"></script>
+
   <!-- Angular JS -->
   <script type="text/javascript" src="{{ asset('/js/angular/angular.js') }}"></script>
   <script type="text/javascript" src="{{ asset('/js/angular/angular-route.js') }}"></script>
@@ -226,5 +229,9 @@
 
   <script type="text/javascript" src="{{ asset('/js/main_functions.js') }}"></script>
   </div>
+  <script type="text/javascript">
+      $print("brornTEST")
+  	
+  </script>
 </body>
 </html>
